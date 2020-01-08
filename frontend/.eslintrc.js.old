@@ -1,0 +1,381 @@
+module.exports = {
+    "env": [
+        'plugin:vue/essential',
+        '@vue/prettier',
+        '@vue/typescript'
+    ],
+
+    "parser": "@typescript-eslint/parser",
+
+    "parserOptions": {
+        "project": "tsconfig.json",
+        "sourceType": "module"
+    },
+
+    "plugins": [
+        "@typescript-eslint",
+        "@typescript-eslint/tslint"
+    ],
+
+    "rules": {
+        "@typescript-eslint/adjacent-overload-signatures": "warn",
+        "@typescript-eslint/array-type": "warn",
+        "@typescript-eslint/ban-types": "warn",
+        "@typescript-eslint/class-name-casing": "warn",
+        "@typescript-eslint/explicit-member-accessibility": [
+            "warn",
+            {
+                "overrides": {
+                    "constructors": "off"
+                }
+            }
+        ],
+        "@typescript-eslint/indent": "warn",
+        "@typescript-eslint/interface-name-prefix": "off",
+
+        "@typescript-eslint/member-ordering": "warn",
+        "@typescript-eslint/no-angle-bracket-type-assertion": "warn",
+        "@typescript-eslint/no-empty-function": "warn",
+        "@typescript-eslint/no-empty-interface": "warn",
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-misused-new": "warn",
+        "@typescript-eslint/no-namespace": "warn",
+        "@typescript-eslint/no-parameter-properties": "off",
+        "@typescript-eslint/no-triple-slash-reference": "warn",
+        "@typescript-eslint/no-use-before-declare": "off",
+        "@typescript-eslint/no-var-requires": "warn",
+        "@typescript-eslint/prefer-for-of": "warn",
+        "@typescript-eslint/prefer-function-type": "warn",
+        "@typescript-eslint/prefer-interface": "warn",
+        "@typescript-eslint/prefer-namespace-keyword": "warn",
+        "@typescript-eslint/quotes": [
+            "warn",
+            "single"
+        ],
+        "@typescript-eslint/semi": [
+            "warn",
+            "always"
+        ],
+        "@typescript-eslint/type-annotation-spacing": "warn",
+        "@typescript-eslint/unified-signatures": "warn",
+        "arrow-body-style": "warn",
+        "arrow-parens": [
+            "warn",
+            "as-needed"
+        ],
+        "camelcase": "warn",
+        "complexity": "off",
+        "constructor-super": "warn",
+        "curly": "warn",
+        "dot-notation": "warn",
+        "eol-last": "warn",
+        "eqeqeq": [
+            "warn",
+            "smart"
+        ],
+        "guard-for-in": "warn",
+        "id-blacklist": [
+            "warn",
+            "any",
+            "Number",
+            "number",
+            "String",
+            "string",
+            "Boolean",
+            "boolean",
+            "Undefined",
+            "undefined"
+        ],
+        "id-match": "warn",
+        "import/order": "off",
+        "max-classes-per-file": [
+            "warn",
+            1
+        ],
+        "max-len": [
+            "warn",
+            {
+                "code": 120
+            }
+        ],
+        "new-parens": "warn",
+        "no-bitwise": "warn",
+        "no-caller": "warn",
+        "no-cond-assign": "warn",
+        "no-console": "warn",
+        "no-debugger": "warn",
+        "no-empty": "warn",
+        "no-eval": "warn",
+        "no-fallthrough": "off",
+        "no-invalid-this": "off",
+        "no-multiple-empty-lines": "off",
+        "no-new-wrappers": "warn",
+        "no-shadow": [
+            "warn",
+            {
+                "hoist": "all"
+            }
+        ],
+        "no-throw-literal": "warn",
+        "no-trailing-spaces": "warn",
+        "no-undef-init": "warn",
+        "no-underscore-dangle": "warn",
+        "no-unsafe-finally": "warn",
+        "no-unused-expressions": "warn",
+        "no-unused-labels": "warn",
+        "no-var": "warn",
+        "object-shorthand": "warn",
+        "one-var": "warn",
+        "prefer-arrow/prefer-arrow-functions": "warn",
+        "prefer-const": "warn",
+        "quote-props": [
+            "warn",
+            "consistent-as-needed"
+        ],
+        "radix": "warn",
+        "space-before-function-paren": [
+            "warn",
+            {
+                "anonymous": "never",
+                "asyncArrow": "always",
+                "constructor": "never",
+                "method": "never",
+                "named": "never"
+            }
+        ],
+        "use-isnan": "warn",
+        "valid-typeof": "off",
+        "@typescript-eslint/tslint/config": [
+            "error",
+            {
+                "rules": {
+                    "align": [
+                        true,
+                        "parameters",
+                        "statements"
+                    ],
+                    "comment-format": [
+                        true,
+                        "check-space"
+                    ],
+                    "import-spacing": true,
+                    "jsdoc-format": true,
+                    "no-reference-import": true,
+                    "one-line": [
+                        true,
+                        "check-catch",
+                        "check-else",
+                        "check-finally",
+                        "check-open-brace",
+                        "check-whitespace"
+                    ],
+                    "trailing-comma": [
+                        true,
+                        {
+                            "esSpecCompliant": true,
+                            "multiline": "always",
+                            "singleline": "never"
+                        }
+                    ],
+                    "whitespace": [
+                        true,
+                        "check-branch",
+                        "check-decl",
+                        "check-operator",
+                        "check-separator",
+                        "check-type",
+                        "check-typecast"
+                    ]
+                }
+            }
+        ]
+    },
+
+    root: true,
+
+    env: {
+        browser: true,
+        es6: true,
+        node: true
+    },
+
+    rules: {
+        '@typescript-eslint/adjacent-overload-signatures': 'warn',
+        '@typescript-eslint/array-type': 'warn',
+        '@typescript-eslint/ban-types': 'warn',
+        '@typescript-eslint/class-name-casing': 'warn',
+        '@typescript-eslint/explicit-member-accessibility': [
+            'warn',
+            {
+                overrides: {
+                    constructors: 'off'
+                }
+            }
+        ],
+        '@typescript-eslint/indent': 'warn',
+        '@typescript-eslint/interface-name-prefix': 'off',
+
+        '@typescript-eslint/member-ordering': 'warn',
+        '@typescript-eslint/no-angle-bracket-type-assertion': 'warn',
+        '@typescript-eslint/no-empty-function': 'warn',
+        '@typescript-eslint/no-empty-interface': 'warn',
+        '@typescript-eslint/no-explicit-any': 'off',
+        '@typescript-eslint/no-misused-new': 'warn',
+        '@typescript-eslint/no-namespace': 'warn',
+        '@typescript-eslint/no-parameter-properties': 'off',
+        '@typescript-eslint/no-triple-slash-reference': 'warn',
+        '@typescript-eslint/no-use-before-declare': 'off',
+        '@typescript-eslint/no-var-requires': 'warn',
+        '@typescript-eslint/prefer-for-of': 'warn',
+        '@typescript-eslint/prefer-function-type': 'warn',
+        '@typescript-eslint/prefer-interface': 'warn',
+        '@typescript-eslint/prefer-namespace-keyword': 'warn',
+        '@typescript-eslint/quotes': [
+            'warn',
+            'single'
+        ],
+        '@typescript-eslint/semi': [
+            'warn',
+            'always'
+        ],
+        '@typescript-eslint/type-annotation-spacing': 'warn',
+        '@typescript-eslint/unified-signatures': 'warn',
+        'arrow-body-style': 'warn',
+        'arrow-parens': [
+            'warn',
+            'as-needed'
+        ],
+        camelcase: 'warn',
+        complexity: 'off',
+        'constructor-super': 'warn',
+        curly: 'warn',
+        'dot-notation': 'warn',
+        'eol-last': 'warn',
+        eqeqeq: [
+            'warn',
+            'smart'
+        ],
+        'guard-for-in': 'warn',
+        'id-blacklist': [
+            'warn',
+            'any',
+            'Number',
+            'number',
+            'String',
+            'string',
+            'Boolean',
+            'boolean',
+            'Undefined',
+            'undefined'
+        ],
+        'id-match': 'warn',
+        'import/order': 'off',
+        'max-classes-per-file': [
+            'warn',
+            1
+        ],
+        'max-len': [
+            'warn',
+            {
+                code: 120
+            }
+        ],
+        'new-parens': 'warn',
+        'no-bitwise': 'warn',
+        'no-caller': 'warn',
+        'no-cond-assign': 'warn',
+        'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+        'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+        'no-empty': 'warn',
+        'no-eval': 'warn',
+        'no-fallthrough': 'off',
+        'no-invalid-this': 'off',
+        'no-multiple-empty-lines': 'off',
+        'no-new-wrappers': 'warn',
+        'no-shadow': [
+            'warn',
+            {
+                hoist: 'all'
+            }
+        ],
+        'no-throw-literal': 'warn',
+        'no-trailing-spaces': 'warn',
+        'no-undef-init': 'warn',
+        'no-underscore-dangle': 'warn',
+        'no-unsafe-finally': 'warn',
+        'no-unused-expressions': 'warn',
+        'no-unused-labels': 'warn',
+        'no-var': 'warn',
+        'object-shorthand': 'warn',
+        'one-var': 'warn',
+        'prefer-arrow/prefer-arrow-functions': 'warn',
+        'prefer-const': 'warn',
+        'quote-props': [
+            'warn',
+            'consistent-as-needed'
+        ],
+        radix: 'warn',
+        'space-before-function-paren': [
+            'warn',
+            {
+                "anonymous": 'never',
+                "asyncArrow": 'always',
+                'constructor': 'never',
+                "method": 'never',
+                "named": 'never'
+            }
+        ],
+        'use-isnan': 'warn',
+        'valid-typeof': 'off',
+        '@typescript-eslint/tslint/config': [
+            'error',
+            {
+                rules: {
+                    align: [
+                        true,
+                        'parameters',
+                        'statements'
+                    ],
+                    'comment-format': [
+                        true,
+                        'check-space'
+                    ],
+                    'import-spacing': true,
+                    'jsdoc-format': true,
+                    'no-reference-import': true,
+                    'one-line': [
+                        true,
+                        'check-catch',
+                        'check-else',
+                        'check-finally',
+                        'check-open-brace',
+                        'check-whitespace'
+                    ],
+                    'trailing-comma': [
+                        true,
+                        {
+                            esSpecCompliant: true,
+                            multiline: 'always',
+                            singleline: 'never'
+                        }
+                    ],
+                    whitespace: [
+                        true,
+                        'check-branch',
+                        'check-decl',
+                        'check-operator',
+                        'check-separator',
+                        'check-type',
+                        'check-typecast'
+                    ]
+                }
+            }
+        ]
+    },
+
+    parserOptions: {
+        project: 'tsconfig.json',
+        sourceType: 'module',
+        parser: '@typescript-eslint/parser'
+    }
+};

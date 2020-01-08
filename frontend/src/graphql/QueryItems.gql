@@ -1,0 +1,37 @@
+# Write your query or mutation here
+mutation createItemTest {
+  createItem(input: { title: "50", estimate: 20, description: "test" }) {
+    title
+    estimate
+    description
+    id
+  }
+}
+
+query getItemTest {
+  items {
+    title
+    estimate
+    description
+    id
+  }
+}
+
+mutation createPersonaTest {
+  createPersona(input: { name: "Gordon", role: "Tester" }) {
+    name
+    role
+    id
+  }
+}
+
+query getPersonaTest {
+  personas {
+    name
+    role
+  }
+}
+
+query personaHello {
+  hello
+}
