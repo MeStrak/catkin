@@ -90,6 +90,7 @@ git clone https://github.com/MeStrak/catkin.git
 ```
 
 2. Install packages
+   In both frontend and backend folders:
 
 ```sh
 yarn
