@@ -12,6 +12,7 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
+[![Quality Gate Status][sonarcloud-shield]][sonarcloud-url]
 
 <!-- PROJECT LOGO -->
 <br />
@@ -184,3 +185,5 @@ Project Link: [https://github.com/MeStrak/catkin](https://github.com/MeStrak/cat
 [license-shield]: https://img.shields.io/badge/License-MIT-yellow.svg
 [license-url]: https://github.com/MeStrak/catkin/blob/master/LICENSE
 [product-screenshot]: images/screenshot.png
+[sonarcloud-shield]: https://sonarcloud.io/api/project_badges/measure?project=MeStrak_catkin&metric=alert_status
+[sonarcloud-url]: https://sonarcloud.io/dashboard?id=MeStrak_catkin
