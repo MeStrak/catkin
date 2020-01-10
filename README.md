@@ -16,7 +16,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/mestrak/catkin">
+  <a href="https://github.com/MeStrak/catkin">
     <img src="images/logo.svg" alt="Logo" width="100">
   </a>
 
@@ -28,9 +28,9 @@
     <br />
     <a href="https://www.catkin.dev">View Demo</a>
     ·
-    <a href="https://github.com/mestrak/catkin/issues">Report Bug</a>
+    <a href="https://github.com/MeStrak/catkin/issues">Report Bug</a>
     ·
-    <a href="https://github.com/mestrak/catkin/issues">Request Feature</a>
+    <a href="https://github.com/MeStrak/catkin/issues">Request Feature</a>
   </p>
 </p>
 
@@ -85,7 +85,7 @@ To get a local copy or your own server up and running follow these steps.
 1. Clone the repo
 
 ```sh
-git clone https://github.com/mestrak/catkin.git
+git clone https://github.com/MeStrak/catkin.git
 ```
 
 2. Install packages
@@ -175,14 +175,14 @@ Project Link: [https://github.com/your_username/repo_name](https://github.com/yo
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[contributors-shield]: https://img.shields.io/github/contributors/mestrak/catkin.svg?style=flat-square
-[contributors-url]: https://github.com/mestrak/catkin/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/mestrak/catkin.svg?style=flat-square
-[forks-url]: https://github.com/mestrak/catkin/network/members
-[stars-shield]: https://img.shields.io/github/stars/mestrak/catkin.svg?style=flat-square
-[stars-url]: https://github.com/mestrak/catkin/stargazers
-[issues-shield]: https://img.shields.io/github/issues/mestrak/catkin.svg?style=flat-square
-[issues-url]: https://github.com/mestrak/catkin/issues
-[license-shield]: https://img.shields.io/github/license/mestrak/catkin.svg?style=flat-square
-[license-url]: https://github.com/mestrak/catkin/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/MeStrak/catkin.svg?style=flat-square
+[contributors-url]: https://github.com/MeStrak/catkin/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/MeStrak/catkin.svg?style=flat-square
+[forks-url]: https://github.com/MeStrak/catkin/network/members
+[stars-shield]: https://img.shields.io/github/stars/MeStrak/catkin.svg?style=flat-square
+[stars-url]: https://github.com/MeStrak/catkin/stargazers
+[issues-shield]: https://img.shields.io/github/issues/MeStrak/catkin.svg?style=flat-square
+[issues-url]: https://github.com/MeStrak/catkin/issues
+[license-shield]: https://img.shields.io/github/license/MeStrak/catkin.svg?style=flat-square
+[license-url]: https://github.com/MeStrak/catkin/blob/master/LICENSE.txt
 [product-screenshot]: images/screenshot.png
