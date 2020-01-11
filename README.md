@@ -170,6 +170,7 @@ Project Link: [https://github.com/MeStrak/catkin](https://github.com/MeStrak/cat
 
 - [vue-kanban](https://github.com/BrockReece/vue-kanban)
 - [Kamil Mysliwec (nest.js creator)](https://github.com/kamilmysliwiec)
+- [Gabriel Tanner's article used to get a headstart on nest.js backend dev](https://medium.com/better-programming/building-a-graphql-server-in-nestjs-f9ba34e773a3)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
