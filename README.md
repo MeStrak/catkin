@@ -13,6 +13,7 @@
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
 [![Quality Gate Status][sonarcloud-shield]][sonarcloud-url]
+[![Renovate][renovate-shield]][renovate-url]
 
 <!-- PROJECT LOGO -->
 <br />
@@ -189,3 +190,5 @@ Project Link: [https://github.com/MeStrak/catkin](https://github.com/MeStrak/cat
 [product-screenshot]: images/screenshot.png
 [sonarcloud-shield]: https://sonarcloud.io/api/project_badges/measure?project=MeStrak_catkin&metric=alert_status
 [sonarcloud-url]: https://sonarcloud.io/dashboard?id=MeStrak_catkin
+[renovate-shield]: https://img.shields.io/badge/renovate-enabled-brightgreen.svg
+[renovate-url]: https://renovatebot.com
