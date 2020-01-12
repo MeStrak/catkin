@@ -10875,7 +10875,12 @@ vue-apollo@3.0.2:
     serialize-javascript "^2.1.0"
     throttle-debounce "^2.1.0"
 
-vue-class-component@7.2.0, vue-class-component@^7.1.0:
+vue-class-component@7.2.1:
+  version "7.2.1"
+  resolved "https://registry.yarnpkg.com/vue-class-component/-/vue-class-component-7.2.1.tgz#5aa0d6aef4c42aec801c53feb2937a322d3270f9"
+  integrity sha512-ehfZKyeV7nQK3gFZ7hS/cNLNMJwBa0IjZ6v1VqAw8ZRT2J8VObW0RouVX/rC1/3iEjoTUstWf5FR7JiAx+/YSw==
+
+vue-class-component@^7.1.0:
   version "7.2.0"
   resolved "https://registry.yarnpkg.com/vue-class-component/-/vue-class-component-7.2.0.tgz#043254a56fa5ed9418fcd62ced16c45679e683cb"
   integrity sha512-v+5DXHpzGpzo7pK6y4xEnkXNTZi2QyX54lCPG7F/eIZVyoVIUeZTgxzYVqpywPys+F5Ylsek/A6dP1mBTgI0sA==
