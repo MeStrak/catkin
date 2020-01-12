@@ -1468,6 +1468,17 @@
   resolved "https://registry.yarnpkg.com/@types/zen-observable/-/zen-observable-0.8.0.tgz#8b63ab7f1aa5321248aad5ac890a485656dcea4d"
   integrity sha512-te5lMAWii1uEJ4FwLjzdlbw3+n0FZNOvFXHxQDKeT0dilh7HOzdMzV2TrJVUzq8ep7J4Na8OUYPRLSQkJHAlrg==
 
+"@typescript-eslint/eslint-plugin@^2.15.0":
+  version "2.15.0"
+  resolved "https://registry.yarnpkg.com/@typescript-eslint/eslint-plugin/-/eslint-plugin-2.15.0.tgz#5442c30b687ffd576ff74cfea46a6d7bfb0ee893"
+  integrity sha512-XRJFznI5v4K1WvIrWmjFjBAdQWaUTz4xJEdqR7+wAFsv6Q9dP3mOlE6BMNT3pdlp9eF1+bC5m5LZTmLMqffCVw==
+  dependencies:
+    "@typescript-eslint/experimental-utils" "2.15.0"
+    eslint-utils "^1.4.3"
+    functional-red-black-tree "^1.0.1"
+    regexpp "^3.0.0"
+    tsutils "^3.17.1"
+
 "@typescript-eslint/experimental-utils@2.15.0":
   version "2.15.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/experimental-utils/-/experimental-utils-2.15.0.tgz#41e35313bfaef91650ddb5380846d1c78a780070"
@@ -8886,7 +8897,6 @@ range-parser@^1.2.1, range-parser@~1.2.1:
 
 "raphael@https://github.com/nhn/raphael.git#2.2.0-c":
   version "2.2.0-c"
-  uid "78a6ed3ec269f33b6457b0ec66f8c3d1f2ed70e0"
   resolved "https://github.com/nhn/raphael.git#78a6ed3ec269f33b6457b0ec66f8c3d1f2ed70e0"
   dependencies:
     eve "git://github.com/adobe-webplatform/eve.git#eef80ed"
@@ -9037,6 +9047,11 @@ regexpp@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/regexpp/-/regexpp-2.0.1.tgz#8d19d31cf632482b589049f8281f93dbcba4d07f"
   integrity sha512-lv0M6+TkDVniA3aD1Eg0DVpfU/booSu7Eev3TDO/mZKHBfVjgCGTV4t4buppESEYDtkArYFOxTJWv6S5C+iaNw==
+
+regexpp@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/regexpp/-/regexpp-3.0.0.tgz#dd63982ee3300e67b41c1956f850aa680d9d330e"
+  integrity sha512-Z+hNr7RAVWxznLPuA7DIh8UNX1j9CDrUQxskw9IrBE1Dxue2lyXT+shqEIeLUjrokxIP8CMy1WkjgG3rTsd5/g==
 
 regexpu-core@^4.6.0:
   version "4.6.0"
