@@ -1,9 +1,9 @@
 {
   "extends": [
     "config:base",
-    :automergeMinor,
-    :automergeTesters,
-    :automergeLinters,
-    :automergeTypes
+    ":automergeMinor",
+    ":automergeTesters",
+    ":automergeLinters",
+    ":automergeTypes"
   ]
 }
