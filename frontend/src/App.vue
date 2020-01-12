@@ -26,7 +26,14 @@
         </v-card>
       </v-dialog>
 
-      <!-- <v-menu v-model="menu" :close-on-content-click="false" :nudge-width="200" offset-x>
+      <!-- filter panel disabled as not yet implemented on backend -->
+      <v-menu
+        v-if="false"
+        v-model="menu"
+        :close-on-content-click="false"
+        :nudge-width="200"
+        offset-x
+      >
         <template v-slot:activator="{ on }">
           <v-btn color="indigo" dark v-on="on">
             <v-icon>filter_list</v-icon>
@@ -34,7 +41,15 @@
         </template>
         <BoardFilters />
       </v-menu>
-      <v-menu v-model="menu" :close-on-content-click="false" :nudge-width="200" offset-x>
+
+      <!-- activity feed disabled as not yet implemented on backend -->
+      <v-menu
+        v-if="false"
+        v-model="menu"
+        :close-on-content-click="false"
+        :nudge-width="200"
+        offset-x
+      >
         <template v-slot:activator="{ on }">
           <v-btn color="indigo" dark v-on="on">
             <v-icon>rss_feed</v-icon>
@@ -43,7 +58,7 @@
         <v-card>
           <NewsFeed />
         </v-card>
-      </v-menu>-->
+      </v-menu>
       <v-menu
         v-if="isLoggedIn"
         v-model="menu"
