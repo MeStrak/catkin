@@ -5,6 +5,7 @@
     ":automergeMinor",
     ":automergeTesters",
     ":automergeLinters",
-    ":automergeTypes"
+    ":automergeTypes",
+    ":automergePatch"
   ]
 }
