@@ -1219,10 +1219,10 @@
   dependencies:
     "@types/node" "*"
 
-"@types/auth0-js@9.10.7":
-  version "9.10.7"
-  resolved "https://registry.yarnpkg.com/@types/auth0-js/-/auth0-js-9.10.7.tgz#df0b5f8df2f844a9920b8b4dc4c917d6ebe776d9"
-  integrity sha512-lgqjubkQCYDCejPVqlTZLlCp5Mf4ROLlidVUmi4RArA9VYagLNk1wRKXGC8+XaJd3ZeTQKsEJJFzlDl8qWGeyA==
+"@types/auth0-js@9.10.8":
+  version "9.10.8"
+  resolved "https://registry.yarnpkg.com/@types/auth0-js/-/auth0-js-9.10.8.tgz#a490ca129911d141fb906842977186252a6ea379"
+  integrity sha512-9bZ9i3d21MudHoqoZ2smqWZm86cpq4ctgU2cCv2iswbUVEQE22QxiOk2q4J+kZPS0MVgxe4/ohn7SWNEGxIL6g==
 
 "@types/body-parser@*", "@types/body-parser@1.17.1":
   version "1.17.1"
