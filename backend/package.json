@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "@nestjs/common": "6.10.14",
-    "@nestjs/config": "0.0.9",
+    "@nestjs/config": "0.1.0",
     "@nestjs/core": "6.10.14",
     "@nestjs/graphql": "6.5.3",
     "@nestjs/mongoose": "6.2.1",
