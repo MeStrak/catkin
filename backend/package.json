@@ -36,7 +36,7 @@
     "graphql": "14.5.8",
     "graphql-tools": "4.0.6",
     "helmet": "3.21.2",
-    "jwks-rsa": "1.6.1",
+    "jwks-rsa": "1.6.2",
     "mongoose": "5.8.9",
     "passport": "0.4.1",
     "passport-jwt": "4.0.0",
