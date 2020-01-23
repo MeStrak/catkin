@@ -10,7 +10,7 @@
   "dependencies": {
     "@auth0/auth0-spa-js": "1.6.2",
     "@toast-ui/vue-editor": "1.1.1",
-    "@types/auth0-js": "9.12.1",
+    "@types/auth0-js": "9.12.2",
     "@types/jwt-decode": "2.2.1",
     "apollo-boost": "0.4.7",
     "apollo-link-ws": "1.0.19",
