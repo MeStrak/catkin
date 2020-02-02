@@ -3,7 +3,7 @@ import { GroupsResolver } from './groups.resolver';
 import { GroupsService } from './groups.service';
 import { getModelToken } from '@nestjs/mongoose';
 import * as mongoose from 'mongoose';
-import { GroupSchema } from './group.schema';
+import { GroupSchema } from './groups.schema';
 
 describe('GroupsResolver', () => {
   let resolver: GroupsResolver;

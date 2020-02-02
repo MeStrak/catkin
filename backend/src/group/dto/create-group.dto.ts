@@ -12,14 +12,5 @@ export class GroupType {
   readonly name: string;
   @Field({ nullable: true })
   @IsString()
-  readonly role?: string;
-  @Field({ nullable: true })
-  @IsString()
-  readonly likes?: string;
-  @Field({ nullable: true })
-  @IsString()
-  readonly pains?: string;
-  @Field({ nullable: true })
-  @IsString()
-  readonly goal?: string;
+  readonly description: string;
 }

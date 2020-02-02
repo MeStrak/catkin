@@ -2,7 +2,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { GroupsService } from './groups.service';
 import { getModelToken } from '@nestjs/mongoose';
 import * as mongoose from 'mongoose';
-import { GroupSchema } from './group.schema';
+import { GroupSchema } from './groups.schema';
 
 describe('GroupsService', () => {
   let service: GroupsService;
