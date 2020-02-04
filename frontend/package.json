@@ -44,7 +44,7 @@
     "eslint": "6.8.0",
     "eslint-plugin-prettier": "3.1.2",
     "eslint-plugin-vue": "6.1.2",
-    "graphql-tag": "2.10.1",
+    "graphql-tag": "2.10.2",
     "lint-staged": "10.0.7",
     "material-design-icons-iconfont": "5.0.1",
     "prettier": "1.19.1",
