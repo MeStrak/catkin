@@ -32,8 +32,8 @@
   },
   "devDependencies": {
     "@mdi/font": "4.9.95",
-    "@typescript-eslint/eslint-plugin": "2.19.0",
-    "@typescript-eslint/parser": "2.19.0",
+    "@typescript-eslint/eslint-plugin": "2.19.2",
+    "@typescript-eslint/parser": "2.19.2",
     "@vue/cli-plugin-babel": "4.2.2",
     "@vue/cli-plugin-eslint": "4.2.2",
     "@vue/cli-plugin-pwa": "4.2.2",
