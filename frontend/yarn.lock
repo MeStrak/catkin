@@ -71,10 +71,10 @@
   resolved "https://registry.yarnpkg.com/@apollographql/graphql-playground-html/-/graphql-playground-html-1.6.24.tgz#3ce939cb127fb8aaa3ffc1e90dff9b8af9f2e3dc"
   integrity sha512-8GqG48m1XqyXh4mIZrtB5xOhUwSsh1WsrrsaZQOEYYql3YN9DEu9OOSg0ILzXHZo/h2Q74777YE4YzlArQzQEQ==
 
-"@auth0/auth0-spa-js@1.6.3":
-  version "1.6.3"
-  resolved "https://registry.yarnpkg.com/@auth0/auth0-spa-js/-/auth0-spa-js-1.6.3.tgz#ca5a8a222be1edcff8107665fbe6e819b4d8d392"
-  integrity sha512-jbK6qrcy3N8bAltP/sEdv9vo0eML9LneAESB05K/MPCwZVUJN9hu+y42DxfI7kH6dnVNyUbJohgpimv+eNonlQ==
+"@auth0/auth0-spa-js@1.6.4":
+  version "1.6.4"
+  resolved "https://registry.yarnpkg.com/@auth0/auth0-spa-js/-/auth0-spa-js-1.6.4.tgz#52c2a9f796dcaffacf9614a5043d77cbaca9ee1f"
+  integrity sha512-zKUfUxOHL/YwSedP1BkKKRRrB4AJ7whMKBVlf6M7dTvVzeCrRzTWEXUF+HB4/iG4skVRyr+U35qQzMYoFWCxhw==
   dependencies:
     browser-tabs-lock "^1.2.1"
     core-js "^3.2.1"
