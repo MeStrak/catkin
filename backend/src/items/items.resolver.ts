@@ -7,6 +7,7 @@ import { ItemInput } from './input-items.input';
 import { ItemType } from './dto/create-item.dto';
 // import { AuthGuard } from '@nestjs/passport';
 import { GqlAuthGuard } from '../auth/gqlauth.guard';
+import { User } from '../users/user.decorator';
 // import { Subscription } from 'type-graphql';
 
 const pubSub = new PubSub();
@@ -17,7 +18,7 @@ export class ItemsResolver {
 
   @Query(() => [ItemType])
   @UseGuards(new GqlAuthGuard('jwt'))
-  async items() {
+  async items(@User() user: any) {
     return this.itemsService.findAll();
   }
 

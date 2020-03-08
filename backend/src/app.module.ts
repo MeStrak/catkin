@@ -4,9 +4,11 @@ import { GraphQLModule } from '@nestjs/graphql';
 import { MongooseModule } from '@nestjs/mongoose';
 
 import { AuthModule } from './auth/auth.module';
-import { ItemsModule } from './items/items.module';
+import { BoardsModule } from './board/boards.module';
 import { GroupsModule } from './group/groups.module';
+import { ItemsModule } from './items/items.module';
 import { PersonasModule } from './personas/personas.module';
+
 @Module({
   imports: [
     GraphQLModule.forRoot({
@@ -19,8 +21,7 @@ import { PersonasModule } from './personas/personas.module';
     ItemsModule,
     PersonasModule,
     GroupsModule,
-    // MongooseModule.forRoot('mongodb://localhost/catkin'),
-    // MongooseModule.forRoot(process.env.MONGO_CONNECTION),
+    BoardsModule,
     MongooseModule.forRootAsync({
       imports: [ConfigModule],
       useFactory: async (configService: ConfigService) => ({
@@ -34,6 +35,6 @@ import { PersonasModule } from './personas/personas.module';
     }),
   ],
   controllers: [],
-  providers: [GroupService],
+  providers: [],
 })
 export class AppModule {}

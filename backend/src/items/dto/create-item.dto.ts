@@ -22,4 +22,7 @@ export class ItemType {
   @Field(() => [String])
   @IsArray()
   readonly personas: string[];
+  @Field()
+  @IsString()
+  readonly group: string;
 }

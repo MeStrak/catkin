@@ -3,12 +3,24 @@
 # !!!   DO NOT MODIFY THIS FILE BY YOURSELF   !!!
 # -----------------------------------------------
 
+input GroupInput {
+  name: String!
+  description: String
+}
+
+type GroupType {
+  id: ID!
+  name: String!
+  description: String
+}
+
 input ItemInput {
   title: String!
   estimate: Int!
   description: String!
   status: String
   personas: [String!]!
+  group: String!
 }
 
 type ItemType {
@@ -18,12 +30,16 @@ type ItemType {
   description: String!
   status: String
   personas: [String!]!
+  group: String!
 }
 
 type Mutation {
   createItem(input: ItemInput!): ItemType!
   updateItem(input: ItemInput!, id: String!): ItemType!
   deleteItem(id: String!): ItemType!
+  createGroup(input: GroupInput!): GroupType!
+  updateGroup(input: GroupInput!, id: String!): GroupType!
+  deleteGroup(id: String!): GroupType!
   createPersona(input: PersonaInput!): PersonaType!
   updatePersona(input: PersonaInput!, id: String!): PersonaType!
   deletePersona(id: String!): PersonaType!
@@ -35,6 +51,7 @@ input PersonaInput {
   likes: String
   pains: String
   goal: String
+  group: String!
 }
 
 type PersonaType {
@@ -50,6 +67,8 @@ type Query {
   items: [ItemType!]!
   itemById(id: String!): ItemType!
   hello: String!
+  groups: [GroupType!]!
+  groupById(id: String!): GroupType!
   personas: [PersonaType!]!
   personaById(id: String!): PersonaType!
 }
