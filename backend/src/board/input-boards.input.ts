@@ -6,4 +6,6 @@ export class BoardInput {
   readonly name: string;
   @Field({ nullable: true })
   readonly description?: string;
+  @Field()
+  readonly group: string;
 }

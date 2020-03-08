@@ -13,4 +13,8 @@ export class BoardType {
   @Field({ nullable: true })
   @IsString()
   readonly description: string;
+  @Field()
+  @IsString()
+  @IsNotEmpty()
+  readonly group: string;
 }

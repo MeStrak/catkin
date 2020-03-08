@@ -14,8 +14,8 @@ export class GroupsService {
     return await createdGroup.save();
   }
 
-  async findAll(): Promise<Group[]> {
-    return await this.groupModel.find().exec();
+  async findAll(groups: string[]): Promise<Group[]> {
+    return await this.groupModel.find({ _id: groups }).exec();
   }
 
   async findOne(id: string): Promise<Group> {

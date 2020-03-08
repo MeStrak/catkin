@@ -5,6 +5,7 @@ import { GroupsService } from './groups.service';
 import { GroupType } from './dto/create-group.dto';
 import { GroupInput } from './input-groups.input';
 import { GqlAuthGuard } from '../auth/gqlauth.guard';
+import { User } from '../users/user.decorator';
 
 @Resolver('Groups')
 export class GroupsResolver {
@@ -12,8 +13,14 @@ export class GroupsResolver {
 
   @Query(() => [GroupType])
   @UseGuards(new GqlAuthGuard('jwt'))
-  async groups() {
-    return this.groupsService.findAll();
+  async groups(@User() user: any) {
+    //get groups from access token - only those groups will be returned
+    let groups: string[] = [];
+    user['https://catkin.dev/permissions'].forEach(element => {
+      groups.push(element.group);
+    });
+
+    return this.groupsService.findAll(groups);
   }
 
   @Query(() => GroupType)
@@ -23,7 +30,7 @@ export class GroupsResolver {
   }
 
   @Mutation(() => GroupType)
-  @UseGuards(new GqlAuthGuard('jwt'))
+  // @UseGuards(new GqlAuthGuard('jwt'))
   async createGroup(@Args('input') input: GroupInput) {
     return this.groupsService.create(input);
   }
