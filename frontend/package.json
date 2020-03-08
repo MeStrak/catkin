@@ -43,7 +43,7 @@
     "@vue/eslint-config-typescript": "5.0.2",
     "eslint": "6.8.0",
     "eslint-plugin-prettier": "3.1.2",
-    "eslint-plugin-vue": "6.2.1",
+    "eslint-plugin-vue": "6.2.2",
     "graphql-tag": "2.10.3",
     "lint-staged": "10.0.8",
     "material-design-icons-iconfont": "5.0.1",
