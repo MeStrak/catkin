@@ -29,7 +29,7 @@
     "@nestjs/passport": "6.2.0",
     "@nestjs/platform-express": "6.11.11",
     "@types/helmet": "0.0.45",
-    "@types/passport": "1.0.2",
+    "@types/passport": "1.0.3",
     "@types/passport-jwt": "3.0.3",
     "apollo-server-express": "2.11.0",
     "class-transformer": "0.2.3",
