@@ -19,6 +19,8 @@ export class ItemsResolver {
   @Query(() => [ItemType])
   @UseGuards(new GqlAuthGuard('jwt'))
   async items(@User() user: any) {
+    // TODO: get user groups and add filter to find all query
+    // TODO: get board ID and add filter to find all query
     return this.itemsService.findAll();
   }
 

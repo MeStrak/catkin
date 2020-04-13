@@ -2,12 +2,28 @@
   <v-container>
     <v-layout text-center wrap>
       <v-flex xs12>
-        <v-img :src="require('../assets/logo.svg')" class="my-3" contain height="250"></v-img>
+        <v-img
+          :src="require('../assets/logo.svg')"
+          class="my-3"
+          contain
+          height="250"
+        ></v-img>
       </v-flex>
 
       <v-flex mb-4>
         <h1 class="display-3 font-weight-bold mb-5">Welcome to catkin</h1>
-        <h1 class="display-1 mb-5">Awesome, open source agile workflow.</h1>
+        <h1 class="display-1 mb-5">
+          Awesome (soon!), open source agile workflow.
+        </h1>
+        <p style="color:red">
+          Disclaimer: Catkin is in very early stages of development, not all
+          security features are in place.
+        </p>
+        <p style="color:red">
+          Your data won't be safe if you use this hosted website. Use the self
+          hosted option instead if you want to store private data. We'll make it
+          safe soon!
+        </p>
       </v-flex>
 
       <!-- <v-flex mb-5 xs12>
