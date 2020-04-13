@@ -21,7 +21,14 @@
             <v-img></v-img>
           </v-avatar>
         </div>
+         <v-btn
+        color="#5DA2D5"
+        dark
+         @click.stop="setCurrentGroup(group.id);"
+      ><v-icon>open_in_new</v-icon> 
+      </v-btn>
       </v-card>
+      
     </v-col>
     <v-dialog v-model="dialog" max-width="80%">
       <v-card>
@@ -33,7 +40,6 @@
 
 
 <script lang="ts">
-// import faker from "faker";
 import Vue from 'vue';
 
 import { debounce } from 'lodash';
@@ -138,7 +144,14 @@ export default Vue.extend({
   },
   mounted() {},
 
-  methods: {},
+  methods: {
+setCurrentGroup(groupId: string)
+{
+      localStorage.setItem('catkin:current_group', groupId);
+
+},
+
+  },
 });
 </script>
 

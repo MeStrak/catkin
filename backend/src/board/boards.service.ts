@@ -14,8 +14,8 @@ export class BoardsService {
     return await createdBoard.save();
   }
 
-  async findAll(): Promise<Board[]> {
-    return await this.boardModel.find().exec();
+  async findAll(groups: string[]): Promise<Board[]> {
+    return await this.boardModel.find({ group: groups }).exec();
   }
 
   async findOne(id: string): Promise<Board> {

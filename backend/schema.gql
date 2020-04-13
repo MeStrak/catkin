@@ -6,12 +6,14 @@
 input BoardInput {
   name: String!
   description: String
+  group: String!
 }
 
 type BoardType {
   id: ID!
   name: String!
   description: String
+  group: String!
 }
 
 input GroupInput {
