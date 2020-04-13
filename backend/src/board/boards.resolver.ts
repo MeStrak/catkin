@@ -6,6 +6,7 @@ import { BoardType } from './dto/create-board.dto';
 import { BoardInput } from './input-boards.input';
 import { GqlAuthGuard } from '../auth/gqlauth.guard';
 import { User } from '../users/user.decorator';
+import { GetUserGroups } from 'src/users/user.helper';
 
 @Resolver('Boards')
 export class BoardsResolver {
@@ -15,10 +16,7 @@ export class BoardsResolver {
   @UseGuards(new GqlAuthGuard('jwt'))
   async boards(@User() user: any) {
     //get groups from access token - only boards for those groups will be returned
-    let groups: string[] = [];
-    user['https://catkin.dev/permissions'].forEach(element => {
-      groups.push(element.group);
-    });
+    let groups: string[] = GetUserGroups(user);
 
     return this.boardsService.findAll(groups);
   }

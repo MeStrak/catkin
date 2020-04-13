@@ -20,8 +20,8 @@ export class ItemsService {
     return await this.itemModel.find({ group: { $in: groups } }).exec();
   }
 
-  async findOne(id: string): Promise<Item> {
-    return await this.itemModel.findOne({ _id: id });
+  async findOne(id: string, groups: string[]): Promise<Item> {
+    return await this.itemModel.findOne({ _id: id, group: { $in: groups } });
   }
 
   async delete(id: string): Promise<Item> {
