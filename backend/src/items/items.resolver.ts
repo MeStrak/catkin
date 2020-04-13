@@ -8,6 +8,7 @@ import { ItemType } from './dto/create-item.dto';
 // import { AuthGuard } from '@nestjs/passport';
 import { GqlAuthGuard } from '../auth/gqlauth.guard';
 import { User } from '../users/user.decorator';
+import { GetUserGroups } from '../users/user.helper';
 // import { Subscription } from 'type-graphql';
 
 const pubSub = new PubSub();
@@ -19,12 +20,9 @@ export class ItemsResolver {
   @Query(() => [ItemType])
   @UseGuards(new GqlAuthGuard('jwt'))
   async items(@User() user: any) {
-    // TODO: get user groups and add filter to find all query
+    // TODO: refactor as this groups filter will be used a lot
     //get groups from access token - only those groups will be returned
-    let groups: string[] = [];
-    user['https://catkin.dev/permissions'].forEach(element => {
-      groups.push(element.group);
-    });
+    let groups: string[] = GetUserGroups(user);
 
     // TODO: get board ID and add filter to find all query
     return this.itemsService.findAll(groups);

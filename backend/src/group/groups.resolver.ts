@@ -6,6 +6,7 @@ import { GroupType } from './dto/create-group.dto';
 import { GroupInput } from './input-groups.input';
 import { GqlAuthGuard } from '../auth/gqlauth.guard';
 import { User } from '../users/user.decorator';
+import { GetUserGroups } from 'src/users/user.helper';
 
 @Resolver('Groups')
 export class GroupsResolver {
@@ -15,10 +16,7 @@ export class GroupsResolver {
   @UseGuards(new GqlAuthGuard('jwt'))
   async groups(@User() user: any) {
     //get groups from access token - only those groups will be returned
-    let groups: string[] = [];
-    user['https://catkin.dev/permissions'].forEach(element => {
-      groups.push(element.group);
-    });
+    let groups: string[] = GetUserGroups(user);
 
     return this.groupsService.findAll(groups);
   }
