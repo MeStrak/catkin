@@ -18,8 +18,10 @@ export class GroupsService {
     return await this.groupModel.find({ _id: groups }).exec();
   }
 
-  async findOne(id: string): Promise<Group> {
-    return await this.groupModel.findOne({ _id: id });
+  async findOne(id: string, groups: string[]): Promise<Group> {
+    return await this.groupModel.findOne({
+      $and: [{ _id: id }, { _id: { $in: groups } }],
+    });
   }
 
   async delete(id: string): Promise<Group> {

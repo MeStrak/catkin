@@ -23,8 +23,10 @@ export class GroupsResolver {
 
   @Query(() => GroupType)
   @UseGuards(new GqlAuthGuard('jwt'))
-  async groupById(@Args('id') id: string) {
-    return this.groupsService.findOne(id);
+  async groupById(@User() user: any, @Args('id') id: string) {
+    let groups: string[] = GetUserGroups(user);
+
+    return this.groupsService.findOne(id, groups);
   }
 
   @Mutation(() => GroupType)

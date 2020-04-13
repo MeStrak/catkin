@@ -17,8 +17,8 @@
         <v-row>
           <v-col cols="12">
             <v-text-field
-              label="Role"
-              v-model="groupById.role"
+              label="description"
+              v-model="groupById.description"
               class="headline"
               hide-details
               @blur="updateGroup()"
@@ -68,7 +68,7 @@ export default Vue.extend({
         query groupById($groupid: String!) {
           groupById(id: $groupid) {
             name
-            role
+            description
           }
         }
       `,
@@ -119,11 +119,14 @@ export default Vue.extend({
         .mutate({
           // Query
           mutation: gql`
-            mutation($id: String!, $name: String!, $role: String) {
-              updateGroup(id: $id, input: { name: $name, role: $role }) {
+            mutation($id: String!, $name: String!, $description: String) {
+              updateGroup(
+                id: $id
+                input: { name: $name, description: $description }
+              ) {
                 id
                 name
-                role
+                description
               }
             }
           `,
@@ -131,7 +134,7 @@ export default Vue.extend({
           variables: {
             id: this.id,
             name: this.groupById.name,
-            role: this.groupById.role,
+            description: this.groupById.description,
           },
           // Update the cache with the result
           //
@@ -175,14 +178,14 @@ export default Vue.extend({
               createGroup(input: { name: $name }) {
                 id
                 name
-                role
+                description
               }
             }
           `,
           // Parameters
           variables: {
             name: '',
-            role: '',
+            description: '',
           },
           // Update the cache with the result
           //
