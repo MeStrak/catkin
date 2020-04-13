@@ -20,8 +20,14 @@ export class ItemsResolver {
   @UseGuards(new GqlAuthGuard('jwt'))
   async items(@User() user: any) {
     // TODO: get user groups and add filter to find all query
+    //get groups from access token - only those groups will be returned
+    let groups: string[] = [];
+    user['https://catkin.dev/permissions'].forEach(element => {
+      groups.push(element.group);
+    });
+
     // TODO: get board ID and add filter to find all query
-    return this.itemsService.findAll();
+    return this.itemsService.findAll(groups);
   }
 
   @Query(() => ItemType)
