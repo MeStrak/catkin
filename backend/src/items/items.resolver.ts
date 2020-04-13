@@ -20,8 +20,6 @@ export class ItemsResolver {
   @Query(() => [ItemType])
   @UseGuards(new GqlAuthGuard('jwt'))
   async items(@User() user: any) {
-    // TODO: refactor as this groups filter will be used a lot
-    //get groups from access token - only those groups will be returned
     let groups: string[] = GetUserGroups(user);
 
     // TODO: get board ID and add filter to find all query
@@ -38,21 +36,23 @@ export class ItemsResolver {
 
   @Mutation(() => ItemType)
   @UseGuards(new GqlAuthGuard('jwt'))
-  async createItem(@Args('input') input: ItemInput) {
+  async createItem(@User() user: any, @Args('input') input: ItemInput) {
     //TODO: check user has access to the specified group
     const createdItem = await this.itemsService.create(input);
     pubSub.publish('itemCreatedOrUpdated', {
       itemCreatedOrUpdated: createdItem,
     });
     return createdItem;
-
-    // return this.itemsService.create(input);
   }
 
   @Mutation(() => ItemType)
   @UseGuards(new GqlAuthGuard('jwt'))
-  async updateItem(@Args('id') id: string, @Args('input') input: ItemInput) {
-    //TODO: check user has access to group of this item
+  async updateItem(
+    @User() user: any,
+    @Args('id') id: string,
+    @Args('input') input: ItemInput,
+  ) {
+    //TODO: check user has write access to group of this item
     const updatedItem = await this.itemsService.update(id, input);
     pubSub.publish('itemCreatedOrUpdated', {
       itemCreatedOrUpdated: updatedItem,
@@ -62,8 +62,8 @@ export class ItemsResolver {
 
   @Mutation(() => ItemType)
   @UseGuards(new GqlAuthGuard('jwt'))
-  async deleteItem(@Args('id') id: string) {
-    //TODO: check user has access to group of this item
+  async deleteItem(@User() user: any, @Args('id') id: string) {
+    //TODO: check user has write access to group of this item
     const deletedItem = await this.itemsService.delete(id);
     pubSub.publish('itemDeleted', { itemDeleted: deletedItem });
     return deletedItem;
