@@ -83,13 +83,17 @@ export default Vue.extend({
       itemById: '',
       selectedpersonaids: [],
       estimateOptions: [1, 2, 3, 5, 8, 13, 21],
+      skipQuery: true,
     };
   },
   created() {
     // if this is a new item, create a record in the database so that bindings work
     if (this.id === 'newitem') {
       console.log('newitem');
+      this.skipQuery = true;
       this.createNewItem();
+    } else {
+      this.skipQuery = false;
     }
   },
   beforeMount() {},
@@ -126,6 +130,10 @@ export default Vue.extend({
         return {
           itemid: this.id,
         };
+      },
+      // Disable the query when waiting for a new item id
+      skip() {
+        return this.id === 'newitem';
       },
     },
   },
@@ -242,6 +250,7 @@ export default Vue.extend({
     },
     createNewItem() {
       console.log('createnewitem');
+      console.log(localStorage.getItem('catkin:current_group'));
       // Call to the graphql mutation
       this.$apollo
         .mutate({
@@ -282,6 +291,7 @@ export default Vue.extend({
             description: '',
             status: 'incubator',
             personas: [],
+            group: localStorage.getItem('catkin:current_group'),
           },
           // Update the cache with the result
           //
@@ -311,6 +321,7 @@ export default Vue.extend({
           console.log('generated new id:' + data.data.createItem.id);
           this.id = data.data.createItem.id;
           this.itemById = data.data.createItem;
+          this.skipQuery = false;
         })
         .catch(error => {
           // Error
@@ -324,6 +335,7 @@ export default Vue.extend({
     onEditorBlur() {
       console.log('onEditorBlur');
       this.itemById.description = this.$refs.tuiEditor.invoke('getValue');
+      console.log(this.itemById.id);
       this.updateItem();
     },
   },

@@ -7,7 +7,11 @@
     grid-list-md
     style="height: calc(100vh - 64px)"
   >
-    <kanban-board :stages="statuses" :blocks="items" @update-block="updateBlock">
+    <kanban-board
+      :stages="statuses"
+      :blocks="items"
+      @update-block="updateBlock"
+    >
       <div v-for="stage in statuses" :slot="stage" :key="stage">
         <h2>
           {{ stage }}
@@ -27,9 +31,7 @@
         "
       >
         <v-card-title class="align-end fill-height">
-          {{
-          item.title
-          }}
+          {{ item.title }}
         </v-card-title>
         <v-card-text>
           #123
@@ -81,6 +83,7 @@ export default Vue.extend({
             status
             description
             id
+            group
           }
         }
       `,
@@ -97,6 +100,7 @@ export default Vue.extend({
                 estimate
                 status
                 description
+                group
               }
             }
           `,
@@ -137,6 +141,7 @@ export default Vue.extend({
                 estimate
                 status
                 description
+                group
               }
             }
           `,
@@ -200,6 +205,7 @@ export default Vue.extend({
               $estimate: Int!
               $description: String!
               $personas: [String!]!
+              $group: String!
             ) {
               updateItem(
                 id: $id
@@ -209,6 +215,7 @@ export default Vue.extend({
                   estimate: $estimate
                   description: $description
                   personas: $personas
+                  group: $group
                 }
               ) {
                 id
@@ -224,6 +231,7 @@ export default Vue.extend({
             description: item.description,
             status: item.status,
             personas: [],
+            group: item.group,
           },
           // Update the cache with the result
           //
