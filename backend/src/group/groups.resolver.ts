@@ -35,12 +35,14 @@ export class GroupsResolver {
     return this.groupsService.create(input);
   }
 
+  //TODO: check user has write access
   @Mutation(() => GroupType)
   @UseGuards(new GqlAuthGuard('jwt'))
   async updateGroup(@Args('id') id: string, @Args('input') input: GroupInput) {
     return this.groupsService.update(id, input);
   }
 
+  //TODO: check user has write access
   @Mutation(() => GroupType)
   @UseGuards(new GqlAuthGuard('jwt'))
   async deleteGroup(@Args('id') id: string) {

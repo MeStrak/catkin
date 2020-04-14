@@ -6,5 +6,5 @@ export const ItemSchema = new mongoose.Schema({
   status: String,
   description: String,
   personas: [String],
-  group: String,
+  group: { type: String, index: true },
 });
