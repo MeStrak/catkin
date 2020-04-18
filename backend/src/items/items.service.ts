@@ -23,10 +23,10 @@ export class ItemsService {
   async findAll(
     groups: string[],
     boards?: string[],
-    publicOnly?: boolean,
+    includePublic?: boolean,
   ): Promise<Item[]> {
-    if (publicOnly !== undefined && publicOnly) {
-      groups = await this.groupService.getPublicGroupIds();
+    if (includePublic !== undefined && includePublic) {
+      groups = groups.concat(await this.groupService.getPublicGroupIds());
     }
 
     return await this.itemModel.find({ group: { $in: groups } }).exec();
