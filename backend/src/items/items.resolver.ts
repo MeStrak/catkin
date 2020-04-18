@@ -11,7 +11,7 @@ import { User } from '../users/user.decorator';
 import { GetUserGroups, GetWritableUserGroups } from '../users/user.helper';
 import { GroupsService } from '../group/groups.service';
 import { InjectModel } from '@nestjs/mongoose';
-// import { Subscription } from 'type-graphql';
+// import { Subscription } from '@nestjs/graphql';
 
 const pubSub = new PubSub();
 
@@ -77,14 +77,14 @@ export class ItemsResolver {
     return deletedItem;
   }
 
-  @Subscription(returns => ItemType)
+  @Subscription((returns) => ItemType)
   @UseGuards(new GqlAuthGuard('jwt'))
   //TODO: check user has access to group of this item
   itemCreatedOrUpdated(@Args('token') token: string) {
     return pubSub.asyncIterator('itemCreatedOrUpdated');
   }
 
-  @Subscription(returns => ItemType)
+  @Subscription((returns) => ItemType)
   @UseGuards(new GqlAuthGuard('jwt'))
   itemDeleted(@Args('token') token: string) {
     //TODO: check user has access to group of this item
