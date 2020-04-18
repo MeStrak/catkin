@@ -18,6 +18,7 @@ type BoardType {
 
 input GroupInput {
   name: String!
+  security: String!
   description: String
 }
 

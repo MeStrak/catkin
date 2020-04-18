@@ -9,5 +9,6 @@ import { MongooseModule } from '@nestjs/mongoose';
     MongooseModule.forFeature([{ name: 'Group', schema: GroupSchema }]),
   ],
   providers: [GroupsService, GroupsResolver],
+  exports: [GroupsService],
 })
 export class GroupsModule {}

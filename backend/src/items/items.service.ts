@@ -6,17 +6,29 @@ import { Model } from 'mongoose';
 import { ItemType } from './dto/create-item.dto';
 import { Item } from './interfaces/item.interface';
 import { ItemInput } from './input-items.input';
+import { GroupsService } from '../group/groups.service';
 
 @Injectable()
 export class ItemsService {
-  constructor(@InjectModel('Item') private itemModel: Model<Item>) {}
+  constructor(
+    @InjectModel('Item') private itemModel: Model<Item>,
+    private readonly groupService: GroupsService,
+  ) {}
 
   async create(createItemDto: ItemInput): Promise<Item> {
     const createdItem = new this.itemModel(createItemDto);
     return await createdItem.save();
   }
 
-  async findAll(groups: string[], boards?: string[]): Promise<Item[]> {
+  async findAll(
+    groups: string[],
+    boards?: string[],
+    publicOnly?: boolean,
+  ): Promise<Item[]> {
+    if (publicOnly !== undefined && publicOnly) {
+      groups = await this.groupService.getPublicGroupIds();
+    }
+
     return await this.itemModel.find({ group: { $in: groups } }).exec();
   }
 

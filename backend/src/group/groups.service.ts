@@ -14,14 +14,22 @@ export class GroupsService {
     return await createdGroup.save();
   }
 
-  async findAll(groups: string[]): Promise<Group[]> {
-    return await this.groupModel.find({ _id: groups }).exec();
+  async findAll(groups: string[], publicOnly?: boolean): Promise<Group[]> {
+    if (publicOnly !== undefined && publicOnly) {
+      return await this.groupModel.find({ security: 'PUBLIC' }).exec();
+    } else {
+      return await this.groupModel.find({ _id: groups }).exec();
+    }
   }
 
   async findOne(id: string, groups: string[]): Promise<Group> {
     return await this.groupModel.findOne({
       $and: [{ _id: id }, { _id: { $in: groups } }],
     });
+  }
+
+  async getPublicGroupIds(): Promise<string[]> {
+    return await this.groupModel.find({ security: 'PUBLIC' }).distinct('_id');
   }
 
   async delete(id: string): Promise<Group> {

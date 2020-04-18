@@ -6,5 +6,5 @@ export const ItemSchema = new mongoose.Schema({
   status: String,
   description: String,
   personas: [String],
-  group: { type: String, index: true },
+  group: { type: mongoose.Schema.Types.ObjectId, ref: 'Group', index: true },
 });
