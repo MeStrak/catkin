@@ -33,6 +33,8 @@ export class ItemsService {
   }
 
   async findOne(id: string, groups: string[]): Promise<Item> {
+    groups = groups.concat(await this.groupService.getPublicGroupIds());
+
     return await this.itemModel.findOne({ _id: id, group: { $in: groups } });
   }
 
