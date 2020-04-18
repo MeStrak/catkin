@@ -3,12 +3,38 @@
 # !!!   DO NOT MODIFY THIS FILE BY YOURSELF   !!!
 # -----------------------------------------------
 
+input BoardInput {
+  name: String!
+  description: String
+  group: String!
+}
+
+type BoardType {
+  id: ID!
+  name: String!
+  description: String
+  group: String!
+}
+
+input GroupInput {
+  name: String!
+  security: String!
+  description: String
+}
+
+type GroupType {
+  id: ID!
+  name: String!
+  description: String
+}
+
 input ItemInput {
   title: String!
   estimate: Int!
   description: String!
   status: String
   personas: [String!]!
+  group: String!
 }
 
 type ItemType {
@@ -18,9 +44,16 @@ type ItemType {
   description: String!
   status: String
   personas: [String!]!
+  group: String!
 }
 
 type Mutation {
+  createBoard(input: BoardInput!): BoardType!
+  updateBoard(input: BoardInput!, id: String!): BoardType!
+  deleteBoard(id: String!): BoardType!
+  createGroup(input: GroupInput!): GroupType!
+  updateGroup(input: GroupInput!, id: String!): GroupType!
+  deleteGroup(id: String!): GroupType!
   createItem(input: ItemInput!): ItemType!
   updateItem(input: ItemInput!, id: String!): ItemType!
   deleteItem(id: String!): ItemType!
@@ -35,6 +68,7 @@ input PersonaInput {
   likes: String
   pains: String
   goal: String
+  group: String!
 }
 
 type PersonaType {
@@ -47,9 +81,13 @@ type PersonaType {
 }
 
 type Query {
+  boards: [BoardType!]!
+  boardById(id: String!): BoardType!
+  hello: String!
+  groups: [GroupType!]!
+  groupById(id: String!): GroupType!
   items: [ItemType!]!
   itemById(id: String!): ItemType!
-  hello: String!
   personas: [PersonaType!]!
   personaById(id: String!): PersonaType!
 }

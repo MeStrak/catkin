@@ -34,7 +34,9 @@
             />
           </v-col>
           <v-col cols="12" md="3" class="order-1 order-md-2">
-            <v-btn small color="error" @click.prevent="deleteItem">Delete</v-btn>
+            <v-btn small color="error" @click.prevent="deleteItem"
+              >Delete</v-btn
+            >
             <v-autocomplete
               v-model="itemById.personas"
               :items="personas"
@@ -50,7 +52,11 @@
               hide-selected
               multiple
             ></v-autocomplete>
-            <v-select v-model="itemById.estimate" :items="estimateOptions" label="Estimate"></v-select>
+            <v-select
+              v-model="itemById.estimate"
+              :items="estimateOptions"
+              label="Estimate"
+            ></v-select>
           </v-col>
         </v-row>
       </v-form>
@@ -77,12 +83,17 @@ export default Vue.extend({
       itemById: '',
       selectedpersonaids: [],
       estimateOptions: [1, 2, 3, 5, 8, 13, 21],
+      skipQuery: true,
     };
   },
   created() {
     // if this is a new item, create a record in the database so that bindings work
     if (this.id === 'newitem') {
+      console.log('newitem');
+      this.skipQuery = true;
       this.createNewItem();
+    } else {
+      this.skipQuery = false;
     }
   },
   beforeMount() {},
@@ -110,6 +121,7 @@ export default Vue.extend({
             estimate
             description
             personas
+            group
           }
         }
       `,
@@ -118,6 +130,10 @@ export default Vue.extend({
         return {
           itemid: this.id,
         };
+      },
+      // Disable the query when waiting for a new item id
+      skip() {
+        return this.id === 'newitem';
       },
     },
   },
@@ -167,6 +183,7 @@ export default Vue.extend({
               $estimate: Int!
               $description: String!
               $personas: [String!]!
+              $group: String!
             ) {
               updateItem(
                 id: $id
@@ -176,6 +193,7 @@ export default Vue.extend({
                   estimate: $estimate
                   description: $description
                   personas: $personas
+                  group: $group
                 }
               ) {
                 id
@@ -184,6 +202,7 @@ export default Vue.extend({
                 estimate
                 description
                 personas
+                group
               }
             }
           `,
@@ -195,6 +214,7 @@ export default Vue.extend({
             description: this.itemById.description,
             status: this.itemById.status,
             personas: this.itemById.personas,
+            group: this.itemById.group,
           },
           // Update the cache with the result
           //
@@ -229,6 +249,8 @@ export default Vue.extend({
         });
     },
     createNewItem() {
+      console.log('createnewitem');
+      console.log(localStorage.getItem('catkin:current_group'));
       // Call to the graphql mutation
       this.$apollo
         .mutate({
@@ -240,6 +262,7 @@ export default Vue.extend({
               $estimate: Int!
               $description: String!
               $personas: [String!]!
+              $group: String!
             ) {
               createItem(
                 input: {
@@ -248,6 +271,7 @@ export default Vue.extend({
                   estimate: $estimate
                   description: $description
                   personas: $personas
+                  group: $group
                 }
               ) {
                 id
@@ -256,6 +280,7 @@ export default Vue.extend({
                 estimate
                 description
                 personas
+                group
               }
             }
           `,
@@ -266,6 +291,7 @@ export default Vue.extend({
             description: '',
             status: 'incubator',
             personas: [],
+            group: localStorage.getItem('catkin:current_group'),
           },
           // Update the cache with the result
           //
@@ -292,18 +318,24 @@ export default Vue.extend({
         })
         .then(data => {
           // Result
-
+          console.log('generated new id:' + data.data.createItem.id);
           this.id = data.data.createItem.id;
           this.itemById = data.data.createItem;
+          this.skipQuery = false;
         })
         .catch(error => {
           // Error
+          console.log('fart');
+
           console.error(error);
+          console.log('fart');
           // We restore the initial user input
         });
     },
     onEditorBlur() {
+      console.log('onEditorBlur');
       this.itemById.description = this.$refs.tuiEditor.invoke('getValue');
+      console.log(this.itemById.id);
       this.updateItem();
     },
   },

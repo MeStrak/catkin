@@ -3,9 +3,11 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { GraphQLModule } from '@nestjs/graphql';
 import { MongooseModule } from '@nestjs/mongoose';
 
+import { AuthModule } from './auth/auth.module';
+import { BoardsModule } from './board/boards.module';
+import { GroupsModule } from './group/groups.module';
 import { ItemsModule } from './items/items.module';
 import { PersonasModule } from './personas/personas.module';
-import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -18,8 +20,8 @@ import { AuthModule } from './auth/auth.module';
     }),
     ItemsModule,
     PersonasModule,
-    // MongooseModule.forRoot('mongodb://localhost/catkin'),
-    // MongooseModule.forRoot(process.env.MONGO_CONNECTION),
+    GroupsModule,
+    BoardsModule,
     MongooseModule.forRootAsync({
       imports: [ConfigModule],
       useFactory: async (configService: ConfigService) => ({

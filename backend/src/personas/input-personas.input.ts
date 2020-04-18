@@ -12,4 +12,6 @@ export class PersonaInput {
   readonly pains?: string;
   @Field({ nullable: true })
   readonly goal?: string;
+  @Field(() => String)
+  readonly group: string;
 }

@@ -54,6 +54,14 @@ const router = new Router({
         import(/* webpackChunkName: "about" */ './components/Callback.vue'),
     },
     {
+      path: '/groups',
+      name: 'groups',
+      // component: Home
+      component: () =>
+        import(/* webpackChunkName: "about" */ './components/Groups.vue'),
+      // beforeEnter: authGuard,
+    },
+    {
       path: '/epics',
       name: 'epics',
       // route level code-splitting
