@@ -6,70 +6,62 @@
       <v-spacer></v-spacer>
       <v-icon>send</v-icon>
       </v-toolbar>-->
-      <v-form no-gutters>
-        <v-row>
-          <v-col>
-            <v-text-field
-              label="Title"
-              v-model="itemById.title"
-              class="headline"
-              hide-details
-              @blur="updateItem()"
-            ></v-text-field>
-          </v-col>
-        </v-row>
-        <v-row>
-          <v-col cols="12" md="9" class="order-2 order-md-1">
-            <p class="headline">Description</p>
-            <editor
-              ref="tuiEditor"
-              :value="itemById.description"
-              :options="editorOptions"
-              :html="editorHtml"
-              :visible="editorVisible"
-              previewStyle="vertical"
-              height="750px"
-              mode="wysiwyg"
-              @blur="onEditorBlur"
-            />
-          </v-col>
-          <v-col cols="12" md="3" class="order-1 order-md-2">
-            <v-btn small color="error" @click.prevent="deleteItem"
-              >Delete</v-btn
-            >
-            <v-autocomplete
-              v-model="itemById.personas"
-              :items="personas"
-              item-text="name"
-              item-value="id"
-              @blur="updateItem()"
-              chips
-              deletable-chips
-              label="Personas"
-              x-large
-              hide-details
-              hide-no-data
-              hide-selected
-              multiple
-            ></v-autocomplete>
-            <v-select
-              v-model="itemById.estimate"
-              :items="estimateOptions"
-              label="Estimate"
-            ></v-select>
-          </v-col>
-        </v-row>
-      </v-form>
+      <v-row>
+        <v-col>
+          <v-text-field
+            label="Title"
+            v-model="itemById.title"
+            class="headline"
+            hide-details
+            @blur="updateItem()"
+          ></v-text-field>
+        </v-col>
+      </v-row>
+      <v-row>
+        <v-col cols="12" md="9" class="order-2 order-md-1">
+          <p class="headline">Description</p>
+          <editor
+            ref="tuiEditor"
+            previewStyle="vertical"
+            height="750px"
+            initialEditType="wysiwyg"
+            @blur="onEditorBlur"
+          />
+        </v-col>
+        <v-col cols="12" md="3" class="order-1 order-md-2">
+          <v-btn small color="error" @click.prevent="deleteItem">Delete</v-btn>
+          <v-autocomplete
+            v-model="itemById.personas"
+            :items="personas"
+            item-text="name"
+            item-value="id"
+            @blur="updateItem()"
+            chips
+            deletable-chips
+            label="Personas"
+            x-large
+            hide-details
+            hide-no-data
+            hide-selected
+            multiple
+          ></v-autocomplete>
+          <v-select
+            v-model="itemById.estimate"
+            :items="estimateOptions"
+            label="Estimate"
+          ></v-select>
+        </v-col>
+      </v-row>
     </v-container>
   </v-card>
 </template>
 <script lang="ts">
 import Vue from 'vue';
 import gql from 'graphql-tag';
-import 'tui-editor/dist/tui-editor.css';
-import 'tui-editor/dist/tui-editor-contents.css';
 import 'codemirror/lib/codemirror.css';
-import Editor from '@toast-ui/vue-editor/src/Editor.vue';
+import '@toast-ui/editor/dist/toastui-editor.css';
+
+import { Editor } from '@toast-ui/vue-editor';
 
 export default Vue.extend({
   name: 'KanbanDetail',
@@ -99,7 +91,9 @@ export default Vue.extend({
   beforeMount() {},
   mounted() {},
   beforeUpdate() {},
-  updated() {},
+  updated() {
+    this.$refs.tuiEditor.invoke('setMarkdown', this.itemById.description);
+  },
   beforeDestroy() {},
   destroyed() {},
   apollo: {
@@ -157,11 +151,11 @@ export default Vue.extend({
             id: this.id,
           },
         })
-        .then(data => {
+        .then((data) => {
           // Result
           this.$emit('item-deleted');
         })
-        .catch(error => {
+        .catch((error) => {
           // Error
           console.error(error);
           // We restore the initial user input
@@ -239,10 +233,10 @@ export default Vue.extend({
           //   },
           // },
         })
-        .then(data => {
+        .then((data) => {
           // Result
         })
-        .catch(error => {
+        .catch((error) => {
           // Error
           console.error(error);
           // We restore the initial user input
@@ -316,14 +310,14 @@ export default Vue.extend({
           //   },
           // },
         })
-        .then(data => {
+        .then((data) => {
           // Result
           console.log('generated new id:' + data.data.createItem.id);
           this.id = data.data.createItem.id;
           this.itemById = data.data.createItem;
           this.skipQuery = false;
         })
-        .catch(error => {
+        .catch((error) => {
           // Error
           console.log('fart');
 
@@ -334,7 +328,8 @@ export default Vue.extend({
     },
     onEditorBlur() {
       console.log('onEditorBlur');
-      this.itemById.description = this.$refs.tuiEditor.invoke('getValue');
+      this.itemById.description = this.$refs.tuiEditor.invoke('getMarkdown');
+
       console.log(this.itemById.id);
       this.updateItem();
     },
