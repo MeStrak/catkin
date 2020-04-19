@@ -6,7 +6,7 @@ import { BoardType } from './dto/create-board.dto';
 import { BoardInput } from './input-boards.input';
 import { GqlAuthGuard } from '../auth/gqlauth.guard';
 import { User } from '../users/user.decorator';
-import { GetUserGroups } from 'src/users/user.helper';
+import { GetUserGroups } from '../users/user.helper';
 
 @Resolver('Boards')
 export class BoardsResolver {
