@@ -1190,7 +1190,7 @@
     "@types/codemirror" "0.0.71"
     codemirror "^5.48.4"
 
-"@toast-ui/vue-editor@2.0.1":
+"@toast-ui/vue-editor@^2.0.1":
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/@toast-ui/vue-editor/-/vue-editor-2.0.1.tgz#c9c8c8da4c0a67b9fbc4240464388c67d72a0c22"
   integrity sha512-sGsApl0n+GVAZbmPA+tTrq9rmmyh2mRgCgg2/mu1/lN7S4vPv/nQH8KXxLG9Y6hG2+kgelqz6wvbOCdzlM/HmQ==
