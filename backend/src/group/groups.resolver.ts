@@ -6,7 +6,7 @@ import { GroupType } from './dto/create-group.dto';
 import { GroupInput } from './input-groups.input';
 import { GqlAuthGuard } from '../auth/gqlauth.guard';
 import { User } from '../users/user.decorator';
-import { GetUserGroups } from 'src/users/user.helper';
+import { GetUserGroups } from '../users/user.helper';
 
 @Resolver('Groups')
 export class GroupsResolver {
