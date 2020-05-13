@@ -35,7 +35,7 @@
     "vuex": "3.4.0"
   },
   "devDependencies": {
-    "@mdi/font": "5.1.45",
+    "@mdi/font": "5.2.45",
     "@typescript-eslint/eslint-plugin": "2.33.0",
     "@typescript-eslint/parser": "2.33.0",
     "@vue/cli-plugin-babel": "4.3.1",
