@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@auth0/auth0-spa-js": "1.8.1",
-    "@toast-ui/vue-editor": "2.1.1",
+    "@toast-ui/vue-editor": "2.1.2",
     "@types/auth0-js": "9.12.4",
     "@types/graphql": "14.5.0",
     "@types/jwt-decode": "2.2.1",
