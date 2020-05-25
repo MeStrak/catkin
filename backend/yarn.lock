@@ -2,22 +2,22 @@
 # yarn lockfile v1
 
 
-"@apollo/federation@^0.15.0", "@apollo/federation@^0.15.1":
-  version "0.15.1"
-  resolved "https://registry.yarnpkg.com/@apollo/federation/-/federation-0.15.1.tgz#12d1764a5535aa36b8e44b74a07903536a6090e6"
-  integrity sha512-iQdrBr+RVLj+I6TuA41grMAHb3KtWo1OL1BgsDbxtW8xWDgO2pUUtAnpKk0Fq3d0UokTMTs2qWTvt7cIcXlUSA==
+"@apollo/federation@^0.16.0":
+  version "0.16.0"
+  resolved "https://registry.yarnpkg.com/@apollo/federation/-/federation-0.16.0.tgz#ce20c52d2f0368eb086465a9098ba2fa8038bfe9"
+  integrity sha512-+UA9QQNA4q896OOmyFHhKTf7iOIFvjL+h/I7ozRkA+Ayv1368pXtd3zyeKrXtUKD21a1vtEkEjCUX9aDGR8cqg==
   dependencies:
     apollo-graphql "^0.4.0"
     apollo-server-env "^2.4.4-alpha.0"
     core-js "^3.4.0"
     lodash.xorby "^4.7.0"
 
-"@apollo/gateway@^0.15.0":
-  version "0.15.1"
-  resolved "https://registry.yarnpkg.com/@apollo/gateway/-/gateway-0.15.1.tgz#6acb6180e21108d4c651bb8ce27c1703d4935505"
-  integrity sha512-ZpznoOnLFQlIu2N7+cUyToP2iUm4MKtPHvrmNnsTIDPe2fjWWyuzefgudTJuL2oY0M05Cknv94FOAmmNHXG8Fg==
+"@apollo/gateway@^0.16.0":
+  version "0.16.0"
+  resolved "https://registry.yarnpkg.com/@apollo/gateway/-/gateway-0.16.0.tgz#baef2f02ad39f21ca1932b24d4d89b443ef9ba7a"
+  integrity sha512-iI1vzuZzgkkIylr/Rk7XlNyY2ob7V5BNA8Uy3DQE2RDtoMRPyBgwliFQG3+up5fFkUsfz+9qJJoRiIgNJD+RNQ==
   dependencies:
-    "@apollo/federation" "^0.15.1"
+    "@apollo/federation" "^0.16.0"
     "@types/node-fetch" "2.5.4"
     apollo-engine-reporting-protobuf "^0.5.1-alpha.0"
     apollo-env "^0.6.1"
@@ -645,29 +645,29 @@
     tslib "2.0.0"
     uuid "8.0.0"
 
-"@nestjs/graphql@7.3.9":
-  version "7.3.9"
-  resolved "https://registry.yarnpkg.com/@nestjs/graphql/-/graphql-7.3.9.tgz#fdeb583c876829fa1c9c2f3a8b3a20025597c256"
-  integrity sha512-DY4BsLlteP/ms8ERGGdnyQkpY4VDp27+FkU2cmyNaDlDARdv4Ksk0MsJrJeWsxzwhtx1oYJ9L5ysX1BsmBnH+A==
+"@nestjs/graphql@7.3.10":
+  version "7.3.10"
+  resolved "https://registry.yarnpkg.com/@nestjs/graphql/-/graphql-7.3.10.tgz#6bd9aed7c11d684374af843a6e19a6b36c6d136f"
+  integrity sha512-M4B7p2Sh+8gxpI3Z61NuZaWHVe/9b2x6s6c3yK0bykiCejKkDDSd9feTTbEUzdIs3rh2Lj8MeX2KaGVrzdirtg==
   dependencies:
-    "@nestjs/mapped-types" "0.0.4"
+    "@nestjs/mapped-types" "0.0.5"
     chokidar "3.4.0"
     fast-glob "3.2.2"
     iterall "1.2.2"
     lodash "4.17.15"
     merge-graphql-schemas "1.7.8"
     normalize-path "3.0.0"
-    tslib "1.11.2"
-    uuid "8.0.0"
+    tslib "2.0.0"
+    uuid "8.1.0"
   optionalDependencies:
-    "@apollo/federation" "^0.15.0"
-    "@apollo/gateway" "^0.15.0"
+    "@apollo/federation" "^0.16.0"
+    "@apollo/gateway" "^0.16.0"
     ts-morph "^7.0.0"
 
-"@nestjs/mapped-types@0.0.4":
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/@nestjs/mapped-types/-/mapped-types-0.0.4.tgz#a55d3e78905a019abb42c69763d04b976e6a8a92"
-  integrity sha512-+LER9UCm/BHPRm0qk3Uv0KLywedru4cr211oaGYA7bIDrHlQZeeqGAfGhVXBiVgZ6w5JWJkBwzsPEFtt5Zw78Q==
+"@nestjs/mapped-types@0.0.5":
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/@nestjs/mapped-types/-/mapped-types-0.0.5.tgz#0c3462de4125eea0e85e3a520f0de4e7e8dcfa40"
+  integrity sha512-QjZCSMHHy8IW4UUTS49QJQ0NrA8MHv6XevNrPLJwh4n3lN7wY9aSRwd1+cBIUDBXEHRKngcYdPtC4oG0fimw+A==
 
 "@nestjs/mongoose@6.4.0":
   version "6.4.0"
@@ -6724,11 +6724,6 @@ tslib@1.11.1, tslib@^1.10.0, tslib@^1.11.1, tslib@^1.8.1, tslib@^1.9.0, tslib@^1
   version "1.11.1"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.11.1.tgz#eb15d128827fbee2841549e171f45ed338ac7e35"
   integrity sha512-aZW88SY8kQbU7gpV19lN24LtXh/yD4ZZg6qieAJDDg+YBsJcSmLGK9QpnUjAKVG/xefmvJGd1WUmfpT/g6AJGA==
-
-tslib@1.11.2:
-  version "1.11.2"
-  resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.11.2.tgz#9c79d83272c9a7aaf166f73915c9667ecdde3cc9"
-  integrity sha512-tTSkux6IGPnUGUd1XAZHcpu85MOkIl5zX49pO+jfsie3eP0B6pyhOlLXm3cAC6T7s+euSDDUUV+Acop5WmtkVg==
 
 tslib@2.0.0:
   version "2.0.0"
