@@ -34,7 +34,7 @@
     "apollo-server-express": "2.14.0",
     "class-transformer": "0.2.3",
     "graphql": "15.0.0",
-    "graphql-tools": "5.0.0",
+    "graphql-tools": "6.0.3",
     "helmet": "3.22.0",
     "jwks-rsa": "1.8.0",
     "mongoose": "5.9.16",
