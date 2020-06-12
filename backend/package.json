@@ -31,7 +31,7 @@
     "@types/helmet": "0.0.47",
     "@types/passport": "1.0.3",
     "@types/passport-jwt": "3.0.3",
-    "apollo-server-express": "2.14.3",
+    "apollo-server-express": "2.14.4",
     "class-transformer": "0.2.3",
     "graphql": "15.0.0",
     "graphql-tools": "5.0.0",
