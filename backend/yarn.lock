@@ -604,10 +604,10 @@
     tslib "2.0.0"
     uuid "8.1.0"
 
-"@nestjs/graphql@7.4.3":
-  version "7.4.3"
-  resolved "https://registry.yarnpkg.com/@nestjs/graphql/-/graphql-7.4.3.tgz#ff8f853b496ee1e4981a7addee6a859046ccf5b1"
-  integrity sha512-BfloI0AjDX9GcSeyC0IUPO4aFXfJxnkrl+vLQ/Lapkg4K6A5eq06a/0ajFc3ruV9IbAToSnyy6nQvNb/hXtpsA==
+"@nestjs/graphql@7.4.5":
+  version "7.4.5"
+  resolved "https://registry.yarnpkg.com/@nestjs/graphql/-/graphql-7.4.5.tgz#a26baadcb0b7fe47df1b89a44071399d53be4922"
+  integrity sha512-TiT4gwejvSaCmdy3kT8dPlY26RYPb0gOdgvi+gDHlLOw/sNsm907h21MyGipjn7beSfY8NfWRxkgJFU5UZKpRQ==
   dependencies:
     "@graphql-tools/merge" "6.0.10"
     "@nestjs/mapped-types" "0.0.5"
