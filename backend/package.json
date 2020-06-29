@@ -52,7 +52,7 @@
     "@types/jest": "26.0.3",
     "@types/node": "10.17.13",
     "@types/socket.io": "2.1.8",
-    "@types/supertest": "2.0.9",
+    "@types/supertest": "2.0.10",
     "concurrently": "5.2.0",
     "jest": "26.1.0",
     "nodemon": "2.0.4",
