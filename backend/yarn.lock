@@ -609,13 +609,14 @@
     tslib "2.0.0"
     uuid "8.2.0"
 
-"@nestjs/graphql@7.5.2":
-  version "7.5.2"
-  resolved "https://registry.yarnpkg.com/@nestjs/graphql/-/graphql-7.5.2.tgz#722f6724ff135c2811fbd3f71b4da6ebc330f24a"
-  integrity sha512-37udIUXM0p6GPAbbnOikmrecXVfrChu6gG13GtTXzc7AOk1vYgsonSf4ghhTAE7rTwqVjA/34qaGGrvbtvbLQQ==
+"@nestjs/graphql@7.5.3":
+  version "7.5.3"
+  resolved "https://registry.yarnpkg.com/@nestjs/graphql/-/graphql-7.5.3.tgz#f400f353d2955d357f14214eae4ecd6beb3d858c"
+  integrity sha512-OFPl7Co4wDJRlsrH4CKhSb95lK7ZWkdRdR6VYhc8A/kZZ3uMXJgZv651Kd42mHkyVKVtQ0gFgcNX+nIHIYcxFg==
   dependencies:
     "@graphql-tools/merge" "6.0.12"
     "@nestjs/mapped-types" "0.0.5"
+    apollo-server-core "2.15.1"
     chokidar "3.4.0"
     fast-glob "3.2.4"
     iterall "1.2.2"
@@ -1408,7 +1409,7 @@ apollo-server-caching@^0.5.2:
   dependencies:
     lru-cache "^5.0.0"
 
-apollo-server-core@^2.15.1:
+apollo-server-core@2.15.1, apollo-server-core@^2.15.1:
   version "2.15.1"
   resolved "https://registry.yarnpkg.com/apollo-server-core/-/apollo-server-core-2.15.1.tgz#3a6871c2a47a3240639b2a970f25c9f457a1ed07"
   integrity sha512-ZRSK3uVPS6YkIV3brm2CjzVphg6NHY0PRhFojZD8BjoQlGo3+pPRP1IHFDvC3UzybGWfyCelcfF4YiVqh4GJHw==
