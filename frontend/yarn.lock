@@ -1961,10 +1961,10 @@
   dependencies:
     "@types/node" "*"
 
-"@types/auth0-js@9.13.2":
-  version "9.13.2"
-  resolved "https://registry.yarnpkg.com/@types/auth0-js/-/auth0-js-9.13.2.tgz#80104b4008a29015a62327d13b82676ce78035d5"
-  integrity sha512-WTRb4M900t6N+GiPWBRAfZfl7lHmT/QVtfyGfAoaXFMcXnQhTuQg0BdY2hH5+TNO/sA9Fn1+PxyiptFsrmL6yw==
+"@types/auth0-js@9.13.3":
+  version "9.13.3"
+  resolved "https://registry.yarnpkg.com/@types/auth0-js/-/auth0-js-9.13.3.tgz#434b8663215bf5de5da824962fee50582dd80b96"
+  integrity sha512-LAh7kCV/9/SgT7cmet20czGeVl7lLYYf4z179+/Ch+udi/J5Z8Ag9124HrMnY6G//VBQb8SX5Xei+hWv91ysUg==
 
 "@types/body-parser@*", "@types/body-parser@1.19.0":
   version "1.19.0"
