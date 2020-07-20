@@ -27,7 +27,7 @@
     "subscriptions-transport-ws": "0.9.17",
     "vue": "2.6.11",
     "vue-apollo": "3.0.3",
-    "vue-class-component": "7.2.3",
+    "vue-class-component": "7.2.4",
     "vue-kanban": "1.7.0",
     "vue-property-decorator": "8.5.1",
     "vue-router": "3.3.4",
