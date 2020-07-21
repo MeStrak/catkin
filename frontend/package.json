@@ -8,7 +8,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "@auth0/auth0-spa-js": "1.10.0",
+    "@auth0/auth0-spa-js": "1.11.0",
     "@toast-ui/vue-editor": "2.3.0",
     "@types/auth0-js": "9.13.3",
     "@types/graphql": "14.5.0",
