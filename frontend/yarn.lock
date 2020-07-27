@@ -12406,10 +12406,10 @@ vue-hot-reload-api@^2.3.0:
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.3.4.tgz#532955cc1eb208a3d990b3a9f9a70574657e08f2"
   integrity sha512-BXq3jwIagosjgNVae6tkHzzIk6a8MHFtzAdwhnV5VlvPTFxDCvIttgSiHWjdGoTJvXtmRu5HacExfdarRcFhog==
 
-vue-kanban@1.7.0:
-  version "1.7.0"
-  resolved "https://registry.yarnpkg.com/vue-kanban/-/vue-kanban-1.7.0.tgz#bdfe9b274ec3c0c51f26afabe6fcef45a698022b"
-  integrity sha512-X4sRUHl8Rcd3gC1Rkk+hdHSUHCqA2h2v+1O/KN9KYqu6LYbwx/EzTzKm6OTX1Xhu0lRmcgMiTKfhWKPNPscPDw==
+vue-kanban@1.8.0:
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/vue-kanban/-/vue-kanban-1.8.0.tgz#aa4ffc853db2e109dd732a840715f852726bf2a0"
+  integrity sha512-PfDBsfTLTZZyr1EhsM9MXsX9UC/j5slavXckaKyv6HKRkR1aFJttUE4j0hLa/No3mr/ctxDsr1VjhmkuvChXHg==
   dependencies:
     dragula "^3.7.2"
     vue "^2.2.6"
