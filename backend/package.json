@@ -28,7 +28,7 @@
     "@nestjs/mongoose": "6.4.0",
     "@nestjs/passport": "7.1.0",
     "@nestjs/platform-express": "7.4.2",
-    "@types/helmet": "0.0.47",
+    "@types/helmet": "0.0.48",
     "@types/passport": "1.0.4",
     "@types/passport-jwt": "3.0.3",
     "apollo-server-express": "2.16.1",
