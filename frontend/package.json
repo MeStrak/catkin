@@ -51,7 +51,7 @@
     "graphql-tag": "2.11.0",
     "lint-staged": "10.2.11",
     "material-design-icons-iconfont": "5.0.1",
-    "prettier": "2.0.5",
+    "prettier": "2.1.0",
     "sass": "1.26.5",
     "sass-loader": "8.0.2",
     "typescript": "3.9.7",
