@@ -78,10 +78,10 @@
   resolved "https://registry.yarnpkg.com/@apollographql/graphql-playground-html/-/graphql-playground-html-1.6.24.tgz#3ce939cb127fb8aaa3ffc1e90dff9b8af9f2e3dc"
   integrity sha512-8GqG48m1XqyXh4mIZrtB5xOhUwSsh1WsrrsaZQOEYYql3YN9DEu9OOSg0ILzXHZo/h2Q74777YE4YzlArQzQEQ==
 
-"@auth0/auth0-spa-js@1.12.0":
-  version "1.12.0"
-  resolved "https://registry.yarnpkg.com/@auth0/auth0-spa-js/-/auth0-spa-js-1.12.0.tgz#632e22c022bd3d28c279fbbbcd45586f5fb73cf0"
-  integrity sha512-BBuUDj5ZgRpTs+Lk+1o9oVI3HvmhfeNdd7hY7/KjzL6GtDJ7kVXTdJ6Ik8OUsZiHWFik69pBBwFBjBLlOZ8ctA==
+"@auth0/auth0-spa-js@1.12.1":
+  version "1.12.1"
+  resolved "https://registry.yarnpkg.com/@auth0/auth0-spa-js/-/auth0-spa-js-1.12.1.tgz#791cdda722afa25f4c8879b93b8d7ab54a26e4c1"
+  integrity sha512-YdXtA1T2wK4iNG79VlGS/CPfNNezS1nqZURerj71jKSf8ICVKmvJgUNXFEZEwNNU/KFdCCPCHd5wMeWLDyEILw==
   dependencies:
     abortcontroller-polyfill "^1.5.0"
     browser-tabs-lock "^1.2.9"
