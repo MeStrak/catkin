@@ -4728,14 +4728,16 @@ jwa@^1.4.1:
     ecdsa-sig-formatter "1.0.11"
     safe-buffer "^5.0.1"
 
-jwks-rsa@1.10.0:
-  version "1.10.0"
-  resolved "https://registry.yarnpkg.com/jwks-rsa/-/jwks-rsa-1.10.0.tgz#48d55f168eb731ed730a86c732068e03e16b3c22"
-  integrity sha512-ix1h4R1+dNTmeUDo+oLpHjVrql34SR89sw9lAVXmKICj3DVUszhhMIwTM8PzhQ+58I4hDnk7x5mxA1SWiGZPDg==
+jwks-rsa@1.10.1:
+  version "1.10.1"
+  resolved "https://registry.yarnpkg.com/jwks-rsa/-/jwks-rsa-1.10.1.tgz#fa56b2c67de504ea2ad19adafbcd7162274d19b1"
+  integrity sha512-UmjOsATVu7eQr17wbBCS+BSoz5LFtl57PtNXHbHFeT1WKomHykCHtn7c8inWVI7tpnsy6CZ1KOMJTgipFwXPig==
   dependencies:
     "@types/express-jwt" "0.0.42"
     axios "^0.19.2"
     debug "^4.1.0"
+    http-proxy-agent "^4.0.1"
+    https-proxy-agent "^5.0.0"
     jsonwebtoken "^8.5.1"
     limiter "^1.1.5"
     lru-memoizer "^2.1.2"
