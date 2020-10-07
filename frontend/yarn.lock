@@ -2890,10 +2890,10 @@
   dependencies:
     eslint-config-prettier "^6.0.0"
 
-"@vue/eslint-config-typescript@5.0.2":
-  version "5.0.2"
-  resolved "https://registry.yarnpkg.com/@vue/eslint-config-typescript/-/eslint-config-typescript-5.0.2.tgz#c2f3328e70d55d10aeb826f209405397960548c7"
-  integrity sha512-GEZOHKOnelgQf5npA+6VNuhJZu9xEJaics3SYUyRjaSay+2SCpEINHhEpt6fXoNy/aIFt8CkDlt9CaEb+QPIcg==
+"@vue/eslint-config-typescript@6.0.0":
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/@vue/eslint-config-typescript/-/eslint-config-typescript-6.0.0.tgz#f850b5c467f5086603a0df90ef26570d687af69a"
+  integrity sha512-LOwZOAWSPwkU+aduJkU2AgnUSRN4foSpzJK2cHSPMn5yuIPiQUxXdOBh3aSuD8TYcddjghd8Lk4QTHLNyTkMYg==
   dependencies:
     vue-eslint-parser "^7.0.0"
 
