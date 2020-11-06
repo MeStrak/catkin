@@ -1,7 +1,7 @@
 import { ValidationPipe, Logger } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 
-import * as helmet from 'helmet';
+import helmet from 'helmet';
 
 import { AppModule } from './app.module';
 
