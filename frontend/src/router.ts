@@ -80,7 +80,17 @@ router.beforeEach((to, from, next) => {
   if (to.path === '/landing') next();
   else if (to.path === '/callback') next();
   else if (!authService.isLoggedIn()) next('/landing');
+  else if (!hasSelectedGroup() && to.path != '/groups') next('/groups');
   else next();
 });
+
+function hasSelectedGroup(): boolean {
+  if (localStorage.getItem('catkin:current_group')) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
 
 export default router;

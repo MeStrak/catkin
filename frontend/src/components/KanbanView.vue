@@ -75,8 +75,8 @@ export default Vue.extend({
   apollo: {
     items: {
       query: gql`
-        query getItems {
-          items {
+        query getItems($groupid: String!) {
+          items(group: $groupid) {
             title
             estimate
             status
@@ -86,6 +86,11 @@ export default Vue.extend({
           }
         }
       `,
+      variables() {
+        return {
+          groupid: localStorage.getItem('catkin:current_group'),
+        };
+      },
 
       /// subscribe to updated and created item update
 
