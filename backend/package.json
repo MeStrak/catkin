@@ -37,7 +37,7 @@
     "class-validator": "0.12.2",
     "graphql": "15.4.0",
     "graphql-tools": "7.0.1",
-    "helmet": "3.23.3",
+    "helmet": "4.2.0",
     "jwks-rsa": "1.10.1",
     "mongoose": "5.10.13",
     "passport": "0.4.1",
