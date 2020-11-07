@@ -1,7 +1,6 @@
 <template>
   <!-- <v-container fluid grid-list-md> -->
   <v-img
-    dark
     src="https://images.unsplash.com/photo-1568509137935-ba0c7848f947"
     fluid
     grid-list-md
