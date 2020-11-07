@@ -3,7 +3,7 @@
     <v-app-bar app clipped-left color="#f3d250">
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
       <span class="title ml-3 mr-5">
-        catkin
+        catkin | {{ currentGroup }}
         <span class="font-weight-light"></span>
       </span>
       <v-spacer></v-spacer>
@@ -157,6 +157,8 @@ export default Vue.extend({
     dialog: false,
     newItemComponentKey: 0,
     isLoggedIn: null,
+    currentGroup: localStorage.getItem("catkin:current_group"),
+
 
     items: [
       { icon: 'view_column', text: 'Boards', route: '/' },

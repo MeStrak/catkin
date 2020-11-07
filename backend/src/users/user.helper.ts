@@ -11,6 +11,13 @@ export function GetUserGroups(user: any): string[] {
   return groups;
 }
 
+export function IsInGroup(user: any, group: string): boolean {
+  var groups: string[] = GetUserGroups(user);
+  let isInGroup = groups.includes(group);
+  
+  return isInGroup;
+}
+
 export function GetWritableUserGroups(user: any): string[] {
   var groups: string[] = [];
   user['https://catkin.dev/permissions'].forEach(element => {

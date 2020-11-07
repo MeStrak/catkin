@@ -40,7 +40,7 @@ type Query {
   hello: String!
   groups: [GroupType!]!
   groupById(id: String!): GroupType!
-  items: [ItemType!]!
+  items(group: String!): [ItemType!]!
   itemById(id: String!): ItemType!
   personas: [PersonaType!]!
   personaById(id: String!): PersonaType!

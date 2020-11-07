@@ -148,7 +148,7 @@ export default Vue.extend({
 setCurrentGroup(groupId: string)
 {
       localStorage.setItem('catkin:current_group', groupId);
-
+      this.$router.push('/');
 },
 
   },
