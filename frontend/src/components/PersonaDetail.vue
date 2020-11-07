@@ -44,6 +44,7 @@ export default Vue.extend({
   data() {
     return {
       personaById: '',
+      thisID: this.id,
     };
   },
   created() {
@@ -215,7 +216,7 @@ export default Vue.extend({
         .then(data => {
           // Result
 
-          this.id = data.data.createPersona.id;
+          this.thisId = data.data.createPersona.id;
           this.personaById = data.data.createPersona;
         })
         .catch(error => {
