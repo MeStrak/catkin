@@ -2182,10 +2182,10 @@
   resolved "https://registry.yarnpkg.com/@types/anymatch/-/anymatch-1.3.1.tgz#336badc1beecb9dacc38bea2cf32adf627a8421a"
   integrity sha512-/+CRPXpBDpo2RK9C68N3b2cOvO0Cf5B9aPijHsoDQTHivnGSObdOF2BRQOYjojWTDy6nQvMjmqRXIxH55VjxxA==
 
-"@types/auth0-js@9.14.0":
-  version "9.14.0"
-  resolved "https://registry.yarnpkg.com/@types/auth0-js/-/auth0-js-9.14.0.tgz#95ad322740efacc8927b5262c1feed464e2fcb0e"
-  integrity sha512-eNppxXJqH7BJD1n85UEpdIKmZ0QrdRNy2O2CSZ4aTWgqxP4aIJyOOE71aPj6XoQkjNt4FZzX5WRdI7HANzgjyA==
+"@types/auth0-js@9.14.1":
+  version "9.14.1"
+  resolved "https://registry.yarnpkg.com/@types/auth0-js/-/auth0-js-9.14.1.tgz#22216a414fcfe21cc8ad26fb35d5be4095d2fbf9"
+  integrity sha512-SDMjh6k6VGZZjwHh4mAm4sekaO/tDCiX0fkKIieAZ5XGSnFyzDp1kllntqsaoXO2yKhaECAX87s/lPEnnxtchQ==
 
 "@types/body-parser@*", "@types/body-parser@1.19.0":
   version "1.19.0"
@@ -9591,9 +9591,9 @@ object-keys@^1.0.11, object-keys@^1.0.12, object-keys@^1.1.1:
   integrity sha512-NuAESUOUMrlIXOfHKzD6bpPu3tYt3xvjNdRIQ+FeT0lNb4K8WR70CaDxhuNguS2XG+GjkyMwOzsN5ZktImfhLA==
 
 object-path@^0.11.4:
-  version "0.11.4"
-  resolved "https://registry.yarnpkg.com/object-path/-/object-path-0.11.4.tgz#370ae752fbf37de3ea70a861c23bba8915691949"
-  integrity sha1-NwrnUvvzfePqcKhhwju6iRVpGUk=
+  version "0.11.5"
+  resolved "https://registry.yarnpkg.com/object-path/-/object-path-0.11.5.tgz#d4e3cf19601a5140a55a16ad712019a9c50b577a"
+  integrity sha512-jgSbThcoR/s+XumvGMTMf81QVBmah+/Q7K7YduKeKVWL7N111unR2d6pZZarSk6kY/caeNxUDyxOvMWyzoU2eg==
 
 object-treeify@^1.1.4:
   version "1.1.25"
