@@ -46,7 +46,7 @@
     "rimraf": "3.0.2",
     "rxjs": "6.6.3",
     "rxjs-compat": "6.6.3",
-    "type-graphql": "0.17.6"
+    "type-graphql": "1.1.1"
   },
   "devDependencies": {
     "@nestjs/testing": "7.4.4",
