@@ -76,6 +76,7 @@ export default Vue.extend({
       selectedpersonaids: [],
       estimateOptions: [1, 2, 3, 5, 8, 13, 21],
       skipQuery: true,
+      thisID: this.id,
     };
   },
   created() {
@@ -313,7 +314,7 @@ export default Vue.extend({
         .then((data) => {
           // Result
           console.log('generated new id:' + data.data.createItem.id);
-          this.id = data.data.createItem.id;
+          this.thisId = data.data.createItem.id;
           this.itemById = data.data.createItem;
           this.skipQuery = false;
         })

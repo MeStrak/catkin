@@ -39,6 +39,7 @@ export default Vue.extend({
   data() {
     return {
       groupById: '',
+      thisID: this.id,
     };
   },
   created() {
@@ -213,7 +214,7 @@ export default Vue.extend({
         .then(data => {
           // Result
 
-          this.id = data.data.createGroup.id;
+          this.thisId = data.data.createGroup.id;
           this.groupById = data.data.createGroup;
         })
         .catch(error => {
