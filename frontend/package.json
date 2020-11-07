@@ -35,7 +35,7 @@
     "vuex": "3.5.1"
   },
   "devDependencies": {
-    "@mdi/font": "5.7.55",
+    "@mdi/font": "5.8.55",
     "@typescript-eslint/eslint-plugin": "4.5.0",
     "@typescript-eslint/parser": "4.5.0",
     "@vue/cli-plugin-babel": "4.5.8",
@@ -45,7 +45,7 @@
     "@vue/cli-service": "4.5.8",
     "@vue/eslint-config-prettier": "6.0.0",
     "@vue/eslint-config-typescript": "5.0.2",
-    "eslint": "7.11.0",
+    "eslint": "7.13.0",
     "eslint-plugin-prettier": "3.1.4",
     "eslint-plugin-vue": "7.1.0",
     "graphql-tag": "2.11.0",
