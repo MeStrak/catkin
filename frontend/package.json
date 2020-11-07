@@ -52,7 +52,7 @@
     "lint-staged": "10.5.1",
     "material-design-icons-iconfont": "5.0.1",
     "prettier": "2.1.0",
-    "sass": "1.27.2",
+    "sass": "1.29.0",
     "sass-loader": "8.0.2",
     "typescript": "4.0.5",
     "vue-cli-plugin-apollo": "0.22.2",
