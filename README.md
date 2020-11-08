@@ -186,7 +186,7 @@ Project Link: [https://github.com/MeStrak/catkin](https://github.com/MeStrak/cat
 [stars-url]: https://github.com/MeStrak/catkin/stargazers
 [issues-shield]: https://img.shields.io/github/issues/MeStrak/catkin.svg?style=flat-square
 [issues-url]: https://github.com/MeStrak/catkin/issues
-[license-shield]: https://img.shields.io/badge/License-MIT-green.svg
+[license-shield]: https://img.shields.io/badge/License-MIT-brightgreen.svg
 [license-url]: https://github.com/MeStrak/catkin/blob/master/LICENSE
 [product-screenshot]: images/screenshot.png
 [sonarcloud-shield]: https://sonarcloud.io/api/project_badges/measure?project=MeStrak_catkin&metric=alert_status
