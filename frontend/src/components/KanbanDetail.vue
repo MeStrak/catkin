@@ -76,7 +76,7 @@ export default Vue.extend({
       selectedpersonaids: [],
       estimateOptions: [1, 2, 3, 5, 8, 13, 21],
       skipQuery: true,
-      thisID: this.id,
+      currentItemId: this.id,
     };
   },
   created() {
@@ -85,7 +85,9 @@ export default Vue.extend({
       console.log('newitem');
       this.skipQuery = true;
       this.createNewItem();
+      this.currentItemId = this.id;
     } else {
+      this.currentItemId = this.id;
       this.skipQuery = false;
     }
   },
@@ -123,12 +125,12 @@ export default Vue.extend({
       // Static parameters
       variables() {
         return {
-          itemid: this.id,
+          itemid: this.currentItemId,
         };
       },
       // Disable the query when waiting for a new item id
       skip() {
-        return this.id === 'newitem';
+        return this.currentItemId === 'newitem';
       },
     },
   },
@@ -149,7 +151,7 @@ export default Vue.extend({
           `,
           // Parameters
           variables: {
-            id: this.id,
+            id: this.currentItemId,
           },
         })
         .then((data) => {
@@ -203,7 +205,7 @@ export default Vue.extend({
           `,
           // Parameters
           variables: {
-            id: this.id,
+            id: this.currentItemId,
             title: this.itemById.title,
             estimate: this.itemById.estimate,
             description: this.itemById.description,
@@ -314,7 +316,7 @@ export default Vue.extend({
         .then((data) => {
           // Result
           console.log('generated new id:' + data.data.createItem.id);
-          this.thisId = data.data.createItem.id;
+          this.currentItemId = data.data.createItem.id;
           this.itemById = data.data.createItem;
           this.skipQuery = false;
         })

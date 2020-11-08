@@ -44,7 +44,7 @@
     </kanban-board>
     <v-dialog v-model="dialog" max-width="80%">
       <v-card>
-        <KanbanDetail v-bind:id="id" v-on:item-deleted="dialog = false" />
+        <KanbanDetail v-bind:id="id" v-on:item-deleted="dialog = false" :key="id" />
       </v-card>
     </v-dialog>
   </v-img>
