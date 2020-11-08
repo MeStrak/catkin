@@ -39,7 +39,6 @@
       </v-card>
       <!-- </div> -->
       <div v-for="stage in statuses" :key="stage" :slot="`footer-${stage}`">
-        <a href @click.prevent="() => addBlock(stage)">+ Add new block</a>
       </div>
     </kanban-board>
     <v-dialog v-model="dialog" max-width="80%">
