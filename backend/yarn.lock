@@ -1243,7 +1243,7 @@
     optional "0.1.4"
     tslib "2.0.3"
 
-"@newrelic/apollo-server-plugin@^0.1.2":
+"@newrelic/apollo-server-plugin@0.1.2":
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/@newrelic/apollo-server-plugin/-/apollo-server-plugin-0.1.2.tgz#053894523e7ef3fa008f1e615d580c10f4ea35ce"
   integrity sha512-Xyoop+RdJsVX4xBgxX0s9PHNTIUWPB83Kk+c+C25G0v2glAviPAYb17Js9KR1EASQwpVfqxTo+NnFbha0rTwkA==
@@ -3393,7 +3393,7 @@ dotenv-expand@5.1.0:
   resolved "https://registry.yarnpkg.com/dotenv-expand/-/dotenv-expand-5.1.0.tgz#3fbaf020bfd794884072ea26b1e9791d45a629f0"
   integrity sha512-YXQl1DSa4/PQyRfgrv6aoNjhasp/p4qs9FjJ4q4cQk+8m4r6k4ZSiEyytKG8f8W9gi8WsQtIObNmKd+tMzNTmA==
 
-dotenv@8.2.0, dotenv@^8.2.0:
+dotenv@8.2.0:
   version "8.2.0"
   resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-8.2.0.tgz#97e619259ada750eea3e4ea3e26bceea5424b16a"
   integrity sha512-8sJ78ElpbDJBHNeBzUbUVLsqKdccaa/BXF1uPTw3GrvQTBgrQrtObr2mUrE38vzYd8cEv+m/JBfDLioYcfXoaw==
@@ -6043,7 +6043,7 @@ negotiator@0.6.2:
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.2.tgz#feacf7ccf525a77ae9634436a64883ffeca346fb"
   integrity sha512-hZXc7K2e+PgeI1eDBe/10Ard4ekbfrrqG8Ep+8Jmf4JID2bNg7NvCPOZN+kfF574pFQI7mum2AUqDidoKqcTOw==
 
-newrelic@^7.0.0:
+newrelic@7.0.0:
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/newrelic/-/newrelic-7.0.0.tgz#43f985af1a0a6eb35a9c9d8499ee30f9ab8079d3"
   integrity sha512-LQqEyM+ZNJZc2N10Xb/brMOdfetvw/Z4R61WxSwV/qqqdTOiDXCS2CPOagtDjpBXddGdiinQKU/pJDHKhTUTfA==
