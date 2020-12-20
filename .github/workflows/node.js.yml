@@ -40,5 +40,5 @@ jobs:
         # yarn test
     - name: Backend tests
       run: |
-        cd ../backend
+        cd backend
         yarn test
