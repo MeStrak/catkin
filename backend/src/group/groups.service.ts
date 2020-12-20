@@ -36,7 +36,7 @@ export class GroupsService {
     return await this.groupModel.findByIdAndRemove(id);
   }
 
-  async update(id: string, group: Group): Promise<Group> {
+  async update(id: string, group: GroupInput): Promise<Group> {
     return await this.groupModel.findByIdAndUpdate(id, group, {
       new: true,
     });

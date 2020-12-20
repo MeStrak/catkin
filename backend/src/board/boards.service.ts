@@ -26,7 +26,7 @@ export class BoardsService {
     return await this.boardModel.findByIdAndRemove(id);
   }
 
-  async update(id: string, board: Board): Promise<Board> {
+  async update(id: string, board: BoardInput): Promise<Board> {
     return await this.boardModel.findByIdAndUpdate(id, board, {
       new: true,
     });

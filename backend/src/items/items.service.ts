@@ -42,7 +42,7 @@ export class ItemsService {
     return await this.itemModel.findByIdAndRemove(id);
   }
 
-  async update(id: string, item: Item): Promise<Item> {
+  async update(id: string, item: ItemInput): Promise<Item> {
     return await this.itemModel.findByIdAndUpdate(id, item, { new: true });
   }
 }

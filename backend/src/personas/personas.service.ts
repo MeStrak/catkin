@@ -26,7 +26,7 @@ export class PersonasService {
     return await this.personaModel.findByIdAndRemove(id);
   }
 
-  async update(id: string, persona: Persona): Promise<Persona> {
+  async update(id: string, persona: PersonaInput): Promise<Persona> {
     return await this.personaModel.findByIdAndUpdate(id, persona, {
       new: true,
     });
