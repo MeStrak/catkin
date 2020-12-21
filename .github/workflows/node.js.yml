@@ -25,7 +25,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm install -g yarn
-    - name: Nest stuff
-      working-directory: ./backend
-    - run: yarn install
-    - run: yarn test
+    - run: |
+        cd backend
+        yarn install
+        yarn test
