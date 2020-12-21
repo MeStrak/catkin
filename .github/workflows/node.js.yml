@@ -26,6 +26,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm install -g yarn
     - run: |
+        ls -la
         cd backend
-        yarn install
-        yarn test
+    - run: yarn install
+    - run: yarn test
