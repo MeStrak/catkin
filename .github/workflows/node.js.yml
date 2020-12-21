@@ -24,12 +24,15 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - id: Backend build
+    - run: |
+        node -v
+        yarn -v
+    - name: Backend build
     - run: |
         cd backend
         yarn
         # yarn test
-    - id: Frontend build
+    - name: Frontend build
     - run: |
         cd frontend
         yarn
