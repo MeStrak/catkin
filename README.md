@@ -1,3 +1,4 @@
+
 <!-- PROJECT SHIELDS -->
 <!--
 *** I'm using markdown "reference style" links for readability.
@@ -15,6 +16,7 @@
 [![Quality Gate Status][sonarcloud-shield]][sonarcloud-url]
 [![Renovate][renovate-shield]][renovate-url]
 [![Netlify][netlify-shield]][netlify-url]
+[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/MeStrak/catkin)
 
 <!-- PROJECT LOGO -->
 <br />
