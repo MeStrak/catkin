@@ -4,3 +4,4 @@ image:
 tasks:
   - init: cd ./backend && yarn install
     command: cd ./backend && yarn start
+  - command: mkdir -p data && mongodb --dbpath data
