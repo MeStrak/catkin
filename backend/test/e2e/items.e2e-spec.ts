@@ -45,10 +45,21 @@ describe('ItemsController (e2e)', () => {
       description
       id,
       personas,
-      groups
+      group
     }
   }`;
 
+  it('Throws an error when API is called with no token', async () => {
+    const res = await request(global.app.getHttpServer())
+     .post('/graphql')
+     .send({
+       operationName: null,
+       query: createItemQuery,
+     })
+       expect(res.body.errors.length).toBeGreaterThan(0);
+       expect(res.body.errors[0].extensions.exception.status).toBe(401);
+ });
+  
   it('createItem', async () => {
      const res = await request(global.app.getHttpServer())
       .post('/graphql')
