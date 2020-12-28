@@ -11,7 +11,7 @@
     "start:dev": "concurrently --handle-input \"wait-on dist/main.js && nodemon\" \"tsc -w -p tsconfig.build.json\" ",
     "start:debug": "nodemon --config nodemon-debug.json",
     "postinstall": "npm run prestart:prod",
-    "prestart:prod": "rimraf dist && npm run build && yarn copy:newrelic",
+    "prestart:prod": "rimraf dist && npm run build",
     "start:prod": "node dist/main.js",
     "lint": "tslint -p tsconfig.json -c tslint.json",
     "test": "jest",
@@ -89,6 +89,7 @@
     "Nestjs",
     "Typescript",
     "GraphQL",
-    "Nestjs GraphQL"
+    "Nestjs GraphQL",
+    "Agile"
   ]
 }

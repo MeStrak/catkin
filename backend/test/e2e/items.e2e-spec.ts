@@ -1,44 +1,35 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import * as request from 'supertest';
-import { ItemsModule } from '../src/items/items.module';
+import request from 'supertest';
+import { ItemsModule } from '../../src/items/items.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { GraphQLModule } from '@nestjs/graphql';
-import { Item } from '../src/items/interfaces/item.interface';
+import { Item } from '../../src/items/interfaces/item.interface';
+import { ItemInput } from 'dist/items/input-items.input';
 
 describe('ItemsController (e2e)', () => {
-  let app;
 
   beforeAll(async () => {
-    const moduleFixture: TestingModule = await Test.createTestingModule({
-      imports: [
-        ItemsModule,
-        MongooseModule.forRoot('mongodb://localhost/catkintesting'),
-        GraphQLModule.forRoot({
-          autoSchemaFile: 'schema.gql',
-        }),
-      ],
-    }).compile();
-
-    app = moduleFixture.createNestApplication();
-    await app.init();
   });
 
   afterAll(async () => {
-    await app.close();
   });
 
-  const item: Item = {
+  const item: ItemInput = {
     title: 'Great item',
     estimate: 10,
     description: 'Description of this great item',
+    personas: [],
+    group: ''
   };
 
   let id: string = '';
 
-  const updatedItem: Item = {
+  const updatedItem: ItemInput = {
     title: 'Great updated item',
     estimate: 20,
     description: 'Updated description of this great item',
+    personas: [],
+    group: ''
   };
 
   const createitemObject = JSON.stringify(item).replace(
@@ -52,43 +43,40 @@ describe('ItemsController (e2e)', () => {
       title
       estimate
       description
-      id
+      id,
+      personas,
+      groups
     }
   }`;
 
-  it('createItem', () => {
-    return request(app.getHttpServer())
+  it('createItem', async () => {
+     const res = await request(global.app.getHttpServer())
       .post('/graphql')
       .send({
         operationName: null,
         query: createItemQuery,
       })
-      .expect(({ body }) => {
-        const data = body.data.createItem;
+        const data = res.body.data.createItem;
         id = data.id;
         expect(data.title).toBe(item.title);
         expect(data.description).toBe(item.description);
         expect(data.estimate).toBe(item.estimate);
-      })
-      .expect(200);
+      
   });
 
-  it('getItems', () => {
-    return request(app.getHttpServer())
+  it('getItems', async () => {
+    const res = await request(global.app.getHttpServer())
       .post('/graphql')
       .send({
         operationName: null,
         query: '{items{title, estimate, description, id}}',
       })
-      .expect(({ body }) => {
-        const data = body.data.items;
+        const data = res.body.data.items;
         const itemResult = data[0];
         expect(data.length).toBeGreaterThan(0);
         expect(itemResult.title).toBe(item.title);
         expect(itemResult.description).toBe(item.description);
         expect(itemResult.estimate).toBe(item.estimate);
-      })
-      .expect(200);
   });
 
   const updateItemObject = JSON.stringify(updatedItem).replace(
@@ -96,7 +84,7 @@ describe('ItemsController (e2e)', () => {
     '$1:',
   );
 
-  it('updateItem', () => {
+  it('updateItem', async () => {
     const updateItemQuery = `
     mutation {
       updateItem(id: "${id}", input: ${updateItemObject}) {
@@ -107,22 +95,20 @@ describe('ItemsController (e2e)', () => {
       }
     }`;
 
-    return request(app.getHttpServer())
+    const res = await request(global.app.getHttpServer())
       .post('/graphql')
       .send({
         operationName: null,
         query: updateItemQuery,
       })
-      .expect(({ body }) => {
-        const data = body.data.updateItem;
+        const data = res.body.data.updateItem;
         expect(data.title).toBe(updatedItem.title);
         expect(data.description).toBe(updatedItem.description);
         expect(data.estimate).toBe(updatedItem.estimate);
-      })
-      .expect(200);
+      
   });
 
-  it('deleteItem', () => {
+  it('deleteItem', async () => {
     const deleteItemQuery = `
       mutation {
         deleteItem(id: "${id}") {
@@ -133,18 +119,16 @@ describe('ItemsController (e2e)', () => {
         }
       }`;
 
-    return request(app.getHttpServer())
+    const res = await request(global.app.getHttpServer())
       .post('/graphql')
       .send({
         operationName: null,
         query: deleteItemQuery,
       })
-      .expect(({ body }) => {
-        const data = body.data.deleteItem;
+
+      const data = res.body.data.deleteItem;
         expect(data.title).toBe(updatedItem.title);
         expect(data.description).toBe(updatedItem.description);
         expect(data.estimate).toBe(updatedItem.estimate);
-      })
-      .expect(200);
   });
 });

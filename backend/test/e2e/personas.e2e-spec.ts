@@ -1,9 +1,10 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import * as request from 'supertest';
-import { PersonasModule } from '../src/personas/personas.module';
+import request from 'supertest';
+import { PersonasModule } from '../../src/personas/personas.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { GraphQLModule } from '@nestjs/graphql';
-import { Persona } from '../src/personas/interfaces/persona.interface';
+import { Persona } from '../../src/personas/interfaces/persona.interface';
+import { PersonaInput } from 'dist/personas/input-personas.input';
 
 describe('PersonasController (e2e)', () => {
   let app;
@@ -27,22 +28,24 @@ describe('PersonasController (e2e)', () => {
     await app.close();
   });
 
-  const persona: Persona = {
+  const persona: PersonaInput = {
     name: 'Brian',
     role: 'Test coordinator',
     likes: 'Farting in the bath',
     pains: 'Smelly poos',
     goal: 'Fly to the moon',
+    group: ''
   };
 
   let id: string = '';
 
-  const updatedPersona: Persona = {
+  const updatedPersona: PersonaInput = {
     name: 'Brian McTwosey',
     role: 'Test manager',
     likes: 'Space',
     pains: 'Cannot afford a rocket',
     goal: 'Fly to mars',
+    group: ''
   };
 
   const createpersonaObject = JSON.stringify(persona).replace(
@@ -62,8 +65,8 @@ describe('PersonasController (e2e)', () => {
     }
   }`;
 
-  it('createPersona', () => {
-    return request(app.getHttpServer())
+  it('createPersona', async () => {
+    return await request(global.app.getHttpServer())
       .post('/graphql')
       .send({
         operationName: null,
@@ -79,7 +82,7 @@ describe('PersonasController (e2e)', () => {
   });
 
   it('getPersonas', () => {
-    return request(app.getHttpServer())
+    return request(global.app.getHttpServer())
       .post('/graphql')
       .send({
         operationName: null,
@@ -110,7 +113,7 @@ describe('PersonasController (e2e)', () => {
       }
     }`;
 
-    return request(app.getHttpServer())
+    return request(global.app.getHttpServer())
       .post('/graphql')
       .send({
         operationName: null,
@@ -134,7 +137,7 @@ describe('PersonasController (e2e)', () => {
         }
       }`;
 
-    return request(app.getHttpServer())
+    return request(global.app.getHttpServer())
       .post('/graphql')
       .send({
         operationName: null,
