@@ -1222,7 +1222,7 @@
     multer "1.4.2"
     tslib "2.0.3"
 
-"@nestjs/terminus@^7.0.1":
+"@nestjs/terminus@7.0.1":
   version "7.0.1"
   resolved "https://registry.yarnpkg.com/@nestjs/terminus/-/terminus-7.0.1.tgz#7d748f8c18973d60023a8ab16760d0adab145b8b"
   integrity sha512-OKg1QQDb+whHJM3Xt+3RRUPiyZSyD0qLacfldK0TXcFpKyexA0yyY3GKeaBNApf01FEzJgkK3ARCUoELnAfXDA==
@@ -6057,7 +6057,7 @@ mongodb-memory-server-core@6.9.2:
   optionalDependencies:
     mongodb "3.6.2"
 
-mongodb-memory-server@^6.9.2:
+mongodb-memory-server@6.9.2:
   version "6.9.2"
   resolved "https://registry.yarnpkg.com/mongodb-memory-server/-/mongodb-memory-server-6.9.2.tgz#75880bf5f485deceba2d7df20659b2796ff703cf"
   integrity sha512-+8axA5PlO+C3H+kgsxt6+6edcKAaY56YjYt+MWj9t1ZiKsEr+7SPsQfJcEoX+Kiz802jt1BOOIbYQVLX+08Hag==
