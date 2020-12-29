@@ -13,7 +13,7 @@ export function GetUserGroups(user: any): string[] {
 
 export function IsInGroup(user: any, group: string): boolean {
   var groups: string[] = GetUserGroups(user);
-  let isInGroup = groups.includes(group);
+  let isInGroup = groups.includes(group) || groups.includes('*');
   
   return isInGroup;
 }

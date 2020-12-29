@@ -40,7 +40,7 @@ export class ItemsResolver {
   @UseGuards(new GqlAuthGuard('jwt'))
   async createItem(@User() user: any, @Args('input') input: ItemInput) {
     //TODO: move this group write access check to a decorator
-    if (!GetWritableUserGroups(user).includes(input.group)) {
+    if (!this.userHasWriteAccess(user, input.group)) {
       throw new HttpException('Unauthorised', HttpStatus.UNAUTHORIZED);
     }
     const createdItem = await this.itemsService.create(input);
@@ -48,6 +48,14 @@ export class ItemsResolver {
       itemCreatedOrUpdated: createdItem,
     });
     return createdItem;
+  }
+
+  private userHasWriteAccess(user: any, group: string): boolean {
+    const writeableGroups = GetWritableUserGroups(user)
+    
+    if (writeableGroups.includes(group)) return true;
+    else if (writeableGroups.includes('*')) return true;
+    else return false;
   }
 
   @Mutation(() => ItemType)
@@ -59,7 +67,7 @@ export class ItemsResolver {
   ) {
     //TODO: move this group write access check to a decorator
     //TODO: fix security hole - if user has ID of item they don't have permission to edit, they could update the group and get write access
-    if (!GetWritableUserGroups(user).includes(input.group)) {
+    if (!this.userHasWriteAccess(user, input.group)) {
       throw new HttpException('Unauthorised', HttpStatus.UNAUTHORIZED);
     }
     const updatedItem = await this.itemsService.update(id, input);
