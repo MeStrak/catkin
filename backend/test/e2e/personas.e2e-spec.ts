@@ -9,23 +9,9 @@ import { PersonaInput } from 'dist/personas/input-personas.input';
 describe('PersonasController (e2e)', () => {
   let app;
 
-  beforeAll(async () => {
-    const moduleFixture: TestingModule = await Test.createTestingModule({
-      imports: [
-        PersonasModule,
-        MongooseModule.forRoot('mongodb://localhost/catkintesting'),
-        GraphQLModule.forRoot({
-          autoSchemaFile: 'schema.gql',
-        }),
-      ],
-    }).compile();
-
-    app = moduleFixture.createNestApplication();
-    await app.init();
-  });
+  beforeAll(async () => {});
 
   afterAll(async () => {
-    await app.close();
   });
 
   const persona: PersonaInput = {
@@ -66,36 +52,32 @@ describe('PersonasController (e2e)', () => {
   }`;
 
   it('createPersona', async () => {
-    return await request(global.app.getHttpServer())
+    const res = await request(global.app.getHttpServer())
       .post('/graphql')
+      .set('Authorization', 'Bearer ' + global.validAuthToken)
       .send({
         operationName: null,
         query: createPersonaQuery,
       })
-      .expect(({ body }) => {
-        const data = body.data.createPersona;
+        const data = res.body.data.createPersona;
         id = data.id;
         expect(data.name).toBe(persona.name);
         expect(data.role).toBe(persona.role);
-      })
-      .expect(200);
   });
 
-  it('getPersonas', () => {
-    return request(global.app.getHttpServer())
+  it('getPersonas', async () => {
+    const res = await request(global.app.getHttpServer())
       .post('/graphql')
+      .set('Authorization', 'Bearer ' + global.validAuthToken)
       .send({
         operationName: null,
         query: '{personas{name, role, id}}',
       })
-      .expect(({ body }) => {
-        const data = body.data.personas;
+        const data = res.body.data.personas;
         const personaResult = data[0];
         expect(data.length).toBeGreaterThan(0);
         expect(personaResult.name).toBe(persona.name);
         expect(personaResult.role).toBe(persona.role);
-      })
-      .expect(200);
   });
 
   const updatePersonaObject = JSON.stringify(updatedPersona).replace(
@@ -103,7 +85,7 @@ describe('PersonasController (e2e)', () => {
     '$1:',
   );
 
-  it('updatePersona', () => {
+  it('updatePersona', async () => {
     const updatePersonaQuery = `
     mutation {
       updatePersona(id: "${id}", input: ${updatePersonaObject}) {
@@ -113,21 +95,19 @@ describe('PersonasController (e2e)', () => {
       }
     }`;
 
-    return request(global.app.getHttpServer())
+    const res = await request(global.app.getHttpServer())
       .post('/graphql')
+      .set('Authorization', 'Bearer ' + global.validAuthToken)
       .send({
         operationName: null,
         query: updatePersonaQuery,
       })
-      .expect(({ body }) => {
-        const data = body.data.updatePersona;
+        const data = res.body.data.updatePersona;
         expect(data.name).toBe(updatedPersona.name);
         expect(data.role).toBe(updatedPersona.role);
-      })
-      .expect(200);
   });
 
-  it('deletePersona', () => {
+  it('deletePersona', async () => {
     const deletePersonaQuery = `
       mutation {
         deletePersona(id: "${id}") {
@@ -137,17 +117,15 @@ describe('PersonasController (e2e)', () => {
         }
       }`;
 
-    return request(global.app.getHttpServer())
+      const res = await request(global.app.getHttpServer())
       .post('/graphql')
+      .set('Authorization', 'Bearer ' + global.validAuthToken)
       .send({
         operationName: null,
         query: deletePersonaQuery,
       })
-      .expect(({ body }) => {
-        const data = body.data.deletePersona;
+        const data = res.body.data.deletePersona;
         expect(data.name).toBe(updatedPersona.name);
         expect(data.role).toBe(updatedPersona.role);
-      })
-      .expect(200);
   });
 });

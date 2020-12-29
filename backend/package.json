@@ -18,7 +18,7 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "jest --config ./test/jest-e2e.json --verbose --silent=false"
+    "test:e2e": "jest --config ./test/jest-e2e.json --verbose --silent=false --runInBand"
   },
   "dependencies": {
     "@nestjs/common": "7.6.3",
@@ -60,7 +60,9 @@
     "@types/supertest": "2.0.10",
     "concurrently": "5.3.0",
     "jest": "26.6.3",
+    "mock-jwks": "^0.3.1",
     "mongodb-memory-server": "6.9.2",
+    "nock": "^13.0.5",
     "nodemon": "2.0.6",
     "prettier": "2.2.1",
     "supertest": "6.0.1",
