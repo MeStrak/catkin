@@ -9,23 +9,9 @@ import { PersonaInput } from 'dist/personas/input-personas.input';
 describe('PersonasController (e2e)', () => {
   let app;
 
-  beforeAll(async () => {
-    const moduleFixture: TestingModule = await Test.createTestingModule({
-      imports: [
-        PersonasModule,
-        MongooseModule.forRoot('mongodb://localhost/catkintesting'),
-        GraphQLModule.forRoot({
-          autoSchemaFile: 'schema.gql',
-        }),
-      ],
-    }).compile();
-
-    app = moduleFixture.createNestApplication();
-    await app.init();
-  });
+  beforeAll(async () => {});
 
   afterAll(async () => {
-    await app.close();
   });
 
   const persona: PersonaInput = {
@@ -68,6 +54,7 @@ describe('PersonasController (e2e)', () => {
   it('createPersona', async () => {
     return await request(global.app.getHttpServer())
       .post('/graphql')
+      .set('Authorization', 'Bearer ' + global.validAuthToken)
       .send({
         operationName: null,
         query: createPersonaQuery,
@@ -84,6 +71,7 @@ describe('PersonasController (e2e)', () => {
   it('getPersonas', () => {
     return request(global.app.getHttpServer())
       .post('/graphql')
+      .set('Authorization', 'Bearer ' + global.validAuthToken)
       .send({
         operationName: null,
         query: '{personas{name, role, id}}',
@@ -115,6 +103,7 @@ describe('PersonasController (e2e)', () => {
 
     return request(global.app.getHttpServer())
       .post('/graphql')
+      .set('Authorization', 'Bearer ' + global.validAuthToken)
       .send({
         operationName: null,
         query: updatePersonaQuery,
@@ -139,6 +128,7 @@ describe('PersonasController (e2e)', () => {
 
     return request(global.app.getHttpServer())
       .post('/graphql')
+      .set('Authorization', 'Bearer ' + global.validAuthToken)
       .send({
         operationName: null,
         query: deletePersonaQuery,

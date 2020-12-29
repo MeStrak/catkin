@@ -76,11 +76,9 @@ describe('ItemsController (e2e)', () => {
   });
 
   it('Creates an item when user is logged in and has access to the group', async () => {
-    const validAuthToken = getToken(global.jwks);
-
     const res = await request(global.app.getHttpServer())
       .post('/graphql')
-      .set('Authorization', 'Bearer ' + validAuthToken)
+      .set('Authorization', 'Bearer ' + global.validAuthToken)
       .send({
         operationName: null,
         query: createItemQuery,
@@ -94,11 +92,9 @@ describe('ItemsController (e2e)', () => {
   });
 
   it('getItems', async () => {
-    const validAuthToken = getToken(global.jwks);
-
     const res = await request(global.app.getHttpServer())
       .post('/graphql')
-      .set('Authorization', 'Bearer ' + validAuthToken)
+      .set('Authorization', 'Bearer ' + global.validAuthToken)
       .send({
         operationName: null,
         query: '{items(group: "54759eb3c090d83494e2d804") {title, estimate, description, id}}',
@@ -126,12 +122,10 @@ describe('ItemsController (e2e)', () => {
         id
       }
     }`;
-    const validAuthToken = getToken(global.jwks);
-
 
     const res = await request(global.app.getHttpServer())
       .post('/graphql')
-      .set('Authorization', 'Bearer ' + validAuthToken)
+      .set('Authorization', 'Bearer ' + global.validAuthToken)
       .send({
         operationName: null,
         query: updateItemQuery,
@@ -153,11 +147,10 @@ describe('ItemsController (e2e)', () => {
           id
         }
       }`;
-    const validAuthToken = getToken(global.jwks);
 
     const res = await request(global.app.getHttpServer())
       .post('/graphql')
-      .set('Authorization', 'Bearer ' + validAuthToken)
+      .set('Authorization', 'Bearer ' + global.validAuthToken)
       .send({
         operationName: null,
         query: deleteItemQuery,
