@@ -4,7 +4,8 @@ import { ItemsModule } from '../../src/items/items.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { GraphQLModule } from '@nestjs/graphql';
 import { Item } from '../../src/items/interfaces/item.interface';
-import { ItemInput } from 'dist/items/input-items.input';
+import { ItemInput } from '../../src/items/input-items.input';
+import { getToken } from '../auth.helpers';
 
 describe('ItemsController (e2e)', () => {
 
@@ -13,7 +14,7 @@ describe('ItemsController (e2e)', () => {
 
   afterAll(async () => {
   });
-
+  
   const item: ItemInput = {
     title: 'Great item',
     estimate: 10,
@@ -56,13 +57,17 @@ describe('ItemsController (e2e)', () => {
        operationName: null,
        query: createItemQuery,
      })
+
        expect(res.body.errors.length).toBeGreaterThan(0);
-       expect(res.body.errors[0].extensions.exception.status).toBe(401);
+       expect(res.body.errors[0].extensions.exception.status).toBe(402);
  });
   
-  it('createItem', async () => {
+  it('Creates an item when user is logged in and has access to the group', async () => {
+    const token = getToken(global.jwks);
+
      const res = await request(global.app.getHttpServer())
       .post('/graphql')
+      .set('Authorization', 'Bearer ' + token)
       .send({
         operationName: null,
         query: createItemQuery,
