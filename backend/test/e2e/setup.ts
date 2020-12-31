@@ -7,6 +7,7 @@ import { AppModule } from '../../src/app.module';
 import createJWKSMock, { JWKSMock } from 'mock-jwks';
 import JwksRsa from 'jwks-rsa';
 import { getToken, startAuthServer } from '../auth.helpers';
+import { ConfigService } from '@nestjs/config';
 
 
 declare global {
@@ -21,6 +22,7 @@ declare global {
 export default global;
 
 beforeAll(async () => {
+  
   try {
     const moduleRef = await Test.createTestingModule({
       imports: [AppModule],
@@ -30,14 +32,15 @@ beforeAll(async () => {
 
     await global.app.init();
     console.log('NestJS server started for e2e tests');
+    const configService = global.app.get(ConfigService);
+    const authDomain = configService.get('AUTH0_DOMAIN');
+    const authAudience = configService.get('AUTH0_AUDIENCE');
 
-    global.jwks = startAuthServer("https://catkin-dev.eu.auth0.com");
+    global.jwks = startAuthServer(authDomain);
     console.log('Mock Auth0 server started for e2e tests');
 
-    global.validAuthToken = getToken(global.jwks);
+    global.validAuthToken = getToken(global.jwks, authDomain, authAudience);
     console.log('Mock Auth0 token generated for e2e tests');
-
-
 
     // await global.app.getHttpAdapter().getInstance().ready();
   } catch (e) {

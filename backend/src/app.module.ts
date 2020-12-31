@@ -38,6 +38,7 @@ const newRelicPlugin = require('@newrelic/apollo-server-plugin')
     AuthModule,
     ConfigModule.forRoot({
       isGlobal: true,
+      envFilePath: ['.env', 'test.env', 'local.dev.env', 'dev.env'],
     }),
   ],
   controllers: [HealthController],
