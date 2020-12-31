@@ -1360,7 +1360,7 @@
   resolved "https://registry.yarnpkg.com/@protobufjs/utf8/-/utf8-1.1.0.tgz#a777360b5b39a1a2e5106f8e858f2fd2d060c570"
   integrity sha1-p3c2C1s5oaLlEG+OhY8v0tBgxXA=
 
-"@recap.dev/client@^1.7.2":
+"@recap.dev/client@1.7.2":
   version "1.7.2"
   resolved "https://registry.yarnpkg.com/@recap.dev/client/-/client-1.7.2.tgz#fba5e23a09edb534f95d36de9d800209a1d8e398"
   integrity sha512-gQS+lqnp5iqawkEt5Kjw3lZ7WqOIW1LttHyE5VG+QC7e5nPWyiAPFtpFCVtGo/3RZyphtgs3mlo1CvH5qwEi4w==
@@ -6081,7 +6081,7 @@ mkdirp@^0.5.1, mkdirp@^0.5.3:
   dependencies:
     minimist "^1.2.5"
 
-mock-jwks@^0.3.1:
+mock-jwks@0.3.1:
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/mock-jwks/-/mock-jwks-0.3.1.tgz#65ccb9b8083629e4ca3fccbedcc7a9b7532cd7fb"
   integrity sha512-PMNH9BBPOZgoLJOJiyAwmG5LE1QH550KSHQ2bG8C0ZRjcUZrobiXBjsQss6mnjC3nUESc9O+Z9ySXzP9aw5XzA==
@@ -6299,7 +6299,7 @@ no-case@^3.0.3:
     lower-case "^2.0.1"
     tslib "^1.10.0"
 
-nock@^13.0.5:
+nock@13.0.5:
   version "13.0.5"
   resolved "https://registry.yarnpkg.com/nock/-/nock-13.0.5.tgz#a618c6f86372cb79fac04ca9a2d1e4baccdb2414"
   integrity sha512-1ILZl0zfFm2G4TIeJFW0iHknxr2NyA+aGCMTjDVUsBY4CkMRispF1pfIYkTRdAR/3Bg+UzdEuK0B6HczMQZcCg==
