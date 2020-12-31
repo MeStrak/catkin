@@ -2,8 +2,9 @@
   "extends": [
     "config:base",
     ":rebaseStalePrs",
+    "group:monorepos",
+    "group:recommended",
     "group:allNonMajor",
-    "schedule:earlyMondays",
     ":automergeMinor",
     ":automergeTesters",
     ":automergeLinters",
