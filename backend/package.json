@@ -35,7 +35,7 @@
     "@types/helmet": "0.0.48",
     "@types/passport": "1.0.5",
     "@types/passport-jwt": "3.0.3",
-    "apollo-server-express": "2.19.0",
+    "apollo-server-express": "2.19.1",
     "class-transformer": "0.3.1",
     "class-validator": "0.12.2",
     "dotenv": "8.2.0",
