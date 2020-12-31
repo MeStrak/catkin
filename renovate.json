@@ -4,7 +4,6 @@
     ":rebaseStalePrs",
     "group:monorepos",
     "group:recommended",
-    "group:allNonMajor",
     ":automergeMinor",
     ":automergeTesters",
     ":automergeLinters",
