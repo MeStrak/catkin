@@ -7,13 +7,13 @@ export function startAuthServer(jwksServer: string): JWKSMock {
     return jwks;
 }
 
-export function getToken(jwks: JWKSMock): string {
+export function getToken(jwks: JWKSMock, authDomain: string, authAudience: string): string {
     const token = jwks.token({
         aud: [
-            "https://catkin.dev",
-            "https://catkin-dev.eu.auth0.com/userinfo"
+            `${authAudience}`,
+            `${authDomain}/userinfo`
         ],
-        iss: `https://catkin-dev.eu.auth0.com/`,
+        iss: `${authDomain}/`,
         'https://catkin.dev/permissions': [
             {
                 "group": "*",
