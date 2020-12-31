@@ -13,6 +13,11 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    services:
+      mongo:
+        image: mongo
+        ports:
+          - 27017:27017
 
     strategy:
       matrix:
@@ -38,7 +43,11 @@ jobs:
         cd frontend
         yarn
         # yarn test
-    - name: Backend tests
+    - name: Backend unit tests
       run: |
         cd backend
         yarn test
+    - name: Backend e2e tests
+      run: |
+        cd backend
+        yarn test:e2e
