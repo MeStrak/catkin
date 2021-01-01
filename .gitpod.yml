@@ -2,5 +2,6 @@ image:
   file: .gitpod.Dockerfile
 
 tasks:
-  - init: cd ./backend && yarn install && ../frontend && yarn install
-  - command: mkdir -p data && mongod --dbpath data
+  - init: cd ./backend && yarn install && cd ../frontend && yarn install
+  - command: mkdir -p mongodb && mkdir -p mongodb/data && mongod --dbpath mongodb/data --fork --logpath mongodb/log/mongod.log
+  
