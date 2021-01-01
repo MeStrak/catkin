@@ -1,2 +1,2 @@
 backend/schema.gql
-data/**
+mongodb/**
