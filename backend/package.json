@@ -21,13 +21,13 @@
     "test:e2e": "jest --config ./test/jest-e2e.json --verbose --silent=false --runInBand"
   },
   "dependencies": {
-    "@nestjs/common": "7.6.3",
+    "@nestjs/common": "7.6.5",
     "@nestjs/config": "0.6.1",
-    "@nestjs/core": "7.6.3",
+    "@nestjs/core": "7.6.5",
     "@nestjs/graphql": "7.9.4",
     "@nestjs/mongoose": "7.2.0",
     "@nestjs/passport": "7.1.5",
-    "@nestjs/platform-express": "7.6.3",
+    "@nestjs/platform-express": "7.6.5",
     "@nestjs/terminus": "7.0.1",
     "@newrelic/apollo-server-plugin": "0.1.2",
     "@recap.dev/client": "1.7.2",
@@ -54,7 +54,7 @@
     "type-graphql": "1.1.1"
   },
   "devDependencies": {
-    "@nestjs/testing": "7.6.3",
+    "@nestjs/testing": "7.6.5",
     "@types/jest": "26.0.19",
     "@types/node": "10.17.13",
     "@types/socket.io": "2.1.12",
