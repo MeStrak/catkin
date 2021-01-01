@@ -3,5 +3,5 @@ image:
 
 tasks:
   - init: cd ./backend && yarn install && cd ../frontend && yarn install
-  - command: mkdir -p mongodb && mkdir -p mongodb/data && mongod --dbpath mongodb/data --fork --logpath mongodb/log/mongod.log
+  - command: mkdir -p mongodb && mkdir -p mongodb/data && mkdir -p mongodb/log && mongod --dbpath mongodb/data --fork --logpath mongodb/log/mongod.log && echo MongoDB up and running unless you see an error msg above
   
