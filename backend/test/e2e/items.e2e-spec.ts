@@ -71,11 +71,11 @@ describe('ItemsController (e2e)', () => {
         query: createItemQuery,
       })
 
-    expect(res.body.errors.length).toBeGreaterThan(0);
+    expect(res.body.errors).toBeTruthy;
     expect(res.body.errors[0].extensions.exception.status).toBe(401);
   });
 
-  it('Creates an item when user is logged in and has access to the group', async () => {
+  it('Creates an item when user is logged in and has write access to the group', async () => {
     const res = await request(global.app.getHttpServer())
       .post('/graphql')
       .set('Authorization', 'Bearer ' + global.validAuthToken)
@@ -83,6 +83,7 @@ describe('ItemsController (e2e)', () => {
         operationName: null,
         query: createItemQuery,
       })
+    checkNoResponseErrors(res);
     const data = res.body.data.createItem;
     id = data.id;
     expect(data.title).toBe(item.title);
@@ -91,7 +92,7 @@ describe('ItemsController (e2e)', () => {
 
   });
 
-  it('getItems', async () => {
+  it('Gets items when user is logged in and has access to the group', async () => {
     const res = await request(global.app.getHttpServer())
       .post('/graphql')
       .set('Authorization', 'Bearer ' + global.validAuthToken)
@@ -99,6 +100,7 @@ describe('ItemsController (e2e)', () => {
         operationName: null,
         query: '{items(group: "54759eb3c090d83494e2d804") {title, estimate, description, id}}',
       })
+    checkNoResponseErrors(res);
     const data = res.body.data.items;
     const itemResult = data[0];
     expect(data.length).toBeGreaterThan(0);
@@ -112,7 +114,7 @@ describe('ItemsController (e2e)', () => {
     '$1:',
   );
 
-  it('updateItem', async () => {
+  it('Updates an item when user is logged in and has write access to the group', async () => {
     const updateItemQuery = `
     mutation {
       updateItem(id: "${id}", input: ${updateItemObject}) {
@@ -130,6 +132,8 @@ describe('ItemsController (e2e)', () => {
         operationName: null,
         query: updateItemQuery,
       })
+    
+    checkNoResponseErrors(res);
     const data = res.body.data.updateItem;
     expect(data.title).toBe(updatedItem.title);
     expect(data.description).toBe(updatedItem.description);
@@ -137,7 +141,7 @@ describe('ItemsController (e2e)', () => {
 
   });
 
-  it('deleteItem', async () => {
+  it('Deletes an item when user is logged in and has write access to the group', async () => {
     const deleteItemQuery = `
       mutation {
         deleteItem(id: "${id}") {
@@ -156,9 +160,15 @@ describe('ItemsController (e2e)', () => {
         query: deleteItemQuery,
       })
 
+    checkNoResponseErrors(res);
     const data = res.body.data.deleteItem;
     expect(data.title).toBe(updatedItem.title);
     expect(data.description).toBe(updatedItem.description);
     expect(data.estimate).toBe(updatedItem.estimate);
   });
 });
+
+function checkNoResponseErrors(res: request.Response) {
+  expect(res.body.errors).toBeFalsy;
+  expect(res.status).toBe(200);
+}

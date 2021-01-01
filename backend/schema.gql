@@ -35,42 +35,30 @@ type PersonaType {
 }
 
 type Query {
-  boards: [BoardType!]!
-  boardById(id: String!): BoardType!
-  hello: String!
-  groups: [GroupType!]!
-  groupById(id: String!): GroupType!
   items(group: String!): [ItemType!]!
   itemById(id: String!): ItemType!
+  groups: [GroupType!]!
+  groupById(id: String!): GroupType!
+  hello: String!
   personas: [PersonaType!]!
   personaById(id: String!): PersonaType!
+  boards: [BoardType!]!
+  boardById(id: String!): BoardType!
 }
 
 type Mutation {
-  createBoard(input: BoardInput!): BoardType!
-  updateBoard(input: BoardInput!, id: String!): BoardType!
-  deleteBoard(id: String!): BoardType!
-  createGroup(input: GroupInput!): GroupType!
-  updateGroup(input: GroupInput!, id: String!): GroupType!
-  deleteGroup(id: String!): GroupType!
   createItem(input: ItemInput!): ItemType!
   updateItem(input: ItemInput!, id: String!): ItemType!
   deleteItem(id: String!): ItemType!
+  createGroup(input: GroupInput!): GroupType!
+  updateGroup(input: GroupInput!, id: String!): GroupType!
+  deleteGroup(id: String!): GroupType!
   createPersona(input: PersonaInput!): PersonaType!
   updatePersona(input: PersonaInput!, id: String!): PersonaType!
   deletePersona(id: String!): PersonaType!
-}
-
-input BoardInput {
-  name: String!
-  description: String
-  group: String!
-}
-
-input GroupInput {
-  name: String!
-  security: String!
-  description: String
+  createBoard(input: BoardInput!): BoardType!
+  updateBoard(input: BoardInput!, id: String!): BoardType!
+  deleteBoard(id: String!): BoardType!
 }
 
 input ItemInput {
@@ -82,12 +70,24 @@ input ItemInput {
   group: String!
 }
 
+input GroupInput {
+  name: String!
+  security: String!
+  description: String
+}
+
 input PersonaInput {
   name: String!
   role: String
   likes: String
   pains: String
   goal: String
+  group: String!
+}
+
+input BoardInput {
+  name: String!
+  description: String
   group: String!
 }
 
