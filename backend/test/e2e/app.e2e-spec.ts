@@ -5,4 +5,7 @@ describe('AppController (e2e)', () => {
     const res = await request(global.app.getHttpServer()).get('/health')
     expect(res['res'].statusCode).toBe(200);
   })
+  it('Returns healthy graphQL status', async () => {
+    const res = await request(global.app.getHttpServer()).get('/.well-known/apollo/server-health')
+    expect(res['res'].statusCode).toBe(200);})
 });
