@@ -34,41 +34,26 @@ describe('ItemsController (e2e)', () => {
     group: '54759eb3c090d83494e2d804'
   };
 
-  const createitemObject = JSON.stringify(item).replace(
-    /\"([^(\")"]+)\":/g,
-    '$1:',
-  );
-
-  const createItemQuery = `
-  mutation {
-    createItem(input: ${createitemObject}) {
+  const CREATE_ITEM_GQL = `
+  mutation createItem($createItem: ItemInput!) {
+      createItem(input: $createItem) {
       title
       estimate
       description
-      id,
-      personas,
+      id
+      personas
       group
     }
   }`;
-
-  // const gettemsQuery = `
-  // query {
-  //   items(input: ${createitemObject}) {
-  //     title
-  //     estimate
-  //     description
-  //     id,
-  //     personas,
-  //     group
-  //   }
-  // }`;
 
   it('Throws an error when API is called with no token', async () => {
     const res = await request(global.app.getHttpServer())
       .post('/graphql')
       .send({
-        operationName: null,
-        query: createItemQuery,
+        query: CREATE_ITEM_GQL,
+        variables: {
+          createItem: item,
+        },
       })
 
     expect(res.body.errors).toBeTruthy;
@@ -80,8 +65,10 @@ describe('ItemsController (e2e)', () => {
       .post('/graphql')
       .set('Authorization', 'Bearer ' + global.validAuthToken)
       .send({
-        operationName: null,
-        query: createItemQuery,
+        query: CREATE_ITEM_GQL,
+        variables: {
+          createItem: item,
+        },
       })
     checkNoResponseErrors(res);
     const data = res.body.data.createItem;
@@ -97,7 +84,6 @@ describe('ItemsController (e2e)', () => {
       .post('/graphql')
       .set('Authorization', 'Bearer ' + global.validAuthToken)
       .send({
-        operationName: null,
         query: '{items(group: "54759eb3c090d83494e2d804") {title, estimate, description, id}}',
       })
     checkNoResponseErrors(res);
@@ -129,7 +115,6 @@ describe('ItemsController (e2e)', () => {
       .post('/graphql')
       .set('Authorization', 'Bearer ' + global.validAuthToken)
       .send({
-        operationName: null,
         query: updateItemQuery,
       })
     
