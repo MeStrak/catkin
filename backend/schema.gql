@@ -12,6 +12,7 @@ type BoardType {
 type GroupType {
   id: ID!
   name: String!
+  security: String!
   description: String
 }
 

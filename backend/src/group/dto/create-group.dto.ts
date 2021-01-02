@@ -10,6 +10,10 @@ export class GroupType {
   @IsString()
   @IsNotEmpty()
   readonly name: string;
+  @Field()
+  @IsString()
+  @IsNotEmpty()
+  readonly security: string;
   @Field({ nullable: true })
   @IsString()
   readonly description: string;
