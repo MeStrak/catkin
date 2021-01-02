@@ -39,14 +39,21 @@ export default Vue.extend({
   data() {
     return {
       groupById: '',
+      currentGroupId: this.id,
       thisID: this.id,
     };
   },
   created() {
     // if this is a new item, create a record in the database so that bindings work
-    if (this.id === 'newGroup') {
+    if (this.id === 'newgroup') {
+      console.log('new group');
       this.createNewGroup();
     }
+    else {
+      console.log('existing group')
+    }
+    this.currentGroupId = this.id;
+
   },
   beforeMount() {},
   mounted() {},
@@ -79,6 +86,9 @@ export default Vue.extend({
           groupid: this.id,
         };
       },
+      skip() {
+        return this.currentGroupId === 'newgroup';
+      },
     },
   },
   props: {
@@ -101,11 +111,11 @@ export default Vue.extend({
             id: this.id,
           },
         })
-        .then(data => {
+        .then((data) => {
           // Result
           this.$emit('group-deleted');
         })
-        .catch(error => {
+        .catch((error) => {
           // Error
           console.error(error);
           // We restore the initial user input
@@ -160,10 +170,10 @@ export default Vue.extend({
           //   },
           // },
         })
-        .then(data => {
+        .then((data) => {
           // Result
         })
-        .catch(error => {
+        .catch((error) => {
           // Error
           console.error(error);
           // We restore the initial user input
@@ -175,10 +185,19 @@ export default Vue.extend({
         .mutate({
           // Query
           mutation: gql`
-            mutation($name: String!) {
-              createGroup(input: { name: $name }) {
+            mutation(
+              $name: String!
+              $security: String!
+              ) {
+              createGroup(
+                input: {
+                  name: $name
+                  security: $security
+                   }
+                ) {
                 id
                 name
+                security
                 description
               }
             }
@@ -187,6 +206,7 @@ export default Vue.extend({
           variables: {
             name: '',
             description: '',
+            security: 'PRIVATE'
           },
           // Update the cache with the result
           //
@@ -211,13 +231,13 @@ export default Vue.extend({
           //   },
           // },
         })
-        .then(data => {
+        .then((data) => {
           // Result
 
           this.thisId = data.data.createGroup.id;
           this.groupById = data.data.createGroup;
         })
-        .catch(error => {
+        .catch((error) => {
           // Error
           console.error(error);
           // We restore the initial user input
