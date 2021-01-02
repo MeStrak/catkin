@@ -74,11 +74,17 @@
             dark
             @click="handleLogout()"
             v-on="on"
-          >Logout</v-btn>
+            >Logout</v-btn
+          >
         </template>
       </v-menu>
 
-      <v-menu v-model="menu" :close-on-content-click="false" :nudge-width="200" offset-x>
+      <v-menu
+        v-model="menu"
+        :close-on-content-click="false"
+        :nudge-width="200"
+        offset-x
+      >
         <template v-slot:activator="{ on }">
           <v-btn
             color="#5DA2D5"
@@ -87,12 +93,19 @@
             @click="handleLogin()"
             v-on="on"
             v-if="!isLoggedIn"
-          >Login</v-btn>
+            >Login</v-btn
+          >
         </template>
       </v-menu>
     </v-app-bar>
 
-    <v-navigation-drawer v-model="drawer" :mini-variant="mini" app clipped color="grey lighten-4">
+    <v-navigation-drawer
+      v-model="drawer"
+      :mini-variant="mini"
+      app
+      clipped
+      color="grey lighten-4"
+    >
       <v-list dense class="grey lighten-4">
         <template v-for="(item, i) in items">
           <v-layout v-if="item.heading" :key="i" row align-center>
@@ -103,16 +116,19 @@
               <v-btn small text>edit</v-btn>
             </v-flex>
           </v-layout>
-          <v-divider v-else-if="item.divider" :key="i" dark class="my-3"></v-divider>
+          <v-divider
+            v-else-if="item.divider"
+            :key="i"
+            dark
+            class="my-3"
+          ></v-divider>
           <v-list-item v-else :key="i" router :to="item.route">
             <v-list-item-action>
               <v-icon>{{ item.icon }}</v-icon>
             </v-list-item-action>
             <v-list-item-content>
               <v-list-item-title class="grey--text">
-                {{
-                item.text
-                }}
+                {{ item.text }}
               </v-list-item-title>
             </v-list-item-content>
           </v-list-item>
@@ -157,8 +173,7 @@ export default Vue.extend({
     dialog: false,
     newItemComponentKey: 0,
     isLoggedIn: null,
-    currentGroup: localStorage.getItem("catkin:current_group"),
-
+    currentGroup: localStorage.getItem('catkin:current_group'),
 
     items: [
       { icon: 'view_column', text: 'Boards', route: '/' },

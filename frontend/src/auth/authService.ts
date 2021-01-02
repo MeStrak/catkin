@@ -30,10 +30,13 @@ class AuthService {
   }
 
   logout() {
-    localStorage.setItem('loggedIn', 'false');
-    localStorage.setItem('gqlbear', '');
+    localStorage.clear();
     apolloClient.clearStore();
-    eventBus.$emit('logout');
+    webAuth.logout({
+      returnTo: `${window.location.origin}/landing`,
+      clientID: process.env.VUE_APP_AUTH0_CLIENT_ID,
+    });
+    // eventBus.$emit('logout');
   }
 
   // Handles the callback request from Auth0
