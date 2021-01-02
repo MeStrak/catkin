@@ -87,7 +87,7 @@ export default Vue.extend({
       `,
       variables() {
         return {
-          groupid: localStorage.getItem('catkin:current_group'),
+          groupid: localStorage.getItem('catkin:current_org'),
         };
       },
 

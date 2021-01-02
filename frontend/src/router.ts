@@ -80,12 +80,12 @@ router.beforeEach((to, from, next) => {
   if (to.path === '/landing') next();
   else if (to.path === '/callback') next();
   else if (!authService.isLoggedIn()) next('/landing');
-  else if (!hasSelectedGroup() && to.path != '/orgs') next('/orgs');
+  else if (!hasSelectedOrg() && to.path != '/orgs') next('/orgs');
   else next();
 });
 
-function hasSelectedGroup(): boolean {
-  if (localStorage.getItem('catkin:current_group')) {
+function hasSelectedOrg(): boolean {
+  if (localStorage.getItem('catkin:current_org')) {
     return true;
   } else {
     return false;

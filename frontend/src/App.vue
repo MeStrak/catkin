@@ -173,7 +173,7 @@ export default Vue.extend({
     dialog: false,
     newItemComponentKey: 0,
     isLoggedIn: null,
-    currentGroup: localStorage.getItem('catkin:current_group'),
+    currentGroup: localStorage.getItem('catkin:current_org'),
 
     items: [
       { icon: 'dashboard', text: 'Boards', route: '/' },
