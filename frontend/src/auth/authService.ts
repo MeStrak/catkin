@@ -36,7 +36,6 @@ class AuthService {
       returnTo: `${window.location.origin}/landing`,
       clientID: process.env.VUE_APP_AUTH0_CLIENT_ID,
     });
-    // eventBus.$emit('logout');
   }
 
   // Handles the callback request from Auth0

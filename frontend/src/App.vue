@@ -196,7 +196,6 @@ export default Vue.extend({
     handleLogout() {
       authService.logout();
       this.isLoggedIn = this.getIsLoggedIn();
-      this.$router.push('/landing');
     },
     getIsLoggedIn() {
       return authService.isLoggedIn();
