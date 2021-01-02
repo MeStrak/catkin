@@ -176,10 +176,12 @@ export default Vue.extend({
     currentGroup: localStorage.getItem('catkin:current_group'),
 
     items: [
-      { icon: 'view_column', text: 'Boards', route: '/' },
+      { icon: 'dashboard', text: 'Boards', route: '/' },
       // { icon: 'category', text: 'Epics', route: '/epics' },
       // { icon: "lightbulb", text: "Ideas lab" },
-      { icon: 'people', text: 'Personas', route: '/personas' },
+      { icon: 'perm_contact_calendar', text: 'Personas', route: '/personas' },
+      { icon: 'group_work', text: 'Orgs', route: '/orgs' },
+
 
       // { divider: true },
       { icon: 'settings', text: 'Settings' },

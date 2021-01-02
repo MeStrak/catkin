@@ -54,8 +54,8 @@ const router = new Router({
         import(/* webpackChunkName: "about" */ './components/Callback.vue'),
     },
     {
-      path: '/groups',
-      name: 'groups',
+      path: '/orgs',
+      name: 'orgs',
       // component: Home
       component: () =>
         import(/* webpackChunkName: "about" */ './components/Groups.vue'),
@@ -80,7 +80,7 @@ router.beforeEach((to, from, next) => {
   if (to.path === '/landing') next();
   else if (to.path === '/callback') next();
   else if (!authService.isLoggedIn()) next('/landing');
-  else if (!hasSelectedGroup() && to.path != '/groups') next('/groups');
+  else if (!hasSelectedGroup() && to.path != '/orgs') next('/orgs');
   else next();
 });
 
