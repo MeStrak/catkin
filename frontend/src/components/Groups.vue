@@ -1,41 +1,54 @@
 <template>
-  <v-row dense>
-    <v-col v-for="(group, i) in groups" :key="i">
-      <v-card
-        cols="4"
-        max-width="400"
-        class="mx-auto"
-        @click.stop="
-          id = group.id;
-          dialog = true;
-        "
-      >
-        <div class="d-flex flex-no-wrap justify-space-between">
-          <div>
-            <v-card-title class="headline" v-text="group.name"></v-card-title>
+  <container>
+    <v-btn
+      color="#5DA2D5"
+      dark
+      @click.stop="
+        id = 'newgroup';
+        dialog = true;
+        forceRerender();
+      "
+    >
+      New group
+    </v-btn>
+    <v-row dense>
+      <v-col v-for="(group, i) in groups" :key="i">
+        <v-card
+          cols="4"
+          max-width="400"
+          class="mx-auto"
+          @click.stop="
+            id = group.id;
+            dialog = true;
+          "
+        >
+          <div class="d-flex flex-no-wrap justify-space-between">
+            <div>
+              <v-card-title class="headline" v-text="group.name"></v-card-title>
 
-            <v-card-subtitle v-text="group.description"></v-card-subtitle>
+              <v-card-subtitle v-text="group.description"></v-card-subtitle>
+            </div>
+
+            <v-avatar class="ma-3" size="125" tile>
+              <v-img></v-img>
+            </v-avatar>
           </div>
-
-          <v-avatar class="ma-3" size="125" tile>
-            <v-img></v-img>
-          </v-avatar>
-        </div>
-         <v-btn
-        color="#5DA2D5"
-        dark
-         @click.stop="setCurrentGroup(group.id);"
-      ><v-icon>open_in_new</v-icon> 
-      </v-btn>
-      </v-card>
-      
-    </v-col>
-    <v-dialog v-model="dialog" max-width="80%">
-      <v-card>
-        <GroupDetail v-bind:id="id" v-on:group-deleted="dialog = false" />
-      </v-card>
-    </v-dialog>
-  </v-row>
+          <v-btn color="#5DA2D5" dark @click.stop="setCurrentGroup(group.id)"
+            >Switch to this org
+          </v-btn>
+        </v-card>
+      </v-col>
+      <v-dialog v-model="dialog" max-width="80%">
+        <v-card>
+          <GroupDetail
+            v-bind:id="id"
+            v-on:group-deleted="dialog = false"
+            :key="newGroupComponentKey"
+          />
+        </v-card>
+      </v-dialog>
+    </v-row>
+  </container>
 </template>
 
 
@@ -52,6 +65,7 @@ export default Vue.extend({
       dialog: false,
       groups: [],
       items: [],
+      newGroupComponentKey: 0,
       id: null,
     };
   },
@@ -145,12 +159,13 @@ export default Vue.extend({
   mounted() {},
 
   methods: {
-setCurrentGroup(groupId: string)
-{
+    forceRerender() {
+      this.newGroupComponentKey += 1;
+    },
+    setCurrentGroup(groupId: string) {
       localStorage.setItem('catkin:current_org', groupId);
       this.$router.push('/');
-},
-
+    },
   },
 });
 </script>
