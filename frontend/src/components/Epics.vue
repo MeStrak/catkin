@@ -22,7 +22,6 @@
           color="deep-purple accent-4"
         ></v-progress-linear>
       </div>
-      <!-- <div v-for="item in blocks" :slot="item.id" :key="item.id"> -->
       <v-card
         v-for="item in blocks"
         :slot="item.id"
@@ -39,7 +38,6 @@
           {{ item.id }}
         </v-card-text>
       </v-card>
-      <!-- </div> -->
       <div v-for="stage in statuses" :key="stage" :slot="`footer-${stage}`">
       </div>
     </kanban-board>
@@ -49,11 +47,9 @@
       </v-card>
     </v-dialog>
   </v-img>
-  <!-- </v-container> -->
 </template>
 
 <script lang="ts">
-// import faker from "faker";
 import Vue from 'vue';
 
 import { debounce } from 'lodash';
@@ -74,25 +70,11 @@ export default Vue.extend({
     KanbanDetail,
   },
   mounted() {
-    for (let i = 0; i <= 20; i += 1) {
-      this.blocks.push({
-        id: i,
-        status: this.statuses[Math.floor(Math.random() * 6)],
-        title: 'fart', // faker.company.bs()
-      });
-    }
   },
 
   methods: {
     updateBlock: debounce(function(id, status) {
       this.blocks.find(b => b.id === Number(id)).status = status;
-    }, 500),
-    addBlock: debounce(function(stage) {
-      this.blocks.push({
-        id: this.blocks.length,
-        status: stage,
-        title: 'fart', // faker.company.bs()
-      });
     }, 500),
   },
 });
