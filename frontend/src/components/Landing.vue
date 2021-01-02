@@ -1,28 +1,30 @@
 <template>
-  <v-container>
+ <!-- <v-container> -->
+    <v-img
+      :src="require('../assets/boxcat.jpg')"
+      cover
+      gradient="to top right, rgb(150,150,150,.4), rgba(150,150,150,.4)"
+      fluid
+      grid-list-md
+      style="height: calc(100vh - 64px)"
+    >
     <v-layout text-center wrap>
       <v-flex xs12>
         <v-img
-          :src="require('../assets/logo.svg')"
-          class="my-3"
+          :src="require('../assets/catkinlogonobgwhite.svg')"
           contain
-          height="250"
+          class="my-3"
+          height="150"
         ></v-img>
       </v-flex>
 
       <v-flex mb-4>
-        <h1 class="display-3 font-weight-bold mb-5">Welcome to catkin</h1>
-        <h1 class="display-1 mb-5">
-          Awesome (soon!), open source agile workflow.
+        <h1 class="display-3 font-weight-bold mb-5" style="color:white">Welcome to catkin</h1>
+        <h1 class="display-1 mb-5" style="color:white">
+          Open source agile workflow.
         </h1>
-        <p style="color:red">
-          Disclaimer: Catkin is in very early stages of development, not all
-          security features are in place.
-        </p>
-        <p style="color:red">
-          Your data won't be safe if you use this hosted website. Use the self
-          hosted option instead if you want to store private data. We'll make it
-          safe soon!
+        <p>
+          <span style="color:white"> Disclaimer: Catkin is not production ready. Do not use it for storing private or sensitive data.</span>
         </p>
       </v-flex>
 
@@ -54,7 +56,8 @@
         </v-layout>
       </v-flex>-->
     </v-layout>
-  </v-container>
+    </v-img>
+   <!--</v-container>-->
 </template>
 
 <script lang="ts">
@@ -116,3 +119,11 @@ export default Vue.extend({
   }),
 });
 </script>
+
+<style lang="scss">
+
+.container {
+  padding: 0px;
+  word-break: break-word;
+}
+</style>
