@@ -3,7 +3,7 @@
     <v-img
       :src="require('../assets/boxcat.jpg')"
       cover
-      gradient="to top right, rgb(150,150,150,.4), rgba(150,150,150,.4)"
+      gradient="to top right, rgb(100,100,100,.6), rgba(100,100,100,.6)"
       fluid
       grid-list-md
       style="height: calc(100vh - 64px)"
