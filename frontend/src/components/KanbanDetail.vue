@@ -247,7 +247,7 @@ export default Vue.extend({
     },
     createNewItem() {
       console.log('createnewitem');
-      console.log(localStorage.getItem('catkin:current_group'));
+      console.log(localStorage.getItem('catkin:current_org'));
       // Call to the graphql mutation
       this.$apollo
         .mutate({
@@ -288,7 +288,7 @@ export default Vue.extend({
             description: '',
             status: 'incubator',
             personas: [],
-            group: localStorage.getItem('catkin:current_group'),
+            group: localStorage.getItem('catkin:current_org'),
           },
           // Update the cache with the result
           //

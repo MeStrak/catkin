@@ -28,7 +28,7 @@
   <h3 align="center">Catkin</h3>
 
   <p align="center">
-    An open source agile tool that's actually good.
+    An open source agile tool, aiming to be a viable alternative to Jira and Trello (still with a lot of development to do!).
     <br />
     <br />
     <a href="https://www.catkin.dev">View Demo</a>
