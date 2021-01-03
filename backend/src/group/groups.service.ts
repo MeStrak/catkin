@@ -43,4 +43,12 @@ export class GroupsService {
       new: true,
     });
   }
+
+  async isGroupPublic(groupId: string): Promise<boolean> {
+    const isPublic =
+      (await this.groupModel.count({
+        $or: [{ security: 'PUBLIC' }, { id: groupId }],
+      })) >= 0;
+    return isPublic;
+  }
 }

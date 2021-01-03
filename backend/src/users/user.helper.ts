@@ -2,7 +2,7 @@ import { GroupsService } from '../group/groups.service';
 
 export function GetUserGroups(user: any): string[] {
   let groups: string[] = []; // eslint-disable-line prefer-const
-  if(!user['https://catkin.dev/permissions']) return groups;
+  if (!user['https://catkin.dev/permissions']) return groups;
 
   user['https://catkin.dev/permissions'].forEach((element) => {
     groups.push(element.group);
@@ -22,7 +22,7 @@ export function IsInGroup(user: any, group: string): boolean {
 
 export function GetWritableUserGroups(user: any): string[] {
   let groups: string[] = []; // eslint-disable-line prefer-const
-  if(!user['https://catkin.dev/permissions']) return groups;
+  if (!user['https://catkin.dev/permissions']) return groups;
 
   user['https://catkin.dev/permissions'].forEach((element) => {
     if (element.role === 'admin' || element.role === 'member') {
@@ -33,8 +33,8 @@ export function GetWritableUserGroups(user: any): string[] {
 }
 
 export function GetAdminUserGroups(user: any): string[] {
-  let groups: string[] = [];  // eslint-disable-line prefer-const
-  if(!user['https://catkin.dev/permissions']) return groups;
+  let groups: string[] = []; // eslint-disable-line prefer-const
+  if (!user['https://catkin.dev/permissions']) return groups;
 
   user['https://catkin.dev/permissions'].forEach((element) => {
     if (element.role === 'admin') {
