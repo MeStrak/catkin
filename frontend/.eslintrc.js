@@ -5,8 +5,13 @@ module.exports = {
     node: true,
   },
 
-  extends: ['plugin:vue/recommended', '@vue/prettier', '@vue/typescript', 'prettier',
-  'prettier/vue'],
+  extends: [
+    'plugin:vue/recommended',
+    '@vue/prettier',
+    '@vue/typescript',
+    'prettier',
+    'prettier/vue',
+  ],
 
   rules: {
     'no-console': 'off',
@@ -20,6 +25,4 @@ module.exports = {
       '@typescript-eslint/rule-name': 'error',
     },
   },
-
-
 };

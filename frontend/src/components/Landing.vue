@@ -1,13 +1,13 @@
 <template>
- <!-- <v-container> -->
-    <v-img
-      :src="require('../assets/boxcat.jpg')"
-      cover
-      gradient="to top right, rgb(100,100,100,.6), rgba(100,100,100,.6)"
-      fluid
-      grid-list-md
-      style="height: calc(100vh - 64px)"
-    >
+  <!-- <v-container> -->
+  <v-img
+    :src="require('../assets/boxcat.jpg')"
+    cover
+    gradient="to top right, rgb(100,100,100,.6), rgba(100,100,100,.6)"
+    fluid
+    grid-list-md
+    style="height: calc(100vh - 64px)"
+  >
     <v-layout text-center wrap>
       <v-flex xs12>
         <v-img
@@ -19,12 +19,17 @@
       </v-flex>
 
       <v-flex mb-4>
-        <h1 class="display-3 font-weight-bold mb-5" style="color:white">Welcome to catkin</h1>
-        <h1 class="display-1 mb-5" style="color:white">
+        <h1 class="display-3 font-weight-bold mb-5" style="color: white">
+          Welcome to catkin
+        </h1>
+        <h1 class="display-1 mb-5" style="color: white">
           Open source agile workflow.
         </h1>
         <p>
-          <span style="color:white"> Disclaimer: Catkin is not production ready. Do not use it for storing private or sensitive data.</span>
+          <span style="color: white">
+            Disclaimer: Catkin is not production ready. Do not use it for
+            storing private or sensitive data.</span
+          >
         </p>
       </v-flex>
 
@@ -56,8 +61,8 @@
         </v-layout>
       </v-flex>-->
     </v-layout>
-    </v-img>
-   <!--</v-container>-->
+  </v-img>
+  <!--</v-container>-->
 </template>
 
 <script lang="ts">
@@ -121,7 +126,6 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
-
 .container {
   padding: 0px;
   word-break: break-word;

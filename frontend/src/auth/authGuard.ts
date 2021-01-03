@@ -15,7 +15,7 @@ export const authGuard = (to, from, next) => {
     return fn();
   }
 
-  authService.$watch('loading', loading => {
+  authService.$watch('loading', (loading) => {
     if (loading === false) {
       return fn();
     }

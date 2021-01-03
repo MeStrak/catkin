@@ -9,8 +9,8 @@
       <v-row>
         <v-col>
           <v-text-field
-            label="Title"
             v-model="itemById.title"
+            label="Title"
             class="headline"
             hide-details
             @blur="updateItem()"
@@ -22,9 +22,9 @@
           <p class="headline">Description</p>
           <editor
             ref="tuiEditor"
-            previewStyle="vertical"
+            preview-style="vertical"
             height="750px"
-            initialEditType="wysiwyg"
+            initial-edit-type="wysiwyg"
             @blur="onEditorBlur"
           />
         </v-col>
@@ -35,7 +35,6 @@
             :items="personas"
             item-text="name"
             item-value="id"
-            @blur="updateItem()"
             chips
             deletable-chips
             label="Personas"
@@ -44,6 +43,7 @@
             hide-no-data
             hide-selected
             multiple
+            @blur="updateItem()"
           ></v-autocomplete>
           <v-select
             v-model="itemById.estimate"

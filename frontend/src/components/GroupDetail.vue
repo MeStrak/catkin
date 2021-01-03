@@ -5,8 +5,8 @@
         <v-row>
           <v-col cols="12">
             <v-text-field
-              label="Name"
               v-model="groupById.name"
+              label="Name"
               class="headline"
               hide-details
               @blur="updateGroup()"
@@ -17,8 +17,8 @@
         <v-row>
           <v-col cols="12">
             <v-text-field
-              label="description"
               v-model="groupById.description"
+              label="description"
               class="headline"
               hide-details
               @blur="updateGroup()"
@@ -48,12 +48,10 @@ export default Vue.extend({
     if (this.id === 'newgroup') {
       console.log('new group');
       this.createNewGroup();
-    }
-    else {
-      console.log('existing group')
+    } else {
+      console.log('existing group');
     }
     this.currentGroupId = this.id;
-
   },
   beforeMount() {},
   mounted() {},
@@ -185,16 +183,8 @@ export default Vue.extend({
         .mutate({
           // Query
           mutation: gql`
-            mutation(
-              $name: String!
-              $security: String!
-              ) {
-              createGroup(
-                input: {
-                  name: $name
-                  security: $security
-                   }
-                ) {
+            mutation($name: String!, $security: String!) {
+              createGroup(input: { name: $name, security: $security }) {
                 id
                 name
                 security
@@ -206,7 +196,7 @@ export default Vue.extend({
           variables: {
             name: '',
             description: '',
-            security: 'PRIVATE'
+            security: 'PRIVATE',
           },
           // Update the cache with the result
           //

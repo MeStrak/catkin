@@ -25,12 +25,11 @@
     </v-col>
     <v-dialog v-model="dialog" max-width="80%">
       <v-card>
-        <PersonaDetail v-bind:id="id" v-on:persona-deleted="dialog = false" />
+        <PersonaDetail :id="id" @persona-deleted="dialog = false" />
       </v-card>
     </v-dialog>
   </v-row>
 </template>
-
 
 <script lang="ts">
 // import faker from "faker";

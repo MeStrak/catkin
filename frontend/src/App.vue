@@ -22,7 +22,7 @@
       </v-btn>
       <v-dialog v-model="dialog" max-width="80%">
         <v-card>
-          <KanbanDetail v-bind:id="id" :key="newItemComponentKey" />
+          <KanbanDetail :id="id" :key="newItemComponentKey" />
         </v-card>
       </v-dialog>
 
@@ -34,7 +34,7 @@
         :nudge-width="200"
         offset-x
       >
-        <template v-slot:activator="{ on }">
+        <template #activator="{ on }">
           <v-btn color="indigo" dark v-on="on">
             <v-icon>filter_list</v-icon>
           </v-btn>
@@ -50,7 +50,7 @@
         :nudge-width="200"
         offset-x
       >
-        <template v-slot:activator="{ on }">
+        <template #activator="{ on }">
           <v-btn color="indigo" dark v-on="on">
             <v-icon>rss_feed</v-icon>
           </v-btn>
@@ -66,7 +66,7 @@
         :nudge-width="200"
         offset-x
       >
-        <template v-if="isLoggedIn" v-slot:activator="{ on }">
+        <template v-if="isLoggedIn" #activator="{ on }">
           <v-btn
             v-if="isLoggedIn"
             color="#5DA2D5"
@@ -85,14 +85,14 @@
         :nudge-width="200"
         offset-x
       >
-        <template v-slot:activator="{ on }">
+        <template #activator="{ on }">
           <v-btn
+            v-if="!isLoggedIn"
             color="#5DA2D5"
             dark
             class="ml-2"
             @click="handleLogin()"
             v-on="on"
-            v-if="!isLoggedIn"
             >Login</v-btn
           >
         </template>
@@ -127,9 +127,9 @@
               <v-icon>{{ item.icon }}</v-icon>
             </v-list-item-action>
             <v-list-item-content>
-              <v-list-item-title class="grey--text">
-                {{ item.text }}
-              </v-list-item-title>
+              <v-list-item-title class="grey--text">{{
+                item.text
+              }}</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
         </template>
@@ -157,15 +157,15 @@ import KanbanDetail from './components/KanbanDetail.vue';
 import authService from './auth/authService';
 
 export default Vue.extend({
-  name: 'inspire',
-  props: {
-    source: String,
-  },
+  name: 'Inspire',
 
   components: {
     NewsFeed,
     BoardFilters,
     KanbanDetail,
+  },
+  props: {
+    source: String,
   },
   data: () => ({
     drawer: false,
@@ -182,11 +182,16 @@ export default Vue.extend({
       { icon: 'perm_contact_calendar', text: 'Personas', route: '/personas' },
       { icon: 'group_work', text: 'Orgs', route: '/orgs' },
 
-
       // { divider: true },
       { icon: 'settings', text: 'Settings' },
     ],
   }),
+  created() {
+    this.isLoggedIn = this.getIsLoggedIn();
+  },
+  updated() {
+    this.isLoggedIn = this.getIsLoggedIn();
+  },
   methods: {
     forceRerender() {
       this.newItemComponentKey += 1;
@@ -202,12 +207,6 @@ export default Vue.extend({
     getIsLoggedIn() {
       return authService.isLoggedIn();
     },
-  },
-  created() {
-    this.isLoggedIn = this.getIsLoggedIn();
-  },
-  updated() {
-    this.isLoggedIn = this.getIsLoggedIn();
   },
 });
 </script>

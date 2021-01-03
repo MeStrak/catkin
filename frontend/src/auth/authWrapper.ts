@@ -27,6 +27,36 @@ export const useAuth0 = ({
         error: null,
       };
     },
+    async created() {
+      this.auth0Client = await createAuth0Client({
+        domain: options.domain,
+        client_id: options.clientid,
+        audience: options.audience,
+        redirect_uri: redirectUri,
+      });
+
+      try {
+        if (
+          window.location.search.includes('code=') &&
+          window.location.search.includes('state=')
+        ) {
+          const { appState } = await this.auth0Client.handleRedirectCallback();
+          this.error = null;
+          //onRedirectCallback(appState);
+          onRedirectCallback();
+        }
+      } catch (e) {
+        console.log('auth error');
+        this.error = e;
+      } finally {
+        this.isAuthenticated = await this.auth0Client.isAuthenticated();
+        // this.gqlbearer = await this.getTokenSilently();
+        // console.log(this.gqlbearer);
+        this.user = await this.auth0Client.getUser();
+        console.log(this.user);
+        this.loading = false;
+      }
+    },
     methods: {
       async loginWithPopup(o) {
         this.popupOpen = true;
@@ -72,36 +102,6 @@ export const useAuth0 = ({
       logout(o) {
         return this.auth0Client.logout(o);
       },
-    },
-    async created() {
-      this.auth0Client = await createAuth0Client({
-        domain: options.domain,
-        client_id: options.clientid,
-        audience: options.audience,
-        redirect_uri: redirectUri,
-      });
-
-      try {
-        if (
-          window.location.search.includes('code=') &&
-          window.location.search.includes('state=')
-        ) {
-          const { appState } = await this.auth0Client.handleRedirectCallback();
-          this.error = null;
-          //onRedirectCallback(appState);
-          onRedirectCallback();
-        }
-      } catch (e) {
-        console.log('auth error');
-        this.error = e;
-      } finally {
-        this.isAuthenticated = await this.auth0Client.isAuthenticated();
-        // this.gqlbearer = await this.getTokenSilently();
-        // console.log(this.gqlbearer);
-        this.user = await this.auth0Client.getUser();
-        console.log(this.user);
-        this.loading = false;
-      }
     },
   });
 

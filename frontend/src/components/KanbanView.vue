@@ -38,12 +38,15 @@
         </v-card-text>
       </v-card>
       <!-- </div> -->
-      <div v-for="stage in statuses" :key="stage" :slot="`footer-${stage}`">
-      </div>
+      <div
+        v-for="stage in statuses"
+        :key="stage"
+        :slot="`footer-${stage}`"
+      ></div>
     </kanban-board>
     <v-dialog v-model="dialog" max-width="80%">
       <v-card>
-        <KanbanDetail v-bind:id="id" v-on:item-deleted="dialog = false" :key="id" />
+        <KanbanDetail :id="id" :key="id" @item-deleted="dialog = false" />
       </v-card>
     </v-dialog>
   </v-img>
@@ -120,7 +123,7 @@ export default Vue.extend({
             // Here, return the new result from the previous with the new data
             if (
               previousResult.items.find(
-                item =>
+                (item) =>
                   item.id === subscriptionData.data.itemCreatedOrUpdated.id,
               )
             ) {
@@ -160,7 +163,7 @@ export default Vue.extend({
           updateQuery: (previousResult, { subscriptionData }) => {
             return {
               items: previousResult.items.filter(
-                item => item.id !== subscriptionData.data.itemDeleted.id,
+                (item) => item.id !== subscriptionData.data.itemDeleted.id,
               ),
             };
           },
@@ -182,12 +185,12 @@ export default Vue.extend({
   },
 
   methods: {
-    updateBlock: debounce(function(id, status) {
-      let blockToUpdate = this.items.find(b => b.id === id);
+    updateBlock: debounce(function (id, status) {
+      let blockToUpdate = this.items.find((b) => b.id === id);
       blockToUpdate.status = status;
       this.updateItem(blockToUpdate);
     }, 500),
-    addBlock: debounce(function(stage) {
+    addBlock: debounce(function (stage) {
       this.blocks.push({
         id: this.blocks.length,
         status: stage,
@@ -259,10 +262,10 @@ export default Vue.extend({
           //   },
           // },
         })
-        .then(data => {
+        .then((data) => {
           // Result
         })
-        .catch(error => {
+        .catch((error) => {
           // Error
           console.error(error);
           // We restore the initial user input
