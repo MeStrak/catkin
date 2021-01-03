@@ -27,12 +27,16 @@ const pubSub = new PubSub();
 
 @Resolver()
 export class ItemsResolver {
-  constructor(private readonly itemsService: ItemsService) {}
+  constructor(
+    private readonly itemsService: ItemsService,
+    private readonly groupService: GroupsService,
+  ) {}
 
   @Query(() => [ItemType])
   @UseGuards(new GqlAuthGuard('jwt'))
   async items(@User() user: any, @Args('group') group: string) {
-    if (!IsInGroup(user, group)) throw new ForbiddenException();
+    if (!IsInGroup(user, group) && !this.groupService.isGroupPublic(group))
+      throw new ForbiddenException();
     else return await this.itemsService.findAll([group], [], false);
   }
 
