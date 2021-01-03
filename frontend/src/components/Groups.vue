@@ -27,6 +27,8 @@
               <v-card-title class="headline" v-text="group.name"></v-card-title>
 
               <v-card-subtitle v-text="group.description"></v-card-subtitle>
+              <v-card-subtitle v-text="group.security"></v-card-subtitle>
+
             </div>
 
             <v-avatar class="ma-3" size="125" tile>
@@ -76,6 +78,7 @@ export default Vue.extend({
             name
             description
             id
+            security
           }
         }
       `,

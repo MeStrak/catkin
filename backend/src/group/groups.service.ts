@@ -18,7 +18,9 @@ export class GroupsService {
     if (publicOnly !== undefined && publicOnly) {
       return await this.groupModel.find({ security: 'PUBLIC' }).exec();
     } else {
-      return await this.groupModel.find({ _id: groups }).exec();
+      return await this.groupModel
+        .find({ $or: [{ _id: groups }, { security: 'PUBLIC' }] })
+        .exec();
     }
   }
 
