@@ -12,7 +12,6 @@ import { PersonasModule } from './personas/personas.module';
 import { HealthController } from './health/health.controller';
 const newRelicPlugin = require('@newrelic/apollo-server-plugin'); /* eslint-disable-line @typescript-eslint/no-var-requires */
 
-
 @Module({
   imports: [
     TerminusModule,
