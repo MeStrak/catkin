@@ -1,4 +1,10 @@
-import { Logger, UseGuards, HttpException, HttpStatus, ForbiddenException } from '@nestjs/common';
+import {
+  Logger,
+  UseGuards,
+  HttpException,
+  HttpStatus,
+  ForbiddenException,
+} from '@nestjs/common';
 import { Resolver, Query, Mutation, Args, Subscription } from '@nestjs/graphql';
 import { PubSub } from 'graphql-subscriptions';
 
@@ -8,7 +14,11 @@ import { ItemType } from './dto/create-item.dto';
 // import { AuthGuard } from '@nestjs/passport';
 import { GqlAuthGuard } from '../auth/gqlauth.guard';
 import { User } from '../users/user.decorator';
-import { GetUserGroups, GetWritableUserGroups, IsInGroup } from '../users/user.helper';
+import {
+  GetUserGroups,
+  GetWritableUserGroups,
+  IsInGroup,
+} from '../users/user.helper';
 import { GroupsService } from '../group/groups.service';
 import { InjectModel } from '@nestjs/mongoose';
 // import { Subscription } from '@nestjs/graphql';
@@ -22,10 +32,8 @@ export class ItemsResolver {
   @Query(() => [ItemType])
   @UseGuards(new GqlAuthGuard('jwt'))
   async items(@User() user: any, @Args('group') group: string) {
-    if(!IsInGroup(user,group))
-      throw new ForbiddenException();
-    else
-      return await this.itemsService.findAll([group], [], false);
+    if (!IsInGroup(user, group)) throw new ForbiddenException();
+    else return await this.itemsService.findAll([group], [], false);
   }
 
   @Query(() => ItemType)
@@ -51,8 +59,8 @@ export class ItemsResolver {
   }
 
   private userHasWriteAccess(user: any, group: string): boolean {
-    const writeableGroups = GetWritableUserGroups(user)
-    
+    const writeableGroups = GetWritableUserGroups(user);
+
     if (writeableGroups.includes(group)) return true;
     else if (writeableGroups.includes('*')) return true;
     else return false;

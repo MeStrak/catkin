@@ -14,9 +14,7 @@ describe('ItemsService', () => {
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      imports: [
-        
-      ],
+      imports: [],
       providers: [
         GroupsService,
         {
