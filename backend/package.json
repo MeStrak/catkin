@@ -7,6 +7,7 @@
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
     "format": "prettier --config .prettierrc --write \"src/**/*.ts\"",
+    "formattests": "prettier --config .prettierrc --write \"test/**/*.ts\"",
     "start": "ts-node -r tsconfig-paths/register src/main.ts",
     "start:dev": "concurrently --handle-input \"wait-on dist/main.js && nodemon\" \"tsc -w -p tsconfig.build.json\" ",
     "start:debug": "nodemon --config nodemon-debug.json",
@@ -14,7 +15,8 @@
     "prestart:prod": "rimraf dist && npm run build",
     "start:prod": "node dist/main.js",
     "tslint": "tslint -p tsconfig.json -c tslint.json",
-    "lint": "eslint . --ext .ts",
+    "lint": "eslint . --ext .ts --max-warnings 95",
+    "lint:fix": "eslint . --fix --ext .ts",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",

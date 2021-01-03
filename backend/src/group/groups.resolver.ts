@@ -16,7 +16,7 @@ export class GroupsResolver {
   @UseGuards(new GqlAuthGuard('jwt'))
   async groups(@User() user: any) {
     //get groups from access token - only those groups will be returned
-    let groups: string[] = GetUserGroups(user);
+    const groups: string[] = GetUserGroups(user);
 
     return this.groupsService.findAll(groups);
   }
@@ -24,7 +24,7 @@ export class GroupsResolver {
   @Query(() => GroupType)
   @UseGuards(new GqlAuthGuard('jwt'))
   async groupById(@User() user: any, @Args('id') id: string) {
-    let groups: string[] = GetUserGroups(user);
+    const groups: string[] = GetUserGroups(user);
 
     return this.groupsService.findOne(id, groups);
   }

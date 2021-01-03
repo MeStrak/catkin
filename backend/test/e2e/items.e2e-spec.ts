@@ -1,3 +1,5 @@
+/* eslint-disable no-useless-escape */
+
 import { Test, TestingModule } from '@nestjs/testing';
 import request from 'supertest';
 import { ItemsModule } from '../../src/items/items.module';
@@ -8,12 +10,12 @@ import { ItemInput } from '../../src/items/input-items.input';
 import { getToken } from '../auth.helpers';
 
 describe('ItemsController (e2e)', () => {
-
-
   beforeAll(async () => {
+    console.log('starting items tests');
   });
 
   afterAll(async () => {
+    console.log('finished items tests');
   });
 
   const item: ItemInput = {
@@ -21,17 +23,17 @@ describe('ItemsController (e2e)', () => {
     estimate: 10,
     description: 'Description of this great item',
     personas: [],
-    group: '54759eb3c090d83494e2d804'
+    group: '54759eb3c090d83494e2d804',
   };
 
-  let id: string = '';
+  let id = '';
 
   const updatedItem: ItemInput = {
     title: 'Great updated item',
     estimate: 20,
     description: 'Updated description of this great item',
     personas: [],
-    group: '54759eb3c090d83494e2d804'
+    group: '54759eb3c090d83494e2d804',
   };
 
   const CREATE_ITEM_GQL = `
@@ -54,7 +56,7 @@ describe('ItemsController (e2e)', () => {
         variables: {
           createItem: item,
         },
-      })
+      });
 
     expect(res.body.errors).toBeTruthy;
     expect(res.body.errors[0].extensions.exception.status).toBe(401);
@@ -69,14 +71,13 @@ describe('ItemsController (e2e)', () => {
         variables: {
           createItem: item,
         },
-      })
+      });
     checkNoResponseErrors(res);
     const data = res.body.data.createItem;
     id = data.id;
     expect(data.title).toBe(item.title);
     expect(data.description).toBe(item.description);
     expect(data.estimate).toBe(item.estimate);
-
   });
 
   it('Gets items when user is logged in and has access to the group', async () => {
@@ -84,8 +85,9 @@ describe('ItemsController (e2e)', () => {
       .post('/graphql')
       .set('Authorization', 'Bearer ' + global.validAuthToken)
       .send({
-        query: '{items(group: "54759eb3c090d83494e2d804") {title, estimate, description, id}}',
-      })
+        query:
+          '{items(group: "54759eb3c090d83494e2d804") {title, estimate, description, id}}',
+      });
     checkNoResponseErrors(res);
     const data = res.body.data.items;
     const itemResult = data[0];
@@ -116,14 +118,13 @@ describe('ItemsController (e2e)', () => {
       .set('Authorization', 'Bearer ' + global.validAuthToken)
       .send({
         query: updateItemQuery,
-      })
-    
+      });
+
     checkNoResponseErrors(res);
     const data = res.body.data.updateItem;
     expect(data.title).toBe(updatedItem.title);
     expect(data.description).toBe(updatedItem.description);
     expect(data.estimate).toBe(updatedItem.estimate);
-
   });
 
   it('Deletes an item when user is logged in and has write access to the group', async () => {
@@ -143,7 +144,7 @@ describe('ItemsController (e2e)', () => {
       .send({
         operationName: null,
         query: deleteItemQuery,
-      })
+      });
 
     checkNoResponseErrors(res);
     const data = res.body.data.deleteItem;
