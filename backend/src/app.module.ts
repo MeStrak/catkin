@@ -10,7 +10,8 @@ import { GroupsModule } from './group/groups.module';
 import { ItemsModule } from './items/items.module';
 import { PersonasModule } from './personas/personas.module';
 import { HealthController } from './health/health.controller';
-const newRelicPlugin = require('@newrelic/apollo-server-plugin');
+const newRelicPlugin = require('@newrelic/apollo-server-plugin'); /* eslint-disable-line @typescript-eslint/no-var-requires */
+
 
 @Module({
   imports: [

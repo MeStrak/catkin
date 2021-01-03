@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-namespace */
 import { Test } from '@nestjs/testing';
 // It is used below
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -8,7 +9,6 @@ import createJWKSMock, { JWKSMock } from 'mock-jwks';
 import JwksRsa from 'jwks-rsa';
 import { getToken, startAuthServer } from '../auth.helpers';
 import { ConfigService } from '@nestjs/config';
-
 
 declare global {
   namespace NodeJS {
@@ -22,7 +22,6 @@ declare global {
 export default global;
 
 beforeAll(async () => {
-  
   try {
     const moduleRef = await Test.createTestingModule({
       imports: [AppModule],

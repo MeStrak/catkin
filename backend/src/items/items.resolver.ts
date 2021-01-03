@@ -39,7 +39,7 @@ export class ItemsResolver {
   @Query(() => ItemType)
   @UseGuards(new GqlAuthGuard('jwt'))
   async itemById(@User() user: any, @Args('id') id: string) {
-    let groups: string[] = GetUserGroups(user);
+    const groups: string[] = GetUserGroups(user);
 
     return this.itemsService.findOne(id, groups);
   }

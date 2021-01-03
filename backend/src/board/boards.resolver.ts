@@ -16,7 +16,7 @@ export class BoardsResolver {
   @UseGuards(new GqlAuthGuard('jwt'))
   async boards(@User() user: any) {
     //get groups from access token - only boards for those groups will be returned
-    let groups: string[] = GetUserGroups(user);
+    const groups: string[] = GetUserGroups(user);
 
     return this.boardsService.findAll(groups);
   }

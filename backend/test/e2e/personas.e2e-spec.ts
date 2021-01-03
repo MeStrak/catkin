@@ -1,3 +1,5 @@
+/* eslint-disable no-useless-escape */
+
 import { Test, TestingModule } from '@nestjs/testing';
 import request from 'supertest';
 import { PersonasModule } from '../../src/personas/personas.module';
@@ -9,9 +11,12 @@ import { PersonaInput } from 'dist/personas/input-personas.input';
 describe('PersonasController (e2e)', () => {
   let app;
 
-  beforeAll(async () => {});
+  beforeAll(async () => {
+    console.log('starting persona e2e tests')
+  });
 
   afterAll(async () => {
+    console.log('finished persona e2e tests')
   });
 
   const persona: PersonaInput = {
@@ -20,10 +25,10 @@ describe('PersonasController (e2e)', () => {
     likes: 'Farting in the bath',
     pains: 'Smelly poos',
     goal: 'Fly to the moon',
-    group: ''
+    group: '',
   };
 
-  let id: string = '';
+  let id = '';
 
   const updatedPersona: PersonaInput = {
     name: 'Brian McTwosey',
@@ -31,7 +36,7 @@ describe('PersonasController (e2e)', () => {
     likes: 'Space',
     pains: 'Cannot afford a rocket',
     goal: 'Fly to mars',
-    group: ''
+    group: '',
   };
 
   const createpersonaObject = JSON.stringify(persona).replace(
@@ -58,11 +63,11 @@ describe('PersonasController (e2e)', () => {
       .send({
         operationName: null,
         query: createPersonaQuery,
-      })
-        const data = res.body.data.createPersona;
-        id = data.id;
-        expect(data.name).toBe(persona.name);
-        expect(data.role).toBe(persona.role);
+      });
+    const data = res.body.data.createPersona;
+    id = data.id;
+    expect(data.name).toBe(persona.name);
+    expect(data.role).toBe(persona.role);
   });
 
   it('getPersonas', async () => {
@@ -72,12 +77,12 @@ describe('PersonasController (e2e)', () => {
       .send({
         operationName: null,
         query: '{personas{name, role, id}}',
-      })
-        const data = res.body.data.personas;
-        const personaResult = data[0];
-        expect(data.length).toBeGreaterThan(0);
-        expect(personaResult.name).toBe(persona.name);
-        expect(personaResult.role).toBe(persona.role);
+      });
+    const data = res.body.data.personas;
+    const personaResult = data[0];
+    expect(data.length).toBeGreaterThan(0);
+    expect(personaResult.name).toBe(persona.name);
+    expect(personaResult.role).toBe(persona.role);
   });
 
   const updatePersonaObject = JSON.stringify(updatedPersona).replace(
@@ -101,10 +106,10 @@ describe('PersonasController (e2e)', () => {
       .send({
         operationName: null,
         query: updatePersonaQuery,
-      })
-        const data = res.body.data.updatePersona;
-        expect(data.name).toBe(updatedPersona.name);
-        expect(data.role).toBe(updatedPersona.role);
+      });
+    const data = res.body.data.updatePersona;
+    expect(data.name).toBe(updatedPersona.name);
+    expect(data.role).toBe(updatedPersona.role);
   });
 
   it('deletePersona', async () => {
@@ -117,15 +122,15 @@ describe('PersonasController (e2e)', () => {
         }
       }`;
 
-      const res = await request(global.app.getHttpServer())
+    const res = await request(global.app.getHttpServer())
       .post('/graphql')
       .set('Authorization', 'Bearer ' + global.validAuthToken)
       .send({
         operationName: null,
         query: deletePersonaQuery,
-      })
-        const data = res.body.data.deletePersona;
-        expect(data.name).toBe(updatedPersona.name);
-        expect(data.role).toBe(updatedPersona.role);
+      });
+    const data = res.body.data.deletePersona;
+    expect(data.name).toBe(updatedPersona.name);
+    expect(data.role).toBe(updatedPersona.role);
   });
 });
