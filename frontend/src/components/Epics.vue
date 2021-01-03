@@ -38,8 +38,11 @@
           {{ item.id }}
         </v-card-text>
       </v-card>
-      <div v-for="stage in statuses" :key="stage" :slot="`footer-${stage}`">
-      </div>
+      <div
+        v-for="stage in statuses"
+        :key="stage"
+        :slot="`footer-${stage}`"
+      ></div>
     </kanban-board>
     <v-dialog v-model="dialog" max-width="80%">
       <v-card>
@@ -58,6 +61,9 @@ import KanbanDetail from './KanbanDetail.vue';
 Vue.use(vueKanban);
 
 export default Vue.extend({
+  components: {
+    KanbanDetail,
+  },
   data() {
     return {
       statuses: ['Epic 1', 'Epic 2', 'Epic 3', 'Epic 4', 'Epic 5', 'Epci 6'],
@@ -66,15 +72,11 @@ export default Vue.extend({
       epicProgress: 60,
     };
   },
-  components: {
-    KanbanDetail,
-  },
-  mounted() {
-  },
+  mounted() {},
 
   methods: {
-    updateBlock: debounce(function(id, status) {
-      this.blocks.find(b => b.id === Number(id)).status = status;
+    updateBlock: debounce(function (id, status) {
+      this.blocks.find((b) => b.id === Number(id)).status = status;
     }, 500),
   },
 });

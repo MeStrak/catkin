@@ -41,16 +41,15 @@
       <v-dialog v-model="dialog" max-width="80%">
         <v-card>
           <GroupDetail
-            v-bind:id="id"
-            v-on:group-deleted="dialog = false"
+            :id="id"
             :key="newGroupComponentKey"
+            @group-deleted="dialog = false"
           />
         </v-card>
       </v-dialog>
     </v-row>
   </container>
 </template>
-
 
 <script lang="ts">
 import Vue from 'vue';

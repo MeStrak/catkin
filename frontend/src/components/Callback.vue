@@ -1,5 +1,7 @@
-// <template><em></em></template>
-// <script>
+//
+<template><em></em></template>
+//
+<script>
 // import { setIdToken, setAccessToken } from '../utils/auth';
 // export default {
 //   name: '',

@@ -10,8 +10,8 @@
         <v-row>
           <v-col cols="12">
             <v-text-field
-              label="Name"
               v-model="personaById.name"
+              label="Name"
               class="headline"
               hide-details
               @blur="updatePersona()"
@@ -22,8 +22,8 @@
         <v-row>
           <v-col cols="12">
             <v-text-field
-              label="Role"
               v-model="personaById.role"
+              label="Role"
               class="headline"
               hide-details
               @blur="updatePersona()"
@@ -106,11 +106,11 @@ export default Vue.extend({
             id: this.id,
           },
         })
-        .then(data => {
+        .then((data) => {
           // Result
           this.$emit('persona-deleted');
         })
-        .catch(error => {
+        .catch((error) => {
           // Error
           console.error(error);
           // We restore the initial user input
@@ -162,10 +162,10 @@ export default Vue.extend({
           //   },
           // },
         })
-        .then(data => {
+        .then((data) => {
           // Result
         })
-        .catch(error => {
+        .catch((error) => {
           // Error
           console.error(error);
           // We restore the initial user input
@@ -213,13 +213,13 @@ export default Vue.extend({
           //   },
           // },
         })
-        .then(data => {
+        .then((data) => {
           // Result
 
           this.thisId = data.data.createPersona.id;
           this.personaById = data.data.createPersona;
         })
-        .catch(error => {
+        .catch((error) => {
           // Error
           console.error(error);
           // We restore the initial user input

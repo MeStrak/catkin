@@ -4,10 +4,10 @@
     <div class="form">
       <label for="field-name" class="label">Name</label>
       <input
+        id="field-name"
         v-model="name"
         placeholder="Type a name"
         class="input"
-        id="field-name"
       />
     </div>
 
@@ -62,7 +62,7 @@
       @done="newMessage = ''"
     >
       <template slot-scope="{ mutate }">
-        <form v-on:submit.prevent="formValid && mutate()">
+        <form @submit.prevent="formValid && mutate()">
           <label for="field-message">Message</label>
           <input
             id="field-message"
