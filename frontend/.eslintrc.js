@@ -5,7 +5,8 @@ module.exports = {
     node: true,
   },
 
-  extends: ['plugin:vue/essential', '@vue/prettier', '@vue/typescript'],
+  extends: ['plugin:vue/recommended', '@vue/prettier', '@vue/typescript', 'prettier',
+  'prettier/vue'],
 
   rules: {
     'no-console': 'off',
