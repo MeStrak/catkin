@@ -1,5 +1,5 @@
-'use strict'
-require('dotenv').config()
+'use strict';
+require('dotenv').config();
 
 /**
  * New Relic agent configuration.
@@ -13,11 +13,11 @@ exports.config = {
    * Array of application names.
    */
   // app_name: ['Catkin'],
-   app_name: process.env.NEW_RELIC_APP_NAME,
+  app_name: process.env.NEW_RELIC_APP_NAME,
   /**
    * Your New Relic license key.
    */
-   license_key: process.env.NEW_RELIC_LICENSE_KEY,
+  license_key: process.env.NEW_RELIC_LICENSE_KEY,
   /**
    * This setting controls distributed tracing.
    * Distributed tracing lets you see the path that a request takes through your
@@ -32,7 +32,7 @@ exports.config = {
      *
      * @env NEW_RELIC_DISTRIBUTED_TRACING_ENABLED
      */
-    enabled: true
+    enabled: true,
   },
   logging: {
     /**
@@ -40,7 +40,7 @@ exports.config = {
      * issues with the agent, 'info' and higher will impose the least overhead on
      * production applications.
      */
-    level: 'info'
+    level: 'info',
   },
   /**
    * When true, all request headers except for those listed in attributes.exclude
@@ -67,7 +67,7 @@ exports.config = {
       'response.headers.authorization',
       'response.headers.proxyAuthorization',
       'response.headers.setCookie*',
-      'response.headers.x*'
-    ]
-  }
-}
+      'response.headers.x*',
+    ],
+  },
+};

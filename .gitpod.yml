@@ -8,6 +8,6 @@ tasks:
 
 vscode:
   extensions:
-    - octref.vetur@0.31.3:QHyAEoimIBiRDoL6WtEoRg==
     - esbenp.prettier-vscode@5.8.0:cd2Jz796EPVnD5zeCyctPw==
     - dbaeumer.vscode-eslint@2.1.8:02aHhbJ0Q4aGdjHXlTdVKg==
+    - octref.vetur@0.31.3:QHyAEoimIBiRDoL6WtEoRg==
