@@ -12,11 +12,11 @@ describe('PersonasController (e2e)', () => {
   let app;
 
   beforeAll(async () => {
-    console.log('starting persona e2e tests')
+    console.log('starting persona e2e tests');
   });
 
   afterAll(async () => {
-    console.log('finished persona e2e tests')
+    console.log('finished persona e2e tests');
   });
 
   const persona: PersonaInput = {
