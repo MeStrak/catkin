@@ -1385,14 +1385,15 @@
   resolved "https://registry.yarnpkg.com/@protobufjs/utf8/-/utf8-1.1.0.tgz#a777360b5b39a1a2e5106f8e858f2fd2d060c570"
   integrity sha1-p3c2C1s5oaLlEG+OhY8v0tBgxXA=
 
-"@recap.dev/client@1.8.2":
-  version "1.8.2"
-  resolved "https://registry.yarnpkg.com/@recap.dev/client/-/client-1.8.2.tgz#a003ebd6597f5448cb10f0436b8a229b6593de33"
-  integrity sha512-HcphLT8UR2iwZlKGJD2BcfSuGp2QFmIl0J3yHT9cGJvR80Lhf96H/hgB72RT6ekGyANKZOctBEUGPZn7bQk7NQ==
+"@recap.dev/client@1.9.0":
+  version "1.9.0"
+  resolved "https://registry.yarnpkg.com/@recap.dev/client/-/client-1.9.0.tgz#997855503477571d2ab8a6848fa21e7db890022d"
+  integrity sha512-MxBIYa1JmDmiNmuJU7VY4Rp3nXOn1b1CfAdOED6ZjF5EuqJctbKvh+klzLSunv3zsp7qhI+Wkiu7tKQnqBoROA==
   dependencies:
     lodash-es "^4.17.15"
     node-fetch "^2.6.0"
     node-sql-parser "^3.1.0"
+    reflect-metadata "^0.1.13"
     serialize-error "^6.0.0"
     shimmer "^1.2.1"
     uuid "^8.3.0"
@@ -7473,7 +7474,7 @@ readdirp@~3.5.0:
   dependencies:
     picomatch "^2.2.1"
 
-reflect-metadata@0.1.13:
+reflect-metadata@0.1.13, reflect-metadata@^0.1.13:
   version "0.1.13"
   resolved "https://registry.yarnpkg.com/reflect-metadata/-/reflect-metadata-0.1.13.tgz#67ae3ca57c972a2aa1642b10fe363fe32d49dc08"
   integrity sha512-Ts1Y/anZELhSsjMcU605fU9RE4Oi3p5ORujwbIKXfWa+0Zxs510Qrmrce5/Jowq3cHSZSJqBjypxmHarc+vEWg==
