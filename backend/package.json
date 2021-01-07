@@ -58,7 +58,7 @@
     },
     "devDependencies": {
         "@nestjs/testing": "7.6.5",
-        "@types/jest": "26.0.19",
+        "@types/jest": "26.0.20",
         "@types/node": "10.17.13",
         "@types/socket.io": "2.1.12",
         "@types/supertest": "2.0.10",
