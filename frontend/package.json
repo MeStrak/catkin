@@ -9,7 +9,7 @@
         "lint": "vue-cli-service lint --max-warnings 12"
     },
     "dependencies": {
-        "@auth0/auth0-spa-js": "1.13.5",
+        "@auth0/auth0-spa-js": "1.13.6",
         "@toast-ui/vue-editor": "2.5.1",
         "@types/auth0-js": "9.14.2",
         "@types/graphql": "14.5.0",
