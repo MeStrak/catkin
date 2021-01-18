@@ -44,7 +44,7 @@
         "dotenv": "8.2.0",
         "graphql": "15.4.0",
         "graphql-tools": "7.0.2",
-        "helmet": "4.3.1",
+        "helmet": "4.4.0",
         "jwks-rsa": "1.12.2",
         "mongoose": "5.11.12",
         "newrelic": "7.1.0",
