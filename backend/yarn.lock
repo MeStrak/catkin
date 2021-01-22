@@ -1385,10 +1385,10 @@
   resolved "https://registry.yarnpkg.com/@protobufjs/utf8/-/utf8-1.1.0.tgz#a777360b5b39a1a2e5106f8e858f2fd2d060c570"
   integrity sha1-p3c2C1s5oaLlEG+OhY8v0tBgxXA=
 
-"@recap.dev/client@1.10.0":
-  version "1.10.0"
-  resolved "https://registry.yarnpkg.com/@recap.dev/client/-/client-1.10.0.tgz#2f8adc28dd8dcabe8f0e9a9c9eda5cf0be01bcbf"
-  integrity sha512-JzVEteTAKGWtwGP6jH7bX459XWFfTlXcXpOQ/xPzpo5Ob6KIVBt0ryV47GY31Mx5ad9TVv/kWp0WYkBGzF/IMQ==
+"@recap.dev/client@1.11.0":
+  version "1.11.0"
+  resolved "https://registry.yarnpkg.com/@recap.dev/client/-/client-1.11.0.tgz#4daab94ba4618923a25ad2f29f91c1ebd7f0a3e0"
+  integrity sha512-XSU2+UXcsuvFZxCLJ0X5hJ/ArirhRzSn/w9/qHZ0wkfxWHRVoWuJINpU9RnZ71oXtU2WB8ZR9IgiKI77WIOFmw==
   dependencies:
     lodash-es "^4.17.15"
     node-fetch "^2.6.0"
