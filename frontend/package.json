@@ -33,7 +33,7 @@
         "vue-property-decorator": "9.1.2",
         "vue-router": "3.5.1",
         "vuetify": "2.4.3",
-        "vuex": "3.6.0"
+        "vuex": "3.6.1"
     },
     "devDependencies": {
         "@mdi/font": "5.9.55",
