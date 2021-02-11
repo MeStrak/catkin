@@ -1435,10 +1435,10 @@
   resolved "https://registry.yarnpkg.com/@protobufjs/utf8/-/utf8-1.1.0.tgz#a777360b5b39a1a2e5106f8e858f2fd2d060c570"
   integrity sha1-p3c2C1s5oaLlEG+OhY8v0tBgxXA=
 
-"@recap.dev/client@1.12.3":
-  version "1.12.3"
-  resolved "https://registry.yarnpkg.com/@recap.dev/client/-/client-1.12.3.tgz#ee8e3796bb312cdfdd65731a7a7d4ee6826a51a6"
-  integrity sha512-4KQpQj4fjse2gcRJyM4BaXfcPL5EZK1mZFe8JW7ZxRXUPo65byqRbHZPw+ukYNFTXTSUBU1Az9s7n4qM3AUI3g==
+"@recap.dev/client@1.12.5":
+  version "1.12.5"
+  resolved "https://registry.yarnpkg.com/@recap.dev/client/-/client-1.12.5.tgz#c13cb71b01f02ff9b80dd6b79d9b3b863b6cb3cb"
+  integrity sha512-+V0KvWlZqre2r6HUG4VCaBWdhRQL2YdP8/DoznErJOu/ggs2CEQQaxb/wNbw4JprisPPm7tOqawp+a9KLvZklg==
   dependencies:
     json-stringify-safe "^5.0.1"
     lodash-es "^4.17.15"
