@@ -1336,10 +1336,10 @@
   resolved "https://registry.yarnpkg.com/@newrelic/apollo-server-plugin/-/apollo-server-plugin-0.1.2.tgz#053894523e7ef3fa008f1e615d580c10f4ea35ce"
   integrity sha512-Xyoop+RdJsVX4xBgxX0s9PHNTIUWPB83Kk+c+C25G0v2glAviPAYb17Js9KR1EASQwpVfqxTo+NnFbha0rTwkA==
 
-"@newrelic/aws-sdk@^3.0.0":
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@newrelic/aws-sdk/-/aws-sdk-3.0.0.tgz#00d5e75e2206cdf3d71418e4f031b52b45991f9f"
-  integrity sha512-8sS0MBrvmdCOVsCe7NpNReKU06fhNnvsT60+VmzZNbv1nqPNbtOuUVERzukF/85XWU7Lk/r+ikUyGHX+Emlb4w==
+"@newrelic/aws-sdk@^3.1.0":
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/@newrelic/aws-sdk/-/aws-sdk-3.1.0.tgz#0f8dd504a37ad92be608c340e5f836d848abdefa"
+  integrity sha512-SBFqCz1Hhn2HQvlFCEm2VwfHCGpemeokJ+NH7XphlfQ211OVVANQf49DOQCCS0uhnLHGbKMLmir8Layx57y48A==
 
 "@newrelic/koa@^5.0.0":
   version "5.0.0"
@@ -6833,14 +6833,14 @@ negotiator@0.6.2:
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.2.tgz#feacf7ccf525a77ae9634436a64883ffeca346fb"
   integrity sha512-hZXc7K2e+PgeI1eDBe/10Ard4ekbfrrqG8Ep+8Jmf4JID2bNg7NvCPOZN+kfF574pFQI7mum2AUqDidoKqcTOw==
 
-newrelic@7.1.1:
-  version "7.1.1"
-  resolved "https://registry.yarnpkg.com/newrelic/-/newrelic-7.1.1.tgz#fd4db4c94a6c41fa33cdcaf56890664c5501090a"
-  integrity sha512-aESSdT4mOXsdLbUp/Mcn+LkEx5qkgRvI1Y7k7netnis6qjn2i1dAkS780Wjy+IsK8Wr/bqnJCbSAVZH1iVrryg==
+newrelic@7.1.2:
+  version "7.1.2"
+  resolved "https://registry.yarnpkg.com/newrelic/-/newrelic-7.1.2.tgz#1fa3273a5241ffa1ea7e19de6e8e517103c48980"
+  integrity sha512-kYfDtEi+4rOrGKmd+WKw6Lx+HQ8zuuOeoPaRbeZMNmDCCNQlfzSMayuvqAox3GUiKNk7aLZvIg+d720010KGEg==
   dependencies:
     "@grpc/grpc-js" "^1.2.5"
     "@grpc/proto-loader" "^0.5.5"
-    "@newrelic/aws-sdk" "^3.0.0"
+    "@newrelic/aws-sdk" "^3.1.0"
     "@newrelic/koa" "^5.0.0"
     "@newrelic/superagent" "^4.0.0"
     "@tyriar/fibonacci-heap" "^2.0.7"
