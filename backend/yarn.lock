@@ -1331,10 +1331,10 @@
     optional "0.1.4"
     tslib "2.1.0"
 
-"@newrelic/apollo-server-plugin@0.1.2":
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/@newrelic/apollo-server-plugin/-/apollo-server-plugin-0.1.2.tgz#053894523e7ef3fa008f1e615d580c10f4ea35ce"
-  integrity sha512-Xyoop+RdJsVX4xBgxX0s9PHNTIUWPB83Kk+c+C25G0v2glAviPAYb17Js9KR1EASQwpVfqxTo+NnFbha0rTwkA==
+"@newrelic/apollo-server-plugin@0.1.3":
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/@newrelic/apollo-server-plugin/-/apollo-server-plugin-0.1.3.tgz#31989398977fb0dd77ac1226e8ab203b5e4059c0"
+  integrity sha512-3UOeM5Ig81m21zV6P3eD5hwrVM4C8LDyeoTkBjUfXpd6jhEnCPEiHatajJN3OAGpzUzILqDmxTZG+qnxr59meQ==
 
 "@newrelic/aws-sdk@^3.1.0":
   version "3.1.0"
