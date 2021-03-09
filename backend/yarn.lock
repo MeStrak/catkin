@@ -1021,12 +1021,12 @@
   resolved "https://registry.yarnpkg.com/@graphql-typed-document-node/core/-/core-3.1.0.tgz#0eee6373e11418bfe0b5638f654df7a4ca6a3950"
   integrity sha512-wYn6r8zVZyQJ6rQaALBEln5B1pzxb9shV5Ef97kTvn6yVGrqyXVnDqnU24MXnFubR+rZjBY9NWuxX3FB2sTsjg==
 
-"@grpc/grpc-js@^1.2.5":
-  version "1.2.5"
-  resolved "https://registry.yarnpkg.com/@grpc/grpc-js/-/grpc-js-1.2.5.tgz#d1ef9ae8b99c3b46bb6cc8c82be1aa80080b7300"
-  integrity sha512-CBCNwedw8McnEBq9jvoiJikws16WN0OiHFejQPovY71XkFWSiIqgvydYiDwpvIYDJmhPQ7qZNzW9BPndhXbx1Q==
+"@grpc/grpc-js@^1.2.7":
+  version "1.2.10"
+  resolved "https://registry.yarnpkg.com/@grpc/grpc-js/-/grpc-js-1.2.10.tgz#f316d29a45fcc324e923d593cb849d292b1ed598"
+  integrity sha512-wj6GkNiorWYaPiIZ767xImmw7avMMVUweTvPFg4mJWOxz2180DKwfuxhJJZ7rpc1+7D3mX/v8vJdxTuIo71Ieg==
   dependencies:
-    "@types/node" "^12.12.47"
+    "@types/node" ">=12.12.47"
     google-auth-library "^6.1.1"
     semver "^6.2.0"
 
@@ -1850,15 +1850,15 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-10.17.55.tgz#a147f282edec679b894d4694edb5abeb595fecbd"
   integrity sha512-koZJ89uLZufDvToeWO5BrC4CR4OUfHnUz2qoPs/daQH6qq3IN62QFxCTZ+bKaCE0xaoCAJYE4AXre8AbghCrhg==
 
+"@types/node@>=12.12.47":
+  version "14.14.33"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.14.33.tgz#9e4f8c64345522e4e8ce77b334a8aaa64e2b6c78"
+  integrity sha512-oJqcTrgPUF29oUP8AsUqbXGJNuPutsetaa9kTQAQce5Lx5dTYWV02ScBiT/k1BX/Z7pKeqedmvp39Wu4zR7N7g==
+
 "@types/node@^10.1.0":
   version "10.17.44"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-10.17.44.tgz#3945e6b702cb6403f22b779c8ea9e5c3f44ead40"
   integrity sha512-vHPAyBX1ffLcy4fQHmDyIUMUb42gHZjPHU66nhvbMzAWJqHnySGZ6STwN3rwrnSd1FHB0DI/RWgGELgKSYRDmw==
-
-"@types/node@^12.12.47":
-  version "12.19.4"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-12.19.4.tgz#cdfbb62e26c7435ed9aab9c941393cc3598e9b46"
-  integrity sha512-o3oj1bETk8kBwzz1WlO6JWL/AfAA3Vm6J1B3C9CsdxHYp7XgPiH7OEXPUbZTndHlRaIElrANkQfe6ZmfJb3H2w==
 
 "@types/node@^13.7.0":
   version "13.13.30"
@@ -6818,12 +6818,12 @@ negotiator@0.6.2:
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.2.tgz#feacf7ccf525a77ae9634436a64883ffeca346fb"
   integrity sha512-hZXc7K2e+PgeI1eDBe/10Ard4ekbfrrqG8Ep+8Jmf4JID2bNg7NvCPOZN+kfF574pFQI7mum2AUqDidoKqcTOw==
 
-newrelic@7.1.2:
-  version "7.1.2"
-  resolved "https://registry.yarnpkg.com/newrelic/-/newrelic-7.1.2.tgz#1fa3273a5241ffa1ea7e19de6e8e517103c48980"
-  integrity sha512-kYfDtEi+4rOrGKmd+WKw6Lx+HQ8zuuOeoPaRbeZMNmDCCNQlfzSMayuvqAox3GUiKNk7aLZvIg+d720010KGEg==
+newrelic@7.1.3:
+  version "7.1.3"
+  resolved "https://registry.yarnpkg.com/newrelic/-/newrelic-7.1.3.tgz#9ba32f73bb52edfc3ebeb2ba1723144fddf55e27"
+  integrity sha512-l5FPCIv+SKY8pE5YKmJnKo8DIsvD0Oe/qgCcCEUb/pnn0Oy/vkeQQMiAvbh90CQhaNDf+XoViL1NRNWFhb167A==
   dependencies:
-    "@grpc/grpc-js" "^1.2.5"
+    "@grpc/grpc-js" "^1.2.7"
     "@grpc/proto-loader" "^0.5.5"
     "@newrelic/aws-sdk" "^3.1.0"
     "@newrelic/koa" "^5.0.0"
