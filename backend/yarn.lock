@@ -6666,10 +6666,10 @@ negotiator@0.6.2:
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.2.tgz#feacf7ccf525a77ae9634436a64883ffeca346fb"
   integrity sha512-hZXc7K2e+PgeI1eDBe/10Ard4ekbfrrqG8Ep+8Jmf4JID2bNg7NvCPOZN+kfF574pFQI7mum2AUqDidoKqcTOw==
 
-newrelic@7.1.3:
-  version "7.1.3"
-  resolved "https://registry.yarnpkg.com/newrelic/-/newrelic-7.1.3.tgz#9ba32f73bb52edfc3ebeb2ba1723144fddf55e27"
-  integrity sha512-l5FPCIv+SKY8pE5YKmJnKo8DIsvD0Oe/qgCcCEUb/pnn0Oy/vkeQQMiAvbh90CQhaNDf+XoViL1NRNWFhb167A==
+newrelic@7.2.0:
+  version "7.2.0"
+  resolved "https://registry.yarnpkg.com/newrelic/-/newrelic-7.2.0.tgz#67d29b3bf804a13381060850c43283877ef62024"
+  integrity sha512-ABTHF9hV3rGVtlbC6xRxLszjsv91p+8i4EtjiuCOTMYImVYwxlMXcixdb+sLeyz58QrzefBaWMpYpqtJ9baa9w==
   dependencies:
     "@grpc/grpc-js" "^1.2.7"
     "@grpc/proto-loader" "^0.5.5"
