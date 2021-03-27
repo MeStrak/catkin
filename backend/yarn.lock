@@ -1329,10 +1329,10 @@
     multer "1.4.2"
     tslib "2.1.0"
 
-"@nestjs/terminus@7.1.0":
-  version "7.1.0"
-  resolved "https://registry.yarnpkg.com/@nestjs/terminus/-/terminus-7.1.0.tgz#fa9666e903a405541fe431a709690b678a24d8cb"
-  integrity sha512-5C6ZpC7DU9HunPmRwYZVK/DiQaNjQfH/KiDMKBLzWTiVG5cVaV+II5eTr0cdhmaaJk58u54S/5eb7lGaK5MGHQ==
+"@nestjs/terminus@7.1.1":
+  version "7.1.1"
+  resolved "https://registry.yarnpkg.com/@nestjs/terminus/-/terminus-7.1.1.tgz#05c7d94214ea0dd897002a606f45e7d994da1e03"
+  integrity sha512-U0cEIB++kb6DZ/KUykXApLEvn1V8bqxw5zivjK5TeqKwwuA/Rm+zwBZnpF8O+5yp1OLO5PuX3Me4qqbpVgG+lA==
   dependencies:
     check-disk-space "2.1.0"
     deprecate "^1.1.1"
