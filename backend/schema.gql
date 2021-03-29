@@ -36,8 +36,8 @@ type PersonaType {
 }
 
 type Permission {
-  """ID of the user from the auth provider"""
-  id: String!
+  """The object (usually a commune)"""
+  permissionForObject: String!
 
   """
   The type of the object to which this permission applies (Commune | Item | ...)

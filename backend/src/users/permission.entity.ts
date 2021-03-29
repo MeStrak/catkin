@@ -3,12 +3,10 @@ import { IsString, ValidatePromise } from 'class-validator';
 
 @ObjectType()
 export class Permission {
-    @Field({
-        description: 'ID of the user from the auth provider',
-        nullable: false,
-    })
+
+    @Field({ description: 'The object (usually a commune)', })
     @IsString()
-    id: string;
+    readonly permissionForObject: string;
 
     @Field({ description: 'The type of the object to which this permission applies (Commune | Item | ...)', })
     @IsString()
