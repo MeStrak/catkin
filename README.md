@@ -45,6 +45,7 @@
 
 - [Table of Contents](#table-of-contents)
 - [About The Project](#about-the-project)
+  - [Concepts](#concepts)
   - [Built With](#built-with)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
@@ -64,9 +65,16 @@
 
 Our aim is to make a fast, easy to use agile workflow too focused on ensuring high quality user stories.
 
-- Persona tagging -the novelty of 'As a xxxxx I want to' has warn off
+- Persona tagging -the novelty of 'As a xxxxx I want to' has worn off
 - User story quality checks - liting to make sure user stories are written in the expected format (coming soon!)
 - User story rating system - devs can vote on the most useful stories (coming soon!)
+
+### Concepts
+- Collective: the top level entity that you create when you start using Catkin - all boards, items are grouped and assigned permissions within your collective (similar to an organisation in other tools)
+- Item: a task or group of tasks that need to be completed (epics, stories, chores)
+- Board: a filtered view on the tasks within a specific collective (not yet implemented)
+- Persona: a description of someone who you are creating a product for
+- Product: (not yet implemented)
 
 ### Built With
 
