@@ -35,12 +35,32 @@ type PersonaType {
   goal: String
 }
 
+type Permission {
+  """ID of the user from the auth provider"""
+  id: String!
+
+  """
+  The type of the object to which this permission applies (Commune | Item | ...)
+  """
+  permissionObjectType: String!
+
+  """The role the user has for this object (Read | Write | Admin)"""
+  role: String!
+}
+
+type UserType {
+  id: ID!
+  permissions: [Permission!]!
+}
+
 type Query {
   items(group: String!): [ItemType!]!
   itemById(id: String!): ItemType!
   groups: [GroupType!]!
   groupById(id: String!): GroupType!
   hello: String!
+  users: [UserType!]!
+  userById(id: String!): UserType!
   personas: [PersonaType!]!
   personaById(id: String!): PersonaType!
   boards: [BoardType!]!
@@ -54,6 +74,9 @@ type Mutation {
   createGroup(input: GroupInput!): GroupType!
   updateGroup(input: GroupInput!, id: String!): GroupType!
   deleteGroup(id: String!): GroupType!
+  createUser(input: UserInput!): UserType!
+  updateUser(input: UserInput!, id: String!): UserType!
+  deleteUser(id: String!): UserType!
   createPersona(input: PersonaInput!): PersonaType!
   updatePersona(input: PersonaInput!, id: String!): PersonaType!
   deletePersona(id: String!): PersonaType!
@@ -75,6 +98,17 @@ input GroupInput {
   name: String!
   security: String!
   description: String
+}
+
+input UserInput {
+  id: String!
+  permissions: [PermissionInput!]
+}
+
+input PermissionInput {
+  permissionForObject: String!
+  permissionObjectType: String!
+  role: String!
 }
 
 input PersonaInput {
