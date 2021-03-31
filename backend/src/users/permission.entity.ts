@@ -1,5 +1,5 @@
 import { ObjectType, Field } from '@nestjs/graphql';
-import { IsString, ValidatePromise } from 'class-validator';
+import { IsString } from 'class-validator';
 
 @ObjectType()
 export class Permission {
@@ -14,6 +14,5 @@ export class Permission {
 
     @Field({ description: 'The role the user has for this object (Read | Write | Admin)', })
     @IsString()
-
     readonly role: string;
 }

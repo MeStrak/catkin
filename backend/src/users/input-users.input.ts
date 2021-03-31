@@ -1,8 +1,6 @@
 import { InputType, Field } from '@nestjs/graphql';
 import { PermissionInput } from './permission.input';
 import { IsObject, IsOptional, ValidateNested } from 'class-validator';
-import { Type, Transform } from 'class-transformer';
-
 
 @InputType()
 export class UserInput {
