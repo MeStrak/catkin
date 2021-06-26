@@ -6883,10 +6883,10 @@ mkdirp@^0.5.1, mkdirp@^0.5.3:
   dependencies:
     minimist "^1.2.5"
 
-mock-jwks@0.3.5:
-  version "0.3.5"
-  resolved "https://registry.yarnpkg.com/mock-jwks/-/mock-jwks-0.3.5.tgz#79e8b56867caf7979f35dced3a42db18634caa19"
-  integrity sha512-bGReKmflmXVcgcTGKv5+mcuK0bU/41MKkZuAxYnds55ONE1WbnqyWOXC1U/0iz0vRRW0W5RnzJPs+Yy3Klv/Xw==
+mock-jwks@1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/mock-jwks/-/mock-jwks-1.0.1.tgz#4e00be4088ef9473a15d7a617da9cf4dee9408cf"
+  integrity sha512-6rA82krn+vIQ500EWv1xwk66/OTLKIx9h3sfa1OG3TgEip223Ellww5BbxD0fi6YP6e9KS9wEgcSWo9YmsX+2A==
   dependencies:
     base64-url "^2.2.0"
     jsonwebtoken "^8.2.0"
