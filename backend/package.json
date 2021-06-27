@@ -34,7 +34,7 @@
         "@nestjs/terminus": "7.2.0",
         "@newrelic/apollo-server-plugin": "0.2.0",
         "@recap.dev/client": "1.14.0",
-        "@types/express": "4.17.8",
+        "@types/express": "4.17.12",
         "@types/helmet": "0.0.48",
         "@types/passport": "1.0.6",
         "@types/passport-jwt": "3.0.5",
