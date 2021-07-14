@@ -1395,10 +1395,10 @@
     optional "0.1.4"
     tslib "2.2.0"
 
-"@newrelic/apollo-server-plugin@0.2.0":
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/@newrelic/apollo-server-plugin/-/apollo-server-plugin-0.2.0.tgz#af429f9cf6f5f1ee9f8033a3b07a3f7419c208ce"
-  integrity sha512-/5r8mwGrGz9RFwTbeXM/JJuhKVU5Fq/hSY3zM1/NICHsukqijP1jjbKN6GOW32glQIWF+83XYBeE2XtHIrbYuQ==
+"@newrelic/apollo-server-plugin@0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@newrelic/apollo-server-plugin/-/apollo-server-plugin-0.3.0.tgz#50924c2931f2d635be93d816c683ab466bc1f1d7"
+  integrity sha512-J5u2Magtmw7ShMTAEWTiNU7ckm5BxhnNhnlJOdGVWArCupafBCi8RLaJsYbvqrxbNQJm9g8NJPysOJdTj7pFCg==
 
 "@newrelic/aws-sdk@^3.1.0":
   version "3.1.0"
