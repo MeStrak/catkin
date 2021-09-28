@@ -42,7 +42,7 @@
         "class-transformer": "0.4.0",
         "class-validator": "0.13.1",
         "dotenv": "8.6.0",
-        "graphql": "15.5.3",
+        "graphql": "15.6.0",
         "graphql-tools": "7.0.5",
         "helmet": "4.6.0",
         "jwks-rsa": "1.12.3",
