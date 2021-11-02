@@ -46,7 +46,7 @@
         "graphql-tools": "7.0.5",
         "helmet": "4.6.0",
         "jwks-rsa": "1.12.3",
-        "mongoose": "5.13.12",
+        "mongoose": "5.13.13",
         "newrelic": "7.5.2",
         "passport": "0.5.0",
         "passport-jwt": "4.0.0",
