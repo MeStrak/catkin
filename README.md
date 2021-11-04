@@ -1,3 +1,4 @@
+_Note: this project is currently on hold due to other commitments_
 
 <!-- PROJECT SHIELDS -->
 <!--
